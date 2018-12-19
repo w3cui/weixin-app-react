@@ -1,4 +1,6 @@
 import Taro, { Component, Config } from '@tarojs/taro'
+import { Provider } from '@tarojs/redux'
+import configStore from './redux/store'
 
 import Index from './pages/index'
 
@@ -15,6 +17,8 @@ if (process.env.TARO_ENV === 'weapp') {
 } else if (process.env.TARO_ENV === 'h5') {
   require('taro-ui/dist/h5/css/index.css')
 }
+
+
 class App extends Component {
 
   /**
@@ -54,11 +58,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-    wx.getUserInfo({
-      success(res) {
-        console.log(res);
-      }
-    })
   }
 
   componentDidShow() { }
@@ -71,9 +70,15 @@ class App extends Component {
   // 请勿修改此函数
   render() {
     return (
-      <Index />
+
+      <Provider store={configStore}>
+        <Index />
+      </Provider>
     )
   }
 }
 
-Taro.render(<App />, document.getElementById('app'))
+Taro.render(
+  <App />
+  ,
+  document.getElementById('app'))

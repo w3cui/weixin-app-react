@@ -1,7 +1,18 @@
 import Taro, { Component, Config } from '@tarojs/taro'
 import { Swiper, SwiperItem, View, Text, Image } from '@tarojs/components'
 import { AtAvatar, AtButton } from 'taro-ui'
+import { connect, userInfo } from '@tarojs/redux'
 import './index.scss'
+
+import { add, minus, asyncAdd, setWeiXinUser } from '../../redux/action'
+
+@connect(({ counter, userInfo }) => ({
+  counter, userInfo
+}), (dispatch, rep) => ({
+  setWeiXinUser(data) {
+    dispatch(setWeiXinUser(data))
+  },
+}))
 
 export default class Index extends Component {
   state = {
@@ -23,17 +34,25 @@ export default class Index extends Component {
   }
 
   componentWillMount() {
-    let _this = this;
+    const _this = this
     wx.getUserInfo({
       success(res) {
-        console.log(res);
-        _this.setState({ weiXinInfo: res.userInfo });
+        _this.props.setWeiXinUser(res)
+        setTimeout(() => {
+          res.userInfo.nickName = res.userInfo.nickName + "111111111"
+          console.log(res)
+          _this.props.setWeiXinUser(res)
+          console.log(_this.props)
+        }, 5000);
+
+        // _this.setState({ weiXinInfo: res.userInfo });
       }
     })
 
   }
 
-  componentDidMount() { }
+  componentDidMount() {
+  }
 
   componentWillUnmount() { }
 
@@ -43,7 +62,9 @@ export default class Index extends Component {
 
   render() {
     const { swiperConfig, circle, weiXinInfo } = this.state
-    console.log(swiperConfig, circle)
+    const { wxInfo } = this.props.userInfo
+
+    console.log("fdsa", this.props)
     return (
       <View style='flex-direction:column;' className='flex-wrp layoutbg'>
         <Swiper
@@ -73,19 +94,22 @@ export default class Index extends Component {
               mode='widthFix' />
           </SwiperItem>
         </Swiper>
-        <View className='at-article home-info '>
-          <View className='cent at-article__section'>
-            <View className='at-row at-row__align--center'>
-              <AtAvatar className='at-col' circle={circle} image={weiXinInfo.avatarUrl}></AtAvatar>
-              <View>
-                <View className='at-article__h3'>下午好，{weiXinInfo.nickName}</View>
-                <View className='at-article__p'>
-                  欢迎来到“XXXXXXXX”酒店使用自助终端办理入住。
+        {wxInfo && (
+          <View className='at-article home-info '>
+            <View className='cent at-article__section'>
+              <View className='at-row at-row__align--center'>
+                <AtAvatar className='at-col' circle={circle} image={wxInfo.userInfo.avatarUrl}></AtAvatar>
+                <View>
+                  <View className='at-article__h3'>下午好，{wxInfo.userInfo.nickName}</View>
+                  <View className='at-article__p'>
+                    欢迎来到“XXXXXXXX”酒店使用自助终端办理入住。
+                </View>
                 </View>
               </View>
             </View>
           </View>
-        </View>
+        )}
+
 
         <View className='at-row at-row__justify--between at-row__align--center'>
           <View className='at-col at-col-5'>
@@ -94,6 +118,12 @@ export default class Index extends Component {
           <View className='at-col at-col-5'>
             <AtButton type='primary' size='small'>按钮文案</AtButton>
           </View>
+        </View>
+        <View className='todo'>
+          <Button className='add_btn' onClick={this.props.add}>+</Button>
+          <Button className='dec_btn' onClick={this.props.dec}>-</Button>
+          <Button className='dec_btn' onClick={this.props.asyncAdd}>async</Button>
+          <View>{this.props.counter.num}</View>
         </View>
       </View>
     )
