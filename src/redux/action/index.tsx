@@ -28,6 +28,6 @@ export function asyncAdd() {
 export const setWeiXinUser = (user) => {
     return {
         type: WEIXIN_USER,
-        user: user,
+        user: { ...user },
     }
 }
