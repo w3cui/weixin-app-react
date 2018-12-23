@@ -1,6 +1,6 @@
 import Taro, { Component, Config } from '@tarojs/taro'
 import { Swiper, SwiperItem, View, Text, Image } from '@tarojs/components'
-import { AtAvatar, AtButton } from 'taro-ui'
+import { AtAvatar, AtButton , AtSteps } from 'taro-ui'
 import { connect, userInfo } from '@tarojs/redux'
 import './index.scss'
 
@@ -21,6 +21,7 @@ export default class Index extends Component {
     },
     circle: true,
     weiXinInfo: false,
+    current:0
   }
   /**
    * 指定config的类型声明为: Taro.Config
@@ -33,27 +34,13 @@ export default class Index extends Component {
     navigationBarTitleText: '新网服务终端'
   }
 
-  openURL (url){
-    wx.navigateTo({
-      url: url
-    })
-  }
   componentWillMount() {
     const _this = this
     wx.getUserInfo({
       success(res) {
-        _this.props.setWeiXinUser(res)
-        setTimeout(() => {
-          res.userInfo.nickName = res.userInfo.nickName + "111111111"
-          console.log(res)
-          _this.props.setWeiXinUser(res)
-          console.log(_this.props)
-        }, 5000);
-
-        // _this.setState({ weiXinInfo: res.userInfo });
+        _this.props.setWeiXinUser(res);
       }
     })
-
   }
 
   componentDidMount() {
@@ -68,37 +55,46 @@ export default class Index extends Component {
   render() {
     const { swiperConfig, circle, weiXinInfo } = this.state
     const { wxInfo } = this.props.userInfo
-
+    const items = [
+      {
+        'title': '步骤一',
+        'desc': '这里是额外的信息，最多两行',
+        'icon': {
+          value: 'sound',
+          activeColor: '#fff',
+          inactiveColor: '#78A4FA',
+          size: '14',
+        }
+      },
+      {
+        'title': '步骤二',
+        'desc': '这里是额外的信息，最多两行',
+        'icon': {
+          value: 'shopping-cart',
+          activeColor: '#fff',
+          inactiveColor: '#78A4FA',
+          size: '14',
+        }
+      },
+      {
+        'title': '步骤三',
+        'desc': '这里是额外的信息，最多两行',
+        'icon': {
+          value: 'camera',
+          activeColor: '#fff',
+          inactiveColor: '#78A4FA',
+          size: '14',
+        }
+      }
+    ]
     console.log("fdsa", this.props)
     return (
       <View style='flex-direction:column;' className='flex-wrp layoutbg'>
-        <Swiper
-          className='test-h'
-          indicatorColor='#fff'
-          indicatorActiveColor='rgba(0,0,0.3)'
-          vertical={swiperConfig.vertical}
-          circular
-          indicatorDots
-          autoplay>
-          <SwiperItem style={{ backgroundColor: '#dfe2e5' }} >
-            <Image
-              style={{ width: '100%', height: '100%' }}
-              src='https://img11.360buyimg.com/babel/s700x360_jfs/t1/4776/39/2280/143162/5b9642a5E83bcda10/d93064343eb12276.jpg!q90!cc_350x180'
-              mode='widthFix' />
-          </SwiperItem>
-          <SwiperItem style={{ backgroundColor: '#f1f1f1' }} >
-            <Image
-              style={{ width: '100%', height: '100%' }}
-              src='https://img11.360buyimg.com/babel/s700x360_jfs/t1/4776/39/2280/143162/5b9642a5E83bcda10/d93064343eb12276.jpg!q90!cc_350x180'
-              mode='widthFix' />
-          </SwiperItem>
-          <SwiperItem style={{ backgroundColor: '#dfe2e5' }} >
-            <Image
-              style={{ width: '100%', height: '100%' }}
-              src='https://img11.360buyimg.com/babel/s700x360_jfs/t1/4776/39/2280/143162/5b9642a5E83bcda10/d93064343eb12276.jpg!q90!cc_350x180'
-              mode='widthFix' />
-          </SwiperItem>
-        </Swiper>
+        <AtSteps
+          items={items}
+          current={this.state.current}
+          onChange={this.onChange.bind(this)}
+        />
         {wxInfo && (
           <View className='at-article home-info '>
             <View className='cent at-article__section'>
@@ -118,19 +114,11 @@ export default class Index extends Component {
 
         <View className='at-row at-row__justify--between at-row__align--center'>
           <View className='at-col at-col-5'>
-            <AtButton type='primary' onClick={this.openURL.bind(this,'/pages/pay/index')} size='small'>已订房间密码办理入住</AtButton>
+            <AtButton type='primary' size='small'>按钮文案</AtButton>
           </View>
           <View className='at-col at-col-5'>
-            <AtButton type='primary' size='small' 
-              
-              >自助订房在线支付入住</AtButton>
+            <AtButton type='primary' size='small'>按钮文案</AtButton>
           </View>
-        </View>
-        <View className='todo'>
-          <Button className='add_btn' onClick={this.props.add}>+</Button>
-          <Button className='dec_btn' onClick={this.props.dec}>-</Button>
-          <Button className='dec_btn' onClick={this.props.asyncAdd}>async</Button>
-          <View>{this.props.counter.num}</View>
         </View>
       </View>
     )

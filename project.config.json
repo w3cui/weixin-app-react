@@ -1,13 +1,15 @@
 {
-  "miniprogramRoot": "./dist",
-  "projectname": "新网服务终端",
-  "description": "",
-  "appid": "wx431af78ee639f238",
-  "setting": {
-    "urlCheck": true,
-    "es6": false,
-    "postcss": false,
-    "minified": false
-  },
-  "compileType": "miniprogram"
+	"miniprogramRoot": "dist/",
+	"projectname": "%E6%96%B0%E7%BD%91%E6%9C%8D%E5%8A%A1%E7%BB%88%E7%AB%AF",
+	"description": "",
+	"appid": "wx431af78ee639f238",
+	"setting": {
+		"urlCheck": true,
+		"es6": false,
+		"postcss": false,
+		"minified": false,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"condition": {}
 }

@@ -1,0 +1,8 @@
+.pay_password_list {
+    padding-left: 0; position: relative; left:10rpx;
+    .input{ position: relative; z-index: 1;
+        input{border:solid 1px #eee;height: 44rpx;line-height: 44rpx; margin-right: 50rpx; text-align: center;}
+        .fg{ text-align: center; height: 44rpx; line-height: 44rpx; position: absolute; right: 0; width: 50rpx; text-align: center; top: 0; font-size:28rpx ; color: #999; }
+    }
+    
+}
