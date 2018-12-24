@@ -6,4 +6,4 @@ import userInfo from './user'
 export default combineReducers({
     counter,
     userInfo,
-})
+}) 

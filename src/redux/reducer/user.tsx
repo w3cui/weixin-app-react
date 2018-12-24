@@ -6,7 +6,6 @@ const INITIAL_STATE = {
 }
 
 export default function userInfo(state = INITIAL_STATE, action) {
-    console.log(action);
     const { type, user } = action;
     switch (type) {
         case WEIXIN_USER:

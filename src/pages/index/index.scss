@@ -13,3 +13,14 @@
     background: #fafafa;
     min-height: 100vh;
 }
+
+.home-tab {
+    background: #fff;
+    margin: 20rpx 10rpx 10rpx 10rpx;
+    .at-col {
+        text-align: center;
+        .at-button {
+            height: 300rpx;
+        }
+    }
+}
