@@ -33,7 +33,7 @@ export default class Index extends Component {
     navigationBarTitleText: '新网服务终端'
   }
 
-  openURL (url){
+  openURL(url) {
     wx.navigateTo({
       url: url
     })
@@ -118,12 +118,12 @@ export default class Index extends Component {
 
         <View className='at-row at-row__justify--between at-row__align--center'>
           <View className='at-col at-col-5'>
-            <AtButton type='primary' onClick={this.openURL.bind(this,'/pages/pay/index')} size='small'>已订房间密码办理入住</AtButton>
+            <AtButton type='primary' onClick={this.openURL.bind(this, '/pages/pay/index')} size='small'>已订房间密码办理入住</AtButton>
           </View>
           <View className='at-col at-col-5'>
-            <AtButton type='primary' size='small' 
-              
-              >自助订房在线支付入住</AtButton>
+            <AtButton type='primary' size='small'
+
+            >自助订房在线支付入住</AtButton>
           </View>
         </View>
         <View className='todo'>
