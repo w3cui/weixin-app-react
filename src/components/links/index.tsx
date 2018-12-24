@@ -1,126 +1,81 @@
 import Taro, { Component, Config } from '@tarojs/taro'
 import { Swiper, SwiperItem, View, Text, Image } from '@tarojs/components'
-import { AtAvatar, AtButton , AtSteps } from 'taro-ui'
+import { AtAvatar, AtButton, AtSteps } from 'taro-ui'
 import { connect, userInfo } from '@tarojs/redux'
 import './index.scss'
 
-import { add, minus, asyncAdd, setWeiXinUser } from '../../redux/action'
-
-@connect(({ counter, userInfo }) => ({
-  counter, userInfo
-}), (dispatch, rep) => ({
-  setWeiXinUser(data) {
-    dispatch(setWeiXinUser(data))
-  },
-}))
-
 export default class Index extends Component {
   state = {
-    swiperConfig: {
-      vertical: false,
-    },
-    circle: true,
-    weiXinInfo: false,
-    current:0
+    showPayPwdInput: false,  //是否展示密码输入层
+    pwdVal: '',  //输入的密码
+    payFocus: true, //文本框焦点
   }
   /**
-   * 指定config的类型声明为: Taro.Config
-   *
-   * 由于 typescript 对于 object 类型推导只能推出 Key 的基本类型
-   * 对于像 navigationBarTextStyle: 'black' 这样的推导出的类型是 string
-   * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
+   * 显示支付密码输入层
    */
-  config: Config = {
-    navigationBarTitleText: '新网服务终端'
+  showInputLayer() {
+    this.setState({ showPayPwdInput: true, payFocus: true });
+  }
+
+  /**
+ * 显示支付密码输入层
+ */
+  showInputLayer() {
+    this.setState({ showPayPwdInput: true, payFocus: true });
+  }
+  /**
+   * 隐藏支付密码输入层
+   */
+  hidePayLayer() {
+
+    var val = this.data.pwdVal;
+
+    this.setState({ showPayPwdInput: false, payFocus: false, pwdVal: '' }, function () {
+      wx.showToast({
+        title: val,
+      })
+    });
+
+  }
+  /**
+   * 获取焦点
+   */
+  getFocus() {
+    this.setState({ payFocus: true });
+  }
+  /**
+   * 输入密码监听
+   */
+  inputPwd(e) {
+    this.setState({ pwdVal: e.detail.value });
+    if (e.detail.value.length >= 6) {
+      this.hidePayLayer();
+    }
   }
 
   componentWillMount() {
-    const _this = this
-    wx.getUserInfo({
-      success(res) {
-        _this.props.setWeiXinUser(res);
-      }
-    })
+    this.showInputLayer()
   }
 
-  componentDidMount() {
-  }
-
-  componentWillUnmount() { }
-
-  componentDidShow() { }
-
-  componentDidHide() { }
 
   render() {
-    const { swiperConfig, circle, weiXinInfo } = this.state
-    const { wxInfo } = this.props.userInfo
-    const items = [
-      {
-        'title': '步骤一',
-        'desc': '这里是额外的信息，最多两行',
-        'icon': {
-          value: 'sound',
-          activeColor: '#fff',
-          inactiveColor: '#78A4FA',
-          size: '14',
-        }
-      },
-      {
-        'title': '步骤二',
-        'desc': '这里是额外的信息，最多两行',
-        'icon': {
-          value: 'shopping-cart',
-          activeColor: '#fff',
-          inactiveColor: '#78A4FA',
-          size: '14',
-        }
-      },
-      {
-        'title': '步骤三',
-        'desc': '这里是额外的信息，最多两行',
-        'icon': {
-          value: 'camera',
-          activeColor: '#fff',
-          inactiveColor: '#78A4FA',
-          size: '14',
-        }
-      }
-    ]
-    console.log("fdsa", this.props)
     return (
-      <View style='flex-direction:column;' className='flex-wrp layoutbg'>
-        <AtSteps
-          items={items}
-          current={this.state.current}
-          onChange={this.onChange.bind(this)}
-        />
-        {wxInfo && (
-          <View className='at-article home-info '>
-            <View className='cent at-article__section'>
-              <View className='at-row at-row__align--center'>
-                <AtAvatar className='at-col' circle={circle} image={wxInfo.userInfo.avatarUrl}></AtAvatar>
-                <View>
-                  <View className='at-article__h3'>下午好，{wxInfo.userInfo.nickName}</View>
-                  <View className='at-article__p'>
-                    欢迎来到“XXXXXXXX”酒店使用自助终端办理入住。
-                </View>
-                </View>
-              </View>
-            </View>
+      <View >
+        <View className='bg_layer'></View>
+        <View className='input_main'>
+          <View className='input_title'>
+            <View className='input_back' catchtap='hidePayLayer'><Text></Text></View>
+            <Text>输入支付密码</Text>
           </View>
-        )}
-
-
-        <View className='at-row at-row__justify--between at-row__align--center'>
-          <View className='at-col at-col-5'>
-            <AtButton type='primary' size='small'>按钮文案</AtButton>
-          </View>
-          <View className='at-col at-col-5'>
-            <AtButton type='primary' size='small'>按钮文案</AtButton>
+          <View className='input_tip'><Text>使用会员卡余额支付需要验证身份，验证通过后才可进行支付。</Text></View>
+          <View className='input_row' catchtap='getFocus'>
+            <View className='pwd_item' wx: for='{{ 6}}' wx:key='item' wx:for-index='i'>
+                      <Text>fdsafdsa</Text>
           </View>
         </View>
-      </View>
+        <View className='forget_pwd' catchtap='hidePayLayer'>忘记密码</View>
+        <Input className='input_control' password type='number' focus='{{payFocus}}' bindinput='inputPwd' maxlength='6' />
+      </View >
     )
   }
 }

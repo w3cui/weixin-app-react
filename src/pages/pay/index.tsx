@@ -1,6 +1,6 @@
 import Taro, { Component, Config } from '@tarojs/taro'
 import { Swiper, SwiperItem, View, Text, Image } from '@tarojs/components'
-import { AtAvatar, AtButton , AtSteps, AtForm, Input } from 'taro-ui'
+import { AtAvatar, AtButton, AtSteps, AtForm, Input } from 'taro-ui'
 import { connect, userInfo } from '@tarojs/redux'
 import './index.scss'
 
@@ -21,8 +21,9 @@ export default class Index extends Component {
     },
     circle: true,
     weiXinInfo: false,
-    current:0,
-    passwordFocus:0,
+    current: 0,
+    passwordFocus: true,
+    passwords: null,
   }
   /**
    * 指定config的类型声明为: Taro.Config
@@ -35,10 +36,19 @@ export default class Index extends Component {
     navigationBarTitleText: '新网服务终端'
   }
 
-  hloadChange(value){
-    this.setState({passwordFocus:value})
+  hloadChange(event) {
+    const { current } = this.state
+    this.setState({ ...{ passwords: event.detail.value }, ...(event.detail.value.length === 4 ? { current: current + 1 } : {}) })
   }
-
+  onBlur() {
+    this.setState({ passwordFocus: false })
+  }
+  hloadClickPassword() {
+    const { passwordFocus } = this.state
+    this.setState({ passwordFocus: false }, () => {
+      this.setState({ passwordFocus: true })
+    })
+  }
   componentWillMount() {
     const _this = this
     wx.getUserInfo({
@@ -59,7 +69,8 @@ export default class Index extends Component {
   componentDidHide() { }
 
   render() {
-    const { swiperConfig, circle, weiXinInfo ,passwordFocus} = this.state
+
+    const { passwordFocus, passwords, current } = this.state
     const { wxInfo } = this.props.userInfo
     const items = [
       {
@@ -90,33 +101,59 @@ export default class Index extends Component {
         }
       }
     ]
-    console.log("fdsa", this.props)
+    let inputItem = () => {
+      if (!passwords) return []
+      let element = []
+      for (let index = 0; index < passwords.length; index++) {
+        element[index] = `●`
+      }
+      return element
+    };
     return (
       <View style='flex-direction:column;' className='flex-wrp '>
-        <View 
+        <View
           style={{
-            marginTop:'20rpx',
+            paddingTop: '30rpx',
+            paddingBottom: '20rpx'
           }}
         >
-        <AtSteps
-          items={items}
-          current={this.state.current}
-          onChange={this.onChange.bind(this)}
-        />
+          <AtSteps
+            items={items}
+            current={current}
+            onChange={this.onChange.bind(this)}
+          />
         </View>
-        <AtForm className='pay_password_list'>
-          <View className='at-row pay_password_list'>
-          {[0,1,2].map(r=>{
-            return r !== 2 ? <View className='at-col input'>
-            <Input type='password' placeholder='' focus = { passwordFocus === r } onChange={this.hloadChange.bind(this,r)} /><View className='fg'>-</View>
-          </View>: <View className='at-col input'>
-            <Input type='password'  placeholder='' focus = { passwordFocus === r } onChange={this.hloadChange.bind(this,r)} />
-          </View> 
-          })}           
+        {current === 0 ? (
+          <AtForm className='pay_password_list'>
+            <View className='at-row pay_password_list' >
+              {[0, 1, 2, 3].map(r => {
+                return r !== 3 ? <View className='at-col input'>
+                  <View className={!passwords && inputItem().length === r && passwordFocus ? 'inputText focus' : 'inputText'} onClick={this.hloadClickPassword.bind(this, r)} >{inputItem()[r]}</View>
+                  {/* <Input type='password' placeholder='' maxLength='2' focus={passwordFocus === r} onInput={this.hloadChange.bind(this, r)} /> */}
+                  <View className='fg'>-</View>
+                </View> : <View className='at-col input'>
+                    <View className={!passwords && inputItem().length === r && passwordFocus ? 'inputText focus' : 'inputText'} >{inputItem()[r]}</View>
+                    {/* <Input type='password' placeholder='' maxLength='2' focus={passwordFocus === r} onInput={this.hloadChange.bind(this, r)} /> */}
+                  </View>
+              })}
+              <Input className='hideInput' type='text' maxLength='4' focus={passwordFocus} onInput={this.hloadChange.bind(this)} />
+            </View>
+          </AtForm>
+        ) : ''}
+
+        {current === 1 ? (<View className='pay_push'>
+          <View >
+            <View className='pay_push_money'>100.00元</View>
+            <View className='pay_push_text'>
+              <View>1.押金用户通过微信支付的方式向xxx酒店支付入住押金</View>
+              <View>2.押金会在用户离开酒店后，由酒店方查验房间后自动原路退返，退返押金需要2个工作日。</View>
+              <View>3.又住宿疑问可致电酒店客服电话咨询。</View>
+            </View>
+            <AtButton type='primary'>支付押金 100.00元</AtButton>
           </View>
-          
-        </AtForm> 
-       
+        </View>) : ''}
+
+
       </View>
     )
   }

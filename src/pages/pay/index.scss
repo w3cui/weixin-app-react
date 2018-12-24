@@ -1,8 +1,88 @@
-.pay_password_list {
-    padding-left: 0; position: relative; left:10rpx;
-    .input{ position: relative; z-index: 1;
-        input{border:solid 1px #eee;height: 44rpx;line-height: 44rpx; margin-right: 50rpx; text-align: center;}
-        .fg{ text-align: center; height: 44rpx; line-height: 44rpx; position: absolute; right: 0; width: 50rpx; text-align: center; top: 0; font-size:28rpx ; color: #999; }
+/*这里设置动画blink*/
+
+@keyframes blink {
+    0%,
+    100% {
+        background-color: #000;
+        color: #aaa;
     }
-    
+    50% {
+        background-color: #bbb;
+        /* not #aaa because it's seem there is Google Chrome bug */
+        color: #000;
+    }
+}
+
+.pay_password_list {
+    padding-left: 0;
+    position: relative;
+    left: 10rpx;
+    padding: 30rpx 0;
+    overflow: hidden;
+    .input {
+        position: relative;
+        z-index: 1;
+        .inputText {
+            border: solid 1px #eee;
+            height: 80rpx;
+            line-height: 80rpx;
+            margin-right: 50rpx;
+            text-align: center;
+            position: relative;
+            z-index: 5;
+            &.focus:before {
+                content: "";
+                animation: blink 1s infinite steps(1, start);
+                width: 6rpx;
+                height: 50rpx;
+                position: absolute;
+                top: 15rpx;
+                left: 3rpx;
+                border-radius: 30rpx;
+            }
+        }
+        .fg {
+            text-align: center;
+            height: 80rpx;
+            line-height: 80rpx;
+            position: absolute;
+            right: 0;
+            width: 50rpx;
+            text-align: center;
+            top: 0;
+            font-size: 28rpx;
+            color: #999;
+        }
+    }
+    .hideInput {
+        position: absolute;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 55;
+        top: 0;
+        opacity: 0;
+        color: #fff;
+        line-height: 9999rpx;
+        padding-bottom: 50vh;
+    }
+}
+
+.pay_push {
+    margin: 0 20rpx;
+    .pay_push_money {
+        text-align: center;
+        color: rgb(255, 102, 0);
+        font-size: 45rpx;
+        padding: 30rpx 0;
+    }
+    .pay_push_text {
+        padding-bottom: 40rpx;
+        font-size: 30rpx;
+        color: #666;
+        line-height: 50rpx;
+        View {
+            padding: 10rpx;
+        }
+    }
 }
