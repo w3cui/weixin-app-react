@@ -40,6 +40,7 @@ export default class Index extends Component {
   }
   componentWillMount() {
     const _this = this
+    // 获取用户信息
     wx.getUserInfo({
       success(res) {
         _this.props.setWeiXinUser(res)
@@ -51,6 +52,20 @@ export default class Index extends Component {
         }, 5000);
 
         // _this.setState({ weiXinInfo: res.userInfo });
+      }
+    })
+    // 进行微信授权
+    wx.getSetting({
+      success(res) {
+        if (!res.authSetting['scope.record']) {
+          wx.authorize({
+            scope: 'scope.record',
+            success() {
+              // 用户已经同意小程序使用录音功能，后续调用 wx.startRecord 接口不会弹窗询问
+              wx.startRecord()
+            }
+          })
+        }
       }
     })
 
