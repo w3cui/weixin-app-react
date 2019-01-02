@@ -133,7 +133,8 @@ export default class Index extends Component {
 
         <View className=''>
           <View className=''>
-            <Button onClick={this.openURL.bind(this, '/pages/pay/index')}>已订房间密码办理入住</Button>
+            <Button onClick={this.openURL.bind(this, '/pages/pay/index')}>
+            已订房间密码办理入住</Button>
           </View>
           <View className=''>
             <Button onClick={this.openURL.bind(this, '/pages/pay/index')}>自助订房在线支付入住</Button>
