@@ -4,6 +4,8 @@ import { AtAvatar, AtButton, AtSteps, AtForm, Input } from 'taro-ui'
 import { connect, userInfo } from '@tarojs/redux'
 import './index.scss'
 
+import EditorNum from '../../components/editor'
+
 import { add, minus, asyncAdd, setWeiXinUser } from '../../redux/action'
 
 @connect(({ counter, userInfo }) => ({
@@ -23,7 +25,7 @@ export default class Index extends Component {
     weiXinInfo: false,
     current: 0,
     passwordFocus: true,
-    passwords: null,
+    passwords: '',
   }
   /**
    * 指定config的类型声明为: Taro.Config
@@ -36,9 +38,18 @@ export default class Index extends Component {
     navigationBarTitleText: '新网服务终端'
   }
 
-  hloadChange(event) {
+  // hloadChange(event) {
+  //   const { current } = this.state
+  //   this.setState({ ...{ passwords: event.detail.value }, ...(event.detail.value.length === 4 ? { current: current + 1 } : {}) })
+  // }
+
+  childChange(v, k) {
     const { current } = this.state
-    this.setState({ ...{ passwords: event.detail.value }, ...(event.detail.value.length === 4 ? { current: current + 1 } : {}) })
+    this.setState({ passwords: v })
+  }
+  childSubmit() {
+    const { current } = this.state
+    this.setState({ current: current + 1 })
   }
   onBlur() {
     this.setState({ passwordFocus: false })
@@ -59,47 +70,15 @@ export default class Index extends Component {
   }
 
 
-  componentDidMount() {
-  }
-
-  componentWillUnmount() { }
-
-  componentDidShow() { }
-
-  componentDidHide() { }
-
   render() {
-
+    console.log(passwords);
     const { passwordFocus, passwords, current } = this.state
+    const _this = this;
     const { wxInfo } = this.props.userInfo
     const items = [
-      {
-        'title': '输入密码',
-        'icon': {
-          value: 'sound',
-          activeColor: '#fff',
-          inactiveColor: '#78A4FA',
-          size: '14',
-        }
-      },
-      {
-        'title': '支付押金',
-        'icon': {
-          value: 'shopping-cart',
-          activeColor: '#fff',
-          inactiveColor: '#78A4FA',
-          size: '14',
-        }
-      },
-      {
-        'title': '领取房卡（钥匙）',
-        'icon': {
-          value: 'camera',
-          activeColor: '#fff',
-          inactiveColor: '#78A4FA',
-          size: '14',
-        }
-      }
+      { 'title': '输入密码' },
+      { 'title': '支付押金' },
+      { 'title': '领取房卡（钥匙）' }
     ]
     let inputItem = () => {
       if (!passwords) return []
@@ -127,7 +106,7 @@ export default class Index extends Component {
           <AtForm className='pay_password_list'>
             <View className='at-row pay_password_list' >
               {[0, 1, 2, 3].map(r => {
-                return r !== 3 ? <View className='at-col input'>
+                return r !== 3 ? <View className='at-col input' key >
                   <View className={!passwords && inputItem().length === r && passwordFocus ? 'inputText focus' : 'inputText'} onClick={this.hloadClickPassword.bind(this, r)} >{inputItem()[r]}</View>
                   {/* <Input type='password' placeholder='' maxLength='2' focus={passwordFocus === r} onInput={this.hloadChange.bind(this, r)} /> */}
                   <View className='fg'>-</View>
@@ -136,8 +115,13 @@ export default class Index extends Component {
                     {/* <Input type='password' placeholder='' maxLength='2' focus={passwordFocus === r} onInput={this.hloadChange.bind(this, r)} /> */}
                   </View>
               })}
-              <Input className='hideInput' type='text' maxLength='4' focus={passwordFocus} onInput={this.hloadChange.bind(this)} />
+              {/* <Input className='hideInput' type='text' maxLength='4' focus={passwordFocus} onInput={this.hloadChange.bind(this)} /> */}
             </View>
+            <EditorNum
+              maxLength={4}
+              onChange={this.childChange.bind(this)}
+              onSubmit={this.childSubmit.bind(this)}
+            />
           </AtForm>
         ) : ''}
 

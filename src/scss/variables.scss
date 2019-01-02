@@ -1,0 +1,35 @@
+//字体
+$font-family: Arial,
+Helvetica,
+sans-serif,
+"Microsoft YaHei";
+$col-text: #333; //普通文字
+$col-main: #f58523; // 主题色
+$col-main-hover: #ff7f0e; // 主题色
+$col-green: #19B933; // 绿色
+$col-money: #FC4D52; // 用于 价格
+$col-pink: #FC3F78; //粉色
+$col-red: #F72239; // 特殊红色
+$col-darkblue: #3172B9;
+$col-gray: #7F8EA4; //按钮灰色
+$col-secondary: #acb0b5; //次按钮颜色
+$col-primary: $col-main; //主按钮颜色
+$col-666: #666;
+$col-888: #888;
+$col-body: #F5F5F5;
+$col-hr: #EEE; //分割线
+$col-link: #1991EB;
+$font-size-base: 1rem;
+$font-size-in: ceil(($font-size-base * 1.14)); // ~16px
+$font-size-large: ceil(($font-size-base * 1.25)); // ~18px
+$font-size-small: ceil(($font-size-base * 0.85)); // ~12px
+$font-size-h1: floor(($font-size-base * 2.6)); // ~36px
+$font-size-h2: floor(($font-size-base * 2.15)); // ~30px
+$font-size-h3: ceil(($font-size-base * 1.7)); // ~24px
+$font-size-h4: ceil(($font-size-base * 1.25)); // ~18px
+$font-size-h5: $font-size-base;
+$font-size-h6: ceil(($font-size-base * 0.85)); // ~12px
+//圆角
+$radius-3: 3px;
+$radius-5: 5px;
+$radius-10: 5px;

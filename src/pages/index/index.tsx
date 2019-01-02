@@ -89,8 +89,8 @@ export default class Index extends Component {
       <View style='flex-direction:column;' className='flex-wrp layoutbg'>
         <Swiper
           className='test-h'
-          indicatorColor='#fff'
-          indicatorActiveColor='rgba(0,0,0.3)'
+          indicatorColor='rgba(255,255,255,1)'
+          indicatorActiveColor='rgba(255,255,255,.3)'
           vertical={swiperConfig.vertical}
           circular
           indicatorDots
@@ -118,11 +118,11 @@ export default class Index extends Component {
           <View className='at-article home-info '>
             <View className='cent at-article__section'>
               <View className='at-row at-row__align--center'>
-                <AtAvatar className='at-col' circle={circle} image={wxInfo.userInfo.avatarUrl}></AtAvatar>
+                {/* <AtAvatar className='at-col' circle={circle} image={wxInfo.userInfo.avatarUrl}></AtAvatar> */}
                 <View>
                   <View className='at-article__h3'>下午好，{wxInfo.userInfo.nickName}</View>
                   <View className='at-article__p'>
-                    欢迎来到“XXXXXXXX”酒店使用自助终端办理入住。
+                    欢迎来到<Text>XXXXXXXX</Text>酒店使用自助终端办理入住。
                 </View>
                 </View>
               </View>

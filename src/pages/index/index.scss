@@ -1,11 +1,20 @@
 .home-info {
     padding: 18rpx 0;
+    margin-bottom: 20rpx;
     background: #fff;
     .cent {
         margin: 0 20rpx;
     }
+    .at-article__h3 {
+        font-size: 30rpx;
+    }
     .at-article__p {
         margin-top: 10rpx;
+        color: #999;
+        font-size: 25rpx;
+        text {
+            color: rgb(245, 133, 35);
+        }
     }
 }
 
