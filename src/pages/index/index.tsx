@@ -1,10 +1,10 @@
 import Taro, { Component, Config } from '@tarojs/taro'
-import { Swiper, SwiperItem, View, Text, Image } from '@tarojs/components'
+import { Swiper, SwiperItem, View, Text, Image ,Button} from '@tarojs/components'
 import { AtAvatar, AtButton } from 'taro-ui'
 import { connect, userInfo } from '@tarojs/redux'
 import './index.scss'
 
-import { add, minus, asyncAdd, setWeiXinUser } from '../../redux/action'
+import { setWeiXinUser } from '../../redux/action'
 
 @connect(({ counter, userInfo }) => ({
   counter, userInfo
@@ -131,22 +131,15 @@ export default class Index extends Component {
         )}
 
 
-        <View className='at-row at-row__justify--between at-row__align--center'>
-          <View className='at-col at-col-5'>
-            <AtButton type='primary' onClick={this.openURL.bind(this, '/pages/pay/index')} size='small'>已订房间密码办理入住</AtButton>
+        <View className=''>
+          <View className=''>
+            <Button onClick={this.openURL.bind(this, '/pages/pay/index')}>已订房间密码办理入住</Button>
           </View>
-          <View className='at-col at-col-5'>
-            <AtButton type='primary' size='small'
+          <View className=''>
+            <Button onClick={this.openURL.bind(this, '/pages/pay/index')}>自助订房在线支付入住</Button>
+          </View>
+        </View>
 
-            >自助订房在线支付入住</AtButton>
-          </View>
-        </View>
-        <View className='todo'>
-          <Button className='add_btn' onClick={this.props.add}>+</Button>
-          <Button className='dec_btn' onClick={this.props.dec}>-</Button>
-          <Button className='dec_btn' onClick={this.props.asyncAdd}>async</Button>
-          <View>{this.props.counter.num}</View>
-        </View>
       </View>
     )
   }

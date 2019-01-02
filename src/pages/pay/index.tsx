@@ -24,7 +24,6 @@ export default class Index extends Component {
     circle: true,
     weiXinInfo: false,
     current: 0,
-    passwordFocus: true,
     passwords: '',
   }
   /**
@@ -51,15 +50,6 @@ export default class Index extends Component {
     const { current } = this.state
     this.setState({ current: current + 1 })
   }
-  onBlur() {
-    this.setState({ passwordFocus: false })
-  }
-  hloadClickPassword() {
-    const { passwordFocus } = this.state
-    this.setState({ passwordFocus: false }, () => {
-      this.setState({ passwordFocus: true })
-    })
-  }
   componentWillMount() {
     const _this = this
     wx.getUserInfo({
@@ -72,7 +62,7 @@ export default class Index extends Component {
 
   render() {
     console.log(passwords);
-    const { passwordFocus, passwords, current } = this.state
+    const { passwords, current } = this.state
     const _this = this;
     const { wxInfo } = this.props.userInfo
     const items = [
@@ -86,6 +76,7 @@ export default class Index extends Component {
       for (let index = 0; index < passwords.length; index++) {
         element[index] = `●`
       }
+      console.log(element);
       return element
     };
     return (
@@ -107,15 +98,12 @@ export default class Index extends Component {
             <View className='at-row pay_password_list' >
               {[0, 1, 2, 3].map(r => {
                 return r !== 3 ? <View className='at-col input' key >
-                  <View className={!passwords && inputItem().length === r && passwordFocus ? 'inputText focus' : 'inputText'} onClick={this.hloadClickPassword.bind(this, r)} >{inputItem()[r]}</View>
-                  {/* <Input type='password' placeholder='' maxLength='2' focus={passwordFocus === r} onInput={this.hloadChange.bind(this, r)} /> */}
+                  <View className={inputItem().length === r  ? 'inputText focus' : 'inputText'}  >{inputItem()[r]}</View>
                   <View className='fg'>-</View>
                 </View> : <View className='at-col input'>
-                    <View className={!passwords && inputItem().length === r && passwordFocus ? 'inputText focus' : 'inputText'} >{inputItem()[r]}</View>
-                    {/* <Input type='password' placeholder='' maxLength='2' focus={passwordFocus === r} onInput={this.hloadChange.bind(this, r)} /> */}
+                    <View className={inputItem().length === r ? 'inputText focus' : 'inputText'} >{inputItem()[r]}</View>
                   </View>
               })}
-              {/* <Input className='hideInput' type='text' maxLength='4' focus={passwordFocus} onInput={this.hloadChange.bind(this)} /> */}
             </View>
             <EditorNum
               maxLength={4}

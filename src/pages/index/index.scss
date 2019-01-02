@@ -1,3 +1,4 @@
+@import "../../scss/common.scss"; //组件
 .home-info {
     padding: 18rpx 0;
     margin-bottom: 20rpx;
@@ -19,7 +20,7 @@
 }
 
 .layoutbg {
-    background: #fafafa;
+    background: $col-body;
     min-height: 100vh;
 }
 
