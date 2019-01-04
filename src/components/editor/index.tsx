@@ -1,6 +1,6 @@
-import Taro, { Component, Config } from '@tarojs/taro'
-import { Swiper, SwiperItem, View, Text, Image } from '@tarojs/components'
-import { AtAvatar, AtButton, AtSteps } from 'taro-ui'
+import Taro, { Component } from '@tarojs/taro'
+import { View } from '@tarojs/components'
+import { Icons } from '../index';
 import './index.scss'
 if (process.env.TARO_ENV === 'weapp') {
   require('taro-ui/dist/weapp/css/index.css')
@@ -50,7 +50,9 @@ export default class EditorNum extends Component {
     }
     return (
       <View className="editor_num at-row at-row--wrap">
-        {editorItem.map((ref, $key) => (<View className={`at-col at-col-3 ${isAddClassName(ref)}`} onClick={this.childFocus.bind(this, ref)} key={$key} > {ref}</View>))}
+        {editorItem.map((ref, $key) => (<View className={`at-col at-col-3 ${isAddClassName(ref)}`} onClick={this.childFocus.bind(this, ref)} key={$key} >
+          {ref === 'x' ? <Icons icon='iconfont-qingchu' size='45rpx' /> : ref}
+        </View>))}
       </View >
     )
   }

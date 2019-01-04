@@ -1,6 +1,6 @@
 import Taro, { Component, Config } from '@tarojs/taro'
-import { Swiper, SwiperItem, View, Text, Image ,Button} from '@tarojs/components'
-import { AtAvatar, AtButton } from 'taro-ui'
+import { Swiper, SwiperItem, View, Text, Image, Button } from '@tarojs/components'
+import { AtAvatar, AtButton, AtIcon, AtGrid } from 'taro-ui'
 import { connect, userInfo } from '@tarojs/redux'
 import './index.scss'
 
@@ -23,7 +23,7 @@ export default class Index extends Component {
     weiXinInfo: false,
   }
   /**
-   * 指定config的类型声明为: Taro.Config
+   * 指定config的类型声明为: Taro.Config 
    *
    * 由于 typescript 对于 object 类型推导只能推出 Key 的基本类型
    * 对于像 navigationBarTextStyle: 'black' 这样的推导出的类型是 string
@@ -86,7 +86,7 @@ export default class Index extends Component {
 
     console.log("fdsa", this.props)
     return (
-      <View style='flex-direction:column;' className='flex-wrp layoutbg'>
+      <View style='flex-direction:column;' className='flex-wrp '>
         <Swiper
           className='test-h'
           indicatorColor='rgba(255,255,255,1)'
@@ -131,14 +131,48 @@ export default class Index extends Component {
         )}
 
 
-        <View className=''>
-          <View className=''>
-            <Button onClick={this.openURL.bind(this, '/pages/pay/index')}>
-            已订房间密码办理入住</Button>
+        <View className='home_tab'>
+          <View className='btn_dg'>
+            <Button onClick={this.openURL.bind(this, '/pages/pay/index')} className='but at-row at-row--wrap' >
+              <View className='at-col at-col-3 text-rignt'>
+                <AtIcon prefixClass='iconfont' value='home' size='50' color='#FFF'  ></AtIcon>
+              </View>
+              <View className='at-col at-col-9 text-left'>
+                <View className='bt' >已订房间</View>
+                <Text className='desc'>凭密码办理入住</Text>
+              </View>
+
+            </Button>
           </View>
-          <View className=''>
-            <Button onClick={this.openURL.bind(this, '/pages/pay/index')}>自助订房在线支付入住</Button>
+          <View className='btn_rz'>
+            <Button onClick={this.openURL.bind(this, '/pages/pay/index')} className='but at-row at-row--wrap' >
+              <View className='at-col at-col-3 text-rignt'>
+                <AtIcon prefixClass='iconfont' value='zizhu' size='50' color='#FFF' ></AtIcon>
+              </View>
+              <View className='at-col at-col-9 text-left'>
+                <View className='bt' >自助订房</View>
+                <Text className='desc'>在线支付入住</Text>
+              </View>
+            </Button>
           </View>
+        </View>
+
+        <View className='home_sev' >
+          <View className='bt'>更多服务</View>
+          <AtGrid data={[
+            {
+              image: 'https://img12.360buyimg.com/jdphoto/s72x72_jfs/t6160/14/2008729947/2754/7d512a86/595c3aeeNa89ddf71.png',
+              value: '押金纪录'
+            },
+            {
+              image: 'https://img12.360buyimg.com/jdphoto/s72x72_jfs/t6160/14/2008729947/2754/7d512a86/595c3aeeNa89ddf71.png',
+              value: '敬请期待'
+            },
+            {
+              image: 'https://img12.360buyimg.com/jdphoto/s72x72_jfs/t6160/14/2008729947/2754/7d512a86/595c3aeeNa89ddf71.png',
+              value: '更多'
+            },
+          ]} />
         </View>
 
       </View>

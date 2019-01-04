@@ -5,12 +5,13 @@ sans-serif,
 "Microsoft YaHei";
 $col-text: #333; //普通文字
 $col-main: #f58523; // 主题色
-$col-main-hover: #ff7f0e; // 主题色
+$col-main-hover: #bf671a; // 主题色
 $col-green: #19B933; // 绿色
 $col-money: #FC4D52; // 用于 价格
 $col-pink: #FC3F78; //粉色
 $col-red: #F72239; // 特殊红色
-$col-darkblue: #3172B9;
+$col-darkblue: rgb(1, 158, 255);
+$col-darkblue-hover: rgb(16, 106, 175);
 $col-gray: #7F8EA4; //按钮灰色
 $col-secondary: #acb0b5; //次按钮颜色
 $col-primary: $col-main; //主按钮颜色
