@@ -46,7 +46,7 @@
     .btn_rz {
         margin: 0 40rpx 30rpx 40rpx;
         .but {
-            box-shadow: 0 0 5rpx rgba(111, 111, 111, .5);
+            box-shadow: 0 0 20rpx rgba(111, 111, 111, .5);
             border-radius: 10rpx; // background: $col-main;
             color: #fff;
             border: 0;
@@ -73,16 +73,16 @@
                 }
             }
             &.button-hover {
-                background: $col-main-hover;
+                background-image: linear-gradient(-121deg, rgb(223, 120, 30) 0%, rgb(243, 184, 89) 96%);
             }
         }
     }
     .btn_rz {
         margin-bottom: 0;
         .but {
-            background: $col-darkblue;
+            background-image: linear-gradient(-121deg, #009FFF 0%, #00D8F2 86%); //background: $col-darkblue;
             &.button-hover {
-                background: $col-darkblue-hover;
+                background-image: linear-gradient(-121deg, rgb(1, 149, 241) 0%, rgb(0, 199, 221) 86%); //background: $col-darkblue-hover;
             }
         }
     }

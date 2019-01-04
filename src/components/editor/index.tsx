@@ -1,7 +1,9 @@
-import Taro, { Component } from '@tarojs/taro'
-import { View } from '@tarojs/components'
-import { Icons } from '../index';
+import Taro, { Component, Config } from '@tarojs/taro'
+import { Swiper, SwiperItem, View, Text, Image } from '@tarojs/components'
+import { AtIcon } from 'taro-ui'
+import Icons from '../icon'
 import './index.scss'
+
 if (process.env.TARO_ENV === 'weapp') {
   require('taro-ui/dist/weapp/css/index.css')
 } else if (process.env.TARO_ENV === 'h5') {

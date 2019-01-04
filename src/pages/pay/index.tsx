@@ -98,7 +98,7 @@ export default class Index extends Component {
             <View className='at-row pay_password_list' >
               {[0, 1, 2, 3].map(r => {
                 return r !== 3 ? <View className='at-col input' key >
-                  <View className={inputItem().length === r  ? 'inputText focus' : 'inputText'}  >{inputItem()[r]}</View>
+                  <View className={inputItem().length === r ? 'inputText focus' : 'inputText'}  >{inputItem()[r]}</View>
                   <View className='fg'>-</View>
                 </View> : <View className='at-col input'>
                     <View className={inputItem().length === r ? 'inputText focus' : 'inputText'} >{inputItem()[r]}</View>

@@ -23,9 +23,9 @@
         position: relative;
         z-index: 1;
         .inputText {
-            border: solid 1px #eee;
-            height: 80rpx;
-            line-height: 80rpx;
+            border: solid 3rpx #eee;
+            height: 100rpx;
+            line-height: 100rpx;
             margin-right: 50rpx;
             text-align: center;
             position: relative;
@@ -36,15 +36,15 @@
                 width: 6rpx;
                 height: 50rpx;
                 position: absolute;
-                top: 15rpx;
+                top: 23rpx;
                 left: 3rpx;
                 border-radius: 30rpx;
             }
         }
         .fg {
             text-align: center;
-            height: 80rpx;
-            line-height: 80rpx;
+            height: 100rpx;
+            line-height: 100rpx;
             position: absolute;
             right: 0;
             width: 50rpx;
