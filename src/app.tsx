@@ -33,11 +33,11 @@ class App extends Component {
       'pages/index/index',
       'pages/pay/index',
       'pages/pay/success',
-      'pages/shop/index'
+      'pages/shop/index',
     ],
     window: {
       backgroundTextStyle: 'light',
-      navigationBarBackgroundColor: '#efefe',
+      navigationBarBackgroundColor: '#fefefe',
       navigationBarTitleText: 'WeChat',
       navigationBarTextStyle: 'black',
       // enablePullDownRefresh: true,

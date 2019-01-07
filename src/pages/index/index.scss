@@ -4,8 +4,7 @@
 }
 
 .home-info {
-    padding: 18rpx 0;
-    margin-bottom: 20rpx;
+    padding: 28rpx 0;
     background: #fff;
     .cent {
         margin: 0 20rpx;
@@ -94,5 +93,9 @@
         font-size: 40rpx;
         margin: 0 30rpx;
         line-height: 60rpx;
+    }
+    .at-grid__flex-item {
+        height: 200rpx;
+        overflow: hidden;
     }
 }
