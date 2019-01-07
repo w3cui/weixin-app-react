@@ -34,7 +34,7 @@ export default class Index extends Component {
   }
 
   openURL(url) {
-    wx.navigateTo({
+    Taro.navigateTo({
       url: url
     })
   }
@@ -89,8 +89,8 @@ export default class Index extends Component {
       <View style='flex-direction:column;' className='flex-wrp '>
         <Swiper
           className='test-h'
-          indicatorColor='rgba(255,255,255,1)'
-          indicatorActiveColor='rgba(255,255,255,.3)'
+          indicatorColor='rgba(255,255,255,.3)'
+          indicatorActiveColor='rgba(255,255,255,1)'
           vertical={swiperConfig.vertical}
           circular
           indicatorDots
@@ -145,7 +145,7 @@ export default class Index extends Component {
             </Button>
           </View>
           <View className='btn_rz'>
-            <Button onClick={this.openURL.bind(this, '/pages/pay/index')} className='but at-row at-row--wrap' >
+            <Button onClick={this.openURL.bind(this, '/pages/shop/index')} className='but at-row at-row--wrap' >
               <View className='at-col at-col-3 text-rignt'>
                 <AtIcon prefixClass='iconfont' value='zizhu' size='50' color='#FFF' ></AtIcon>
               </View>
@@ -159,20 +159,29 @@ export default class Index extends Component {
 
         <View className='home_sev' >
           <View className='bt'>更多服务</View>
-          <AtGrid data={[
-            {
-              image: 'https://img12.360buyimg.com/jdphoto/s72x72_jfs/t6160/14/2008729947/2754/7d512a86/595c3aeeNa89ddf71.png',
-              value: '押金纪录'
-            },
-            {
-              image: 'https://img12.360buyimg.com/jdphoto/s72x72_jfs/t6160/14/2008729947/2754/7d512a86/595c3aeeNa89ddf71.png',
-              value: '敬请期待'
-            },
-            {
-              image: 'https://img12.360buyimg.com/jdphoto/s72x72_jfs/t6160/14/2008729947/2754/7d512a86/595c3aeeNa89ddf71.png',
-              value: '更多'
-            },
-          ]} />
+          <AtGrid
+            columnNum={2}
+            data={[
+              {
+                iconInfo: {
+                  prefixClass: 'iconfont',
+                  value: 'jilu',
+                  size: 34,
+                  color: '#F58423',
+                },
+                // image: 'https://img12.360buyimg.com/jdphoto/s72x72_jfs/t6160/14/2008729947/2754/7d512a86/595c3aeeNa89ddf71.png',
+                value: '押金纪录'
+              },
+              {
+                iconInfo: {
+                  prefixClass: 'iconfont',
+                  value: 'shalou',
+                  size: 34,
+                  color: '#9B9E9F',
+                },
+                value: '敬请期待'
+              }
+            ]} />
         </View>
 
       </View>

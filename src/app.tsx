@@ -31,13 +31,15 @@ class App extends Component {
   config: Config = {
     pages: [
       'pages/index/index',
-      'pages/pay/index'
+      'pages/pay/index',
+      'pages/pay/success',
+      'pages/shop/index'
     ],
     window: {
       backgroundTextStyle: 'light',
-      navigationBarBackgroundColor: '#5c89e4',
+      navigationBarBackgroundColor: '#efefe',
       navigationBarTitleText: 'WeChat',
-      navigationBarTextStyle: 'white',
+      navigationBarTextStyle: 'black',
       // enablePullDownRefresh: true,
     },
     // tabBar: {

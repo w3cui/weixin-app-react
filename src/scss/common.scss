@@ -7,3 +7,18 @@
 .text-left {
     text-align: left;
 }
+
+.flex-wrp {
+    .at-button {
+        &.at-button--primary {
+            background: $col-main;
+            border: 1px solid $col-main;
+        }
+    }
+}
+
+.hr {
+    background: $col-body;
+    height: 20rpx;
+    overflow: hidden;
+}

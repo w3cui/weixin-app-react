@@ -34,7 +34,7 @@ export default class Index extends Component {
    * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
    */
   config: Config = {
-    navigationBarTitleText: '密码办理入住'
+    navigationBarTitleText: '自助订房'
   }
 
   // hloadChange(event) {
@@ -68,9 +68,10 @@ export default class Index extends Component {
     const _this = this;
     const { wxInfo } = this.props.userInfo
     const items = [
-      { 'title': '输入密码' },
+      { 'title': '选择房型' },
+      { 'title': '信息录入' },
       { 'title': '支付押金' },
-      { 'title': '领取房卡（钥匙）' }
+      { 'title': '领取房卡' }
     ]
     let inputItem = () => {
       if (!passwords) return []
@@ -96,6 +97,27 @@ export default class Index extends Component {
           />
         </View>
         {current === 0 ? (
+          <View>
+            <View className='hr'></View>
+            <View className="item_list_goods at-row">
+              <View className='pic at-col'>
+                <Image
+                  src='https://img.alicdn.com/imgextra/i1/3229147608/O1CN0149XEIA264Vl9W9ggk_!!3229147608.jpg_310x310.jpg'
+                />
+              </View>
+              <View className='center at-col'>
+                <View className='bt'>豪华双人间</View>
+                <View className='desc'>36平米 双床 5-6层</View>
+                <View className='btn'>
+                  <Text className='del' >¥226</Text>
+                  <View className="money">¥<Text>260</Text></View>
+                  <AtButton type='primary' >订购</AtButton>
+                </View>
+              </View>
+            </View>
+          </View>
+        ) : ''}
+        {current === 1 ? (
           <AtForm className='pay_password_list'>
             <View className='at-row pay_password_list' >
               {[0, 1, 2, 3].map(r => {
@@ -115,7 +137,7 @@ export default class Index extends Component {
           </AtForm>
         ) : ''}
 
-        {current === 1 ? (<View className='pay_push'>
+        {current === 2 ? (<View className='pay_push'>
           <View className='pay_push_money'>¥100.00元</View>
           <View className='hr'></View>
           <View className='pay_push_text'>
