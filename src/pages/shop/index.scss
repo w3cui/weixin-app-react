@@ -143,4 +143,65 @@
     }
 }
 
-.item_list_goods {}
+.item_list_goods {
+    position: relative;
+    z-index: 0;
+    padding: 20rpx 0;
+    border-bottom: solid 1px #ECECEC;
+    .pic {
+        padding: 0 20rpx;
+        Image {
+            width: 150rpx;
+            height: 150rpx;
+            display: block;
+        }
+    }
+    .center {
+        width: 40%;
+        .bt {
+            font-size: 38rpx;
+            overflow: hidden;
+            line-height: 40px;
+            height: 40px;
+            padding: 30rpx 0 10rpx 0;
+        }
+        .desc {
+            font-size: 30rpx;
+            color: #9B9E9F;
+            line-height: 35px;
+            overflow: hidden;
+            height: 35px;
+        }
+    }
+    .btn {
+        position: absolute;
+        right: 10rpx;
+        top: 30%;
+        width: 60%;
+        .col {
+            float: right;
+            font-size: 30rpx;
+            line-height: 68rpx;
+            .at-button {
+                border-radius: 100rpx;
+                padding: 0rpx 25rpx;
+                font-size: 32rpx;
+                line-height: 68rpx;
+                height: 68rpx;
+            }
+            margin-left: 15rpx;
+        }
+        .del {
+            text-decoration: line-through;
+            color: #9B9E9F;
+            font-size: 28rpx;
+        }
+        .money {
+            font-size: 24rpx;
+            color: $col-main;
+            Text {
+                font-size: 35rpx;
+            }
+        }
+    }
+}

@@ -1,5 +1,5 @@
 import Taro, { Component, Config } from '@tarojs/taro'
-import { Swiper, SwiperItem, View, Text, Image } from '@tarojs/components'
+import { Swiper, SwiperItem, View, Text, Image, ScrollView } from '@tarojs/components'
 import { AtAvatar, AtButton, AtSteps, AtForm, Input } from 'taro-ui'
 import { connect, userInfo } from '@tarojs/redux'
 import './index.scss'
@@ -86,8 +86,13 @@ export default class Index extends Component {
       <View style='flex-direction:column;' className='flex-wrp '>
         <View
           style={{
+            zIndex: 50,
+            position: 'absolute',
+            left: '0',
+            top: 0,
+            width: '100%',
             paddingTop: '30rpx',
-            paddingBottom: '20rpx'
+            background: '#fff',
           }}
         >
           <AtSteps
@@ -95,27 +100,44 @@ export default class Index extends Component {
             current={current}
             onChange={this.onChange.bind(this)}
           />
+          <View className='hr' style={{ marginTop: '20rpx' }}></View>
         </View>
         {current === 0 ? (
-          <View>
-            <View className='hr'></View>
-            <View className="item_list_goods at-row">
-              <View className='pic at-col'>
-                <Image
-                  src='https://img.alicdn.com/imgextra/i1/3229147608/O1CN0149XEIA264Vl9W9ggk_!!3229147608.jpg_310x310.jpg'
-                />
-              </View>
-              <View className='center at-col'>
-                <View className='bt'>豪华双人间</View>
-                <View className='desc'>36平米 双床 5-6层</View>
-                <View className='btn'>
-                  <Text className='del' >¥226</Text>
-                  <View className="money">¥<Text>260</Text></View>
-                  <AtButton type='primary' >订购</AtButton>
+          <ScrollView
+            className='scrollview'
+            scrollY
+            scrollWithAnimation
+            scrollTop='0'
+            style='height: 100vh;'
+            onScrolltoupper={this.onScrolltoupper}
+            onScroll={this.onScroll}>
+            <View style={{
+              paddingTop: '200rpx',
+            }}>
+              {[1, 2, 3, 4, 5, 6].map(ref => (
+                <View className="item_list_goods at-row">
+                  <View className='pic at-col at-col-2 at-col--auto'>
+                    <Image
+                      mode='scaleToFill'
+                      src='http://imgproxy.18cap.cn/imgextra/i3/2176670969/*o1*c*n012a*n87*c1*j1q*h3*hpw2b_!!2176670969.jpg_400x400.jpg'
+                    />
+                  </View>
+                  <View className='center at-col'>
+                    <View className='bt'>豪华双人间</View>
+                    <View className='desc'>36平米 双床 5-6层</View>
+                  </View>
+                  <View className='btn'>
+                    <View className="col ">
+                      <AtButton type='primary' >订购</AtButton>
+                    </View>
+                    <View className="col money">¥<Text>260</Text></View>
+                    <Text className=' col del' >¥226</Text>
+                  </View>
                 </View>
-              </View>
+              ))}
+
             </View>
-          </View>
+          </ScrollView>
         ) : ''}
         {current === 1 ? (
           <AtForm className='pay_password_list'>
