@@ -16,6 +16,28 @@ import { add, minus, asyncAdd, setWeiXinUser } from '../../redux/action'
   },
 }))
 
+class userItemNew {
+  constructor(parameters) {
+    this.config = {
+      ...{
+        user: "",
+        userId: "",
+      },
+      ...parameters
+    }
+  }
+  set user(name) {
+    this.config.user = name
+  }
+  get user() {
+    const { user } = this.config
+    return user
+  }
+  user2(name) {
+    console.log(name)
+  }
+}
+
 export default class Index extends Component {
   state = {
     swiperConfig: {
@@ -59,14 +81,15 @@ export default class Index extends Component {
     })
   }
   componentWillMount() {
-
+    const userItem2 = new userItemNew({ user: "" })
+    console.log(userItem2);
+    debugger
   }
 
 
   render() {
     const { passwords, current } = this.state
     const _this = this;
-    const { wxInfo } = this.props.userInfo
     const items = [
       { 'title': '选择房型' },
       { 'title': '信息录入' },
