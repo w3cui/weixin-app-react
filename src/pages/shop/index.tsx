@@ -130,7 +130,7 @@ export default class Index extends Component {
             className='scrollview'
             scrollY
             scrollWithAnimation
-            scrollTop='0'
+            scrollTop={0}
             style='height: 100vh;'
             onScrolltoupper={this.onScrolltoupper}
             onScroll={this.onScroll}>
@@ -161,44 +161,49 @@ export default class Index extends Component {
 
             </View>
           </ScrollView>
-        ) : ''}
-        {current === 1 ? (
-          <AtForm className='pay_password_list'>
-            <View className='at-row pay_password_list' >
-              {[0, 1, 2, 3].map(r => {
-                return r !== 3 ? <View className='at-col input' key >
-                  <View className={inputItem().length === r ? 'inputText focus' : 'inputText'}  >{inputItem()[r]}</View>
-                  <View className='fg'>-</View>
-                </View> : <View className='at-col input'>
-                    <View className={inputItem().length === r ? 'inputText focus' : 'inputText'} >{inputItem()[r]}</View>
-                  </View>
-              })}
+        ) : ''
+        }
+        {
+          current === 1 ? (
+            <AtForm className='pay_password_list'>
+              <View className='at-row pay_password_list' >
+                {[0, 1, 2, 3].map(r => {
+                  return r !== 3 ? <View className='at-col input' key >
+                    <View className={inputItem().length === r ? 'inputText focus' : 'inputText'}  >{inputItem()[r]}</View>
+                    <View className='fg'>-</View>
+                  </View> : <View className='at-col input'>
+                      <View className={inputItem().length === r ? 'inputText focus' : 'inputText'} >{inputItem()[r]}</View>
+                    </View>
+                })}
+              </View>
+              <EditorNum
+                maxLength={4}
+                onChange={this.childChange.bind(this)}
+                onSubmit={this.childSubmit.bind(this)}
+              />
+            </AtForm>
+          ) : ''
+        }
+
+        {
+          current === 2 ? (<View className='pay_push'>
+            <View className='pay_push_money'>¥100.00元</View>
+            <View className='hr'></View>
+            <View className='pay_push_text'>
+              <View>1.押金用户通过微信支付的方式向xxx酒店支付入住押金</View>
+              <View>2.押金会在用户离开酒店后，由酒店方查验房间后自动原路退返，退返押金需要2个工作日。</View>
+              <View>3.又住宿疑问可致电酒店客服电话咨询。</View>
             </View>
-            <EditorNum
-              maxLength={4}
-              onChange={this.childChange.bind(this)}
-              onSubmit={this.childSubmit.bind(this)}
-            />
-          </AtForm>
-        ) : ''}
-
-        {current === 2 ? (<View className='pay_push'>
-          <View className='pay_push_money'>¥100.00元</View>
-          <View className='hr'></View>
-          <View className='pay_push_text'>
-            <View>1.押金用户通过微信支付的方式向xxx酒店支付入住押金</View>
-            <View>2.押金会在用户离开酒店后，由酒店方查验房间后自动原路退返，退返押金需要2个工作日。</View>
-            <View>3.又住宿疑问可致电酒店客服电话咨询。</View>
-          </View>
-          <View className='pay_btn'>
-            <View>
-              <AtButton type='primary' onClick={this.openPage.bind(this, "/pages/pay/success")}>支付押金 100.00元</AtButton>
+            <View className='pay_btn'>
+              <View>
+                <AtButton type='primary' onClick={this.openPage.bind(this, "/pages/pay/success")}>支付押金 100.00元</AtButton>
+              </View>
             </View>
-          </View>
 
-        </View>) : ''}
+          </View>) : ''
+        }
 
-      </View>
+      </View >
     )
   }
 }
