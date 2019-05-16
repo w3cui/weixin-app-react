@@ -43,11 +43,16 @@ export default class Index extends Component {
     wx.login({
       success(res) {
         if (res.code) {
-          // 发起网络请求
-          wx.request({
-            url: 'https://hotel.park666.com/api/user/third',
-            data: {
-              code: res.code
+          wx.getUserInfo({
+            success(userinfo) {
+                 // 发起网络请求
+                wx.request({
+                  url: 'https://hotel.park666.com/api/user/third',
+                  data: {
+                    code: res.code,
+                    user_info:userinfo.rawData,
+                  }
+                })
             }
           })
         } else {
@@ -55,20 +60,20 @@ export default class Index extends Component {
         }
       }
     })
-    // // 获取用户信息
-    // wx.getUserInfo({
-    //   success(res) {
-    //     _this.props.setWeiXinUser(res)
-    //     setTimeout(() => {
-    //       res.userInfo.nickName = res.userInfo.nickName + "111111111"
-    //       console.log(res)
-    //       _this.props.setWeiXinUser(res)
-    //       console.log(_this.props)
-    //     }, 5000);
+    // 获取用户信息
+    wx.getUserInfo({
+      success(res) {
+        _this.props.setWeiXinUser(res)
+        setTimeout(() => {
+          res.userInfo.nickName = res.userInfo.nickName + "111111111"
+          console.log(res)
+          _this.props.setWeiXinUser(res)
+          console.log(_this.props)
+        }, 5000);
 
-    //     // _this.setState({ weiXinInfo: res.userInfo });
-    //   }
-    // })
+        // _this.setState({ weiXinInfo: res.userInfo });
+      }
+    })
     // // 进行微信授权
     // wx.getSetting({
     //   success(res) {
