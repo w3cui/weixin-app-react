@@ -40,34 +40,49 @@ export default class Index extends Component {
   }
   componentWillMount() {
     const _this = this
-    // 获取用户信息
-    wx.getUserInfo({
+    wx.login({
       success(res) {
-        _this.props.setWeiXinUser(res)
-        setTimeout(() => {
-          res.userInfo.nickName = res.userInfo.nickName + "111111111"
-          console.log(res)
-          _this.props.setWeiXinUser(res)
-          console.log(_this.props)
-        }, 5000);
-
-        // _this.setState({ weiXinInfo: res.userInfo });
-      }
-    })
-    // 进行微信授权
-    wx.getSetting({
-      success(res) {
-        if (!res.authSetting['scope.record']) {
-          wx.authorize({
-            scope: 'scope.record',
-            success() {
-              // 用户已经同意小程序使用录音功能，后续调用 wx.startRecord 接口不会弹窗询问
-              wx.startRecord()
+        if (res.code) {
+          // 发起网络请求
+          wx.request({
+            url: 'https://hotel.park666.com/api/user/third',
+            data: {
+              code: res.code
             }
           })
+        } else {
+          console.log('登录失败！' + res.errMsg)
         }
       }
     })
+    // // 获取用户信息
+    // wx.getUserInfo({
+    //   success(res) {
+    //     _this.props.setWeiXinUser(res)
+    //     setTimeout(() => {
+    //       res.userInfo.nickName = res.userInfo.nickName + "111111111"
+    //       console.log(res)
+    //       _this.props.setWeiXinUser(res)
+    //       console.log(_this.props)
+    //     }, 5000);
+
+    //     // _this.setState({ weiXinInfo: res.userInfo });
+    //   }
+    // })
+    // // 进行微信授权
+    // wx.getSetting({
+    //   success(res) {
+    //     if (!res.authSetting['scope.record']) {
+    //       wx.authorize({
+    //         scope: 'scope.record',
+    //         success() {
+    //           // 用户已经同意小程序使用录音功能，后续调用 wx.startRecord 接口不会弹窗询问
+    //           wx.startRecord()
+    //         }
+    //       })
+    //     }
+    //   }
+    // })
 
   }
 
