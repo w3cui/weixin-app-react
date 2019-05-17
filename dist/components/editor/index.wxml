@@ -1,0 +1,12 @@
+<block>
+    <view class="editor_num at-row at-row--wrap">
+        <view class="{{ref.$loopState__temp2}}" bindtap="childFocus" wx:key="{{$key}}" wx:for="{{loopArray0}}" wx:for-item="ref" wx:for-index="$key" data-e-childFocus-so="this" data-e-childFocus-a-a="{{ref.$original}}">
+            <block>
+                <block wx:if="{{ref.$original === 'x'}}">
+                    <icons icon="iconfont-qingchu" __triggerObserer="{{ _triggerObserer }}" size="45rpx"></icons>
+                </block>
+                <block wx:else>{{ref.$original}}</block>
+            </block>
+        </view>
+    </view>
+</block>

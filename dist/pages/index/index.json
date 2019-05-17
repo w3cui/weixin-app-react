@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "at-icon": "../../npm/taro-ui/dist/weapp/components/icon/index",
+    "at-grid": "../../npm/taro-ui/dist/weapp/components/grid/index"
+  },
+  "navigationBarTitleText": "新网服务终端"
+}

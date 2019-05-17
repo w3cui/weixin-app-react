@@ -1,0 +1,56 @@
+<block>
+    <view style="flex-direction:column;" class="flex-wrp ">
+        <swiper class="test-h" indicator-color="rgba(255,255,255,.3)" indicator-active-color="rgba(255,255,255,1)" vertical="{{swiperConfig.vertical}}" circular="{{true}}" indicator-dots="{{true}}" autoplay="{{true}}">
+            <swiper-item style="{{anonymousState__temp}}">
+                <image style="{{anonymousState__temp2}}" src="https://img11.360buyimg.com/babel/s700x360_jfs/t1/4776/39/2280/143162/5b9642a5E83bcda10/d93064343eb12276.jpg!q90!cc_350x180" mode="widthFix" />
+            </swiper-item>
+            <swiper-item style="{{anonymousState__temp3}}">
+                <image style="{{anonymousState__temp4}}" src="https://img11.360buyimg.com/babel/s700x360_jfs/t1/4776/39/2280/143162/5b9642a5E83bcda10/d93064343eb12276.jpg!q90!cc_350x180" mode="widthFix" />
+            </swiper-item>
+            <swiper-item style="{{anonymousState__temp5}}">
+                <image style="{{anonymousState__temp6}}" src="https://img11.360buyimg.com/babel/s700x360_jfs/t1/4776/39/2280/143162/5b9642a5E83bcda10/d93064343eb12276.jpg!q90!cc_350x180" mode="widthFix" />
+            </swiper-item>
+        </swiper>
+        <block wx:if="{{wxInfo}}">
+            <view class="at-article home-info ">
+                <view class="cent at-article__section">
+                    <view class="at-row at-row__align--center">
+                        <view>
+                            <view class="at-article__h3">下午好，{{wxInfo.userInfo.nickName}}</view>
+                            <view class="at-article__p">欢迎来到
+                                <text>XXXXXXXX</text>酒店使用自助终端办理入住。</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </block>
+        <view class="home_tab">
+            <view class="btn_dg">
+                <button bindtap="openURL" class="but at-row at-row--wrap" data-e-openURL-so="this" data-e-openURL-a-a="/pages/pay/index">
+                    <view class="at-col at-col-3 text-rignt">
+                        <at-icon prefixClass="iconfont" __triggerObserer="{{ _triggerObserer }}" value="home" size="50" color="#FFF"></at-icon>
+                    </view>
+                    <view class="at-col at-col-9 text-left">
+                        <view class="bt">已订房间</view>
+                        <text class="desc">凭密码办理入住</text>
+                    </view>
+                </button>
+            </view>
+            <view class="btn_rz">
+                <button bindtap="openURL" class="but at-row at-row--wrap" data-e-openURL-so="this" data-e-openURL-a-a="/pages/shop/index">
+                    <view class="at-col at-col-3 text-rignt">
+                        <at-icon prefixClass="iconfont" __triggerObserer="{{ _triggerObserer }}" value="zizhu" size="50" color="#FFF"></at-icon>
+                    </view>
+                    <view class="at-col at-col-9 text-left">
+                        <view class="bt">自助订房</view>
+                        <text class="desc">在线支付入住</text>
+                    </view>
+                </button>
+            </view>
+        </view>
+        <view class="home_sev">
+            <view class="bt">更多服务</view>
+            <at-grid columnNum="{{2}}" __triggerObserer="{{ _triggerObserer }}" data="{{anonymousState__temp7}}"></at-grid>
+        </view>
+    </view>
+</block>

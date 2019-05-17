@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "at-steps": "../../npm/taro-ui/dist/weapp/components/steps/index",
+    "at-icon": "../../npm/taro-ui/dist/weapp/components/icon/index",
+    "at-button": "../../npm/taro-ui/dist/weapp/components/button/index"
+  },
+  "navigationBarTitleText": "密码办理入住"
+}

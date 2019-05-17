@@ -1,0 +1,3 @@
+<block>
+    <view class="{{icon + ' ' + (iconName || 'iconfont')}}" style="{{anonymousState__temp}}"></view>
+</block>
