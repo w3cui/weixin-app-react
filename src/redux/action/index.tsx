@@ -1,4 +1,5 @@
 // src/actions/counter.js
+import {setUserThird} from '../../service'
 import {
     ADD,
     MINUS,
@@ -29,5 +30,13 @@ export const setWeiXinUser = (user) => {
     return {
         type: WEIXIN_USER,
         user: { ...user },
+    }
+}
+
+export const actionUserInfo = ()=>{
+    return dispatch => {
+        setUserThird().then((res)=>{
+            dispatch(res); 
+        })
     }
 }

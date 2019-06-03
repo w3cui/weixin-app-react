@@ -85,7 +85,9 @@ export default class Index extends Component {
     console.log(userItem2);
     debugger
   }
-
+  onChange(){
+    
+  }
 
   render() {
     const { passwords, current } = this.state

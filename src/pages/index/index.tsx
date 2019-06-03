@@ -1,6 +1,6 @@
 import Taro, { Component, Config } from '@tarojs/taro'
 import { Swiper, SwiperItem, View, Text, Image, Button } from '@tarojs/components'
-import { AtAvatar, AtButton, AtIcon, AtGrid } from 'taro-ui'
+import { AtAvatar, AtButton, AtIcon, AtGrid ,AtModal, AtModalHeader, AtModalContent, AtModalAction} from 'taro-ui'
 import { connect, userInfo } from '@tarojs/redux'
 import './index.scss'
 
@@ -21,6 +21,7 @@ export default class Index extends Component {
     },
     circle: true,
     weiXinInfo: false,
+    isOpened:wx.canIUse('button.open-type.getUserInfo'),
   }
   /**
    * 指定config的类型声明为: Taro.Config 
@@ -54,39 +55,34 @@ export default class Index extends Component {
         // _this.setState({ weiXinInfo: res.userInfo });
       }
     })
-    // 进行微信授权
-    wx.getSetting({
-      success(res) {
-        if (!res.authSetting['scope.record']) {
-          wx.authorize({
-            scope: 'scope.record',
-            success() {
-              // 用户已经同意小程序使用录音功能，后续调用 wx.startRecord 接口不会弹窗询问
-              wx.startRecord()
-            }
-          })
-        }
-      }
-    })
+   
 
   }
 
   componentDidMount() {
+    Taro.getUserInfo(params).then((res)=>{
+      console.log(res);
+    })
   }
 
-  componentWillUnmount() { }
-
-  componentDidShow() { }
-
-  componentDidHide() { }
-
+  bindGetUserInfo(e){
+    this.setState({isOpened:false,})
+  }
   render() {
-    const { swiperConfig, circle, weiXinInfo } = this.state
-    const { wxInfo } = this.props.userInfo
+    const { swiperConfig, circle, weiXinInfo ,isOpened} = this.state
+    const { wxInfo } = this.props.userInfo 
 
     console.log("fdsa", this.props)
     return (
       <View style='flex-direction:column;' className='flex-wrp '>
+
+      <AtModal isOpened={isOpened} >
+        <AtModalHeader>提示</AtModalHeader>
+        <AtModalContent>
+          应用将使用您的头像与名称，请同意授权
+        </AtModalContent>
+        <AtModalAction><Button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" onClick={this.bindGetUserInfo}  >同意授权</Button></AtModalAction>
+      </AtModal>
         <Swiper
           className='test-h'
           indicatorColor='rgba(255,255,255,.3)'
@@ -129,7 +125,7 @@ export default class Index extends Component {
             </View>
           </View>
         )}
-
+        
 
         <View className='home_tab'>
           <View className='btn_dg'>

@@ -62,7 +62,9 @@ export default class Index extends Component {
 
   }
 
-
+  onChange(){
+    
+  }
   render() {
     const { passwords, current } = this.state
     const _this = this;

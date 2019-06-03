@@ -12,8 +12,13 @@ import './app.scss'
 //   require('nerv-devtools')
 // }
 
+if (process.env.TARO_ENV === 'weapp') {
+  require('taro-ui/dist/weapp/css/index.css')
+} else if (process.env.TARO_ENV === 'h5') {
+  require('taro-ui/dist/h5/css/index.css')
+}
 
- 
+
 class App extends Component {
 
   /**
