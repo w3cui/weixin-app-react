@@ -46,9 +46,15 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
+<<<<<<< HEAD
     return _ret = (_temp = (_this2 = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this2), _this2.$usedState = ["anonymousState__temp", "loopArray0", "$compid__4", "$compid__5", "$compid__6", "$compid__7", "current", "swiperConfig", "circle", "weiXinInfo", "passwords", "userInfo"], _this2.config = {
       navigationBarTitleText: '密码办理入住'
     }, _this2.customComponents = ["AtSteps", "AtForm", "EditorNum", "AtButton"], _temp), _possibleConstructorReturn(_this2, _ret);
+=======
+    return _ret = (_temp = (_this2 = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this2), _this2.$usedState = ["anonymousState__temp", "loopArray0", "items", "current", "swiperConfig", "circle", "weiXinInfo", "passwords", "userInfo"], _this2.config = {
+      navigationBarTitleText: '密码办理入住'
+    }, _this2.$$refs = [], _temp), _possibleConstructorReturn(_this2, _ret);
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
   }
 
   _createClass(Index, [{
@@ -71,7 +77,10 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
        * 对于像 navigationBarTextStyle: 'black' 这样的推导出的类型是 string
        * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
        */
+<<<<<<< HEAD
       this.$$refs = [];
+=======
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
     }
     // hloadChange(event) {
     //   const { current } = this.state
@@ -106,15 +115,21 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
     key: "componentWillMount",
     value: function componentWillMount() {}
   }, {
+<<<<<<< HEAD
     key: "onChange",
     value: function onChange() {}
   }, {
+=======
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
     key: "_createData",
     value: function _createData() {
       this.__state = arguments[0] || this.state || {};
       this.__props = arguments[1] || this.props || {};
+<<<<<<< HEAD
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
+=======
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
       ;
 
       var _state = this.__state,
@@ -139,7 +154,11 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
         paddingTop: '30rpx',
         paddingBottom: '20rpx'
       });
+<<<<<<< HEAD
       var loopArray0 = current === 0 ? [0, 1, 2, 3].map(function (r, _anonIdx) {
+=======
+      var loopArray0 = current === 0 ? [0, 1, 2, 3].map(function (r) {
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
         r = {
           $original: (0, _index.internal_get_original)(r)
         };
@@ -155,6 +174,7 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
           $original: r.$original
         };
       }) : [];
+<<<<<<< HEAD
       var $compid__4 = (0, _index.genCompid)(__prefix + "$compid__4");
       _index.propsManager.set({
         "items": items,
@@ -183,13 +203,28 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
         $compid__5: $compid__5,
         $compid__6: $compid__6,
         $compid__7: $compid__7
+=======
+      Object.assign(this.__state, {
+        anonymousState__temp: anonymousState__temp,
+        loopArray0: loopArray0,
+        items: items
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
       });
       return this.__state;
     }
   }]);
 
   return Index;
+<<<<<<< HEAD
 }(_index.Component), _class.$$events = [], _class.$$componentPath = "pages/pay/index", _temp2);
+=======
+}(_index.Component), _class.properties = {
+  "userInfo": {
+    "type": null,
+    "value": null
+  }
+}, _class.$$events = ["onChange", "childChange", "childSubmit", "openPage"], _temp2);
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 Index = tslib_1.__decorate([(0, _index3.connect)(function (_ref2) {
   var counter = _ref2.counter,
       userInfo = _ref2.userInfo;

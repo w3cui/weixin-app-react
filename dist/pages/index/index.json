@@ -1,9 +1,12 @@
 {
   "usingComponents": {
+<<<<<<< HEAD
     "at-modal": "../../npm/taro-ui/dist/weapp/components/modal/index",
     "at-modal-header": "../../npm/taro-ui/dist/weapp/components/modal/header/index",
     "at-modal-content": "../../npm/taro-ui/dist/weapp/components/modal/content/index",
     "at-modal-action": "../../npm/taro-ui/dist/weapp/components/modal/action/index",
+=======
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
     "at-icon": "../../npm/taro-ui/dist/weapp/components/icon/index",
     "at-grid": "../../npm/taro-ui/dist/weapp/components/grid/index"
   },

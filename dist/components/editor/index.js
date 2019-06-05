@@ -12,10 +12,13 @@ var _class, _temp2;
 
 var _index = require("../../npm/@tarojs/taro-weapp/index.js");
 
+<<<<<<< HEAD
 var _index2 = _interopRequireDefault(_index);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+=======
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -38,7 +41,11 @@ var EditorNum = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
+<<<<<<< HEAD
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = EditorNum.__proto__ || Object.getPrototypeOf(EditorNum)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray5", "editorItem", "value", "maxLength"], _this.customComponents = ["Icons"], _temp), _possibleConstructorReturn(_this, _ret);
+=======
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = EditorNum.__proto__ || Object.getPrototypeOf(EditorNum)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray0", "editorItem", "value", "maxLength"], _this.$$refs = [], _temp), _possibleConstructorReturn(_this, _ret);
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
   }
 
   _createClass(EditorNum, [{
@@ -49,7 +56,10 @@ var EditorNum = (_temp2 = _class = function (_BaseComponent) {
         editorItem: [7, 8, 9, "", 4, 5, 6, "+", 1, 2, 3, '-', '.', 0, 'x', '完成'],
         value: ""
       };
+<<<<<<< HEAD
       this.$$refs = [];
+=======
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
     }
     /**
      * 获取焦点
@@ -68,10 +78,17 @@ var EditorNum = (_temp2 = _class = function (_BaseComponent) {
       if (retValue.length > maxLength) {
         return false;
       } else if (ref === '完成' && onSubmit && retValue.length === maxLength) {
+<<<<<<< HEAD
         this.props.onSubmit();
       } else if (ref !== '完成' && ref !== '') {
         this.setState({ value: retValue });
         this.props.onChange(retValue, ref);
+=======
+        this.__triggerPropsFn("onSubmit", [null].concat([]));
+      } else if (ref !== '完成' && ref !== '') {
+        this.setState({ value: retValue });
+        this.__triggerPropsFn("onChange", [null].concat([retValue, ref]));
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
       }
     }
   }, {
@@ -82,8 +99,11 @@ var EditorNum = (_temp2 = _class = function (_BaseComponent) {
     value: function _createData() {
       this.__state = arguments[0] || this.state || {};
       this.__props = arguments[1] || this.props || {};
+<<<<<<< HEAD
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
+=======
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
       ;
 
       var editorItem = this.__state.editorItem;
@@ -101,11 +121,16 @@ var EditorNum = (_temp2 = _class = function (_BaseComponent) {
             break;
         }
       };
+<<<<<<< HEAD
       var loopArray5 = editorItem.map(function (ref, $key) {
+=======
+      var loopArray0 = editorItem.map(function (ref, $key) {
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
         ref = {
           $original: (0, _index.internal_get_original)(ref)
         };
         var $loopState__temp2 = "at-col at-col-3 " + isAddClassName(ref.$original);
+<<<<<<< HEAD
         var $compid__22 = (0, _index.genCompid)(__prefix + "GMkhtKcJBv" + $key);
         ref.$original === 'x' && _index.propsManager.set({
           "icon": "iconfont-qingchu",
@@ -114,18 +139,51 @@ var EditorNum = (_temp2 = _class = function (_BaseComponent) {
         return {
           $loopState__temp2: $loopState__temp2,
           $compid__22: $compid__22,
+=======
+        return {
+          $loopState__temp2: $loopState__temp2,
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
           $original: ref.$original
         };
       });
       Object.assign(this.__state, {
+<<<<<<< HEAD
         loopArray5: loopArray5
+=======
+        loopArray0: loopArray0
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
       });
       return this.__state;
     }
   }]);
 
   return EditorNum;
+<<<<<<< HEAD
 }(_index.Component), _class.$$events = ["childFocus"], _class.$$componentPath = "components/editor/index", _temp2);
+=======
+}(_index.Component), _class.properties = {
+  "onChange": {
+    "type": null,
+    "value": null
+  },
+  "onSubmit": {
+    "type": null,
+    "value": null
+  },
+  "maxLength": {
+    "type": null,
+    "value": null
+  },
+  "__fn_onSubmit": {
+    "type": null,
+    "value": null
+  },
+  "__fn_onChange": {
+    "type": null,
+    "value": null
+  }
+}, _class.$$events = ["childFocus"], _temp2);
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 exports.default = EditorNum;
 
 Component(require('../../npm/@tarojs/taro-weapp/index.js').default.createComponent(EditorNum));

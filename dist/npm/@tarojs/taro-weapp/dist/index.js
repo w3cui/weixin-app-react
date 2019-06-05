@@ -2,6 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
+<<<<<<< HEAD
 if (typeof Object.assign !== 'function') {
   // Must be writable: true, enumerable: false, configurable: true
   Object.assign = function (target) {
@@ -31,6 +32,8 @@ if (typeof Object.assign !== 'function') {
   };
 }
 
+=======
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 function _typeof(obj) {
   if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
     _typeof = function (obj) {
@@ -1293,6 +1296,7 @@ var ENV_TYPE = {
   RN: 'RN',
   SWAN: 'SWAN',
   ALIPAY: 'ALIPAY',
+<<<<<<< HEAD
   TT: 'TT',
   QQ: 'QQ'
 };
@@ -1305,6 +1309,11 @@ function getEnv() {
     return ENV_TYPE.TT;
   }
 
+=======
+  TT: 'TT'
+};
+function getEnv() {
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
   if (typeof wx !== 'undefined' && wx.getSystemInfo) {
     return ENV_TYPE.WEAPP;
   }
@@ -1317,6 +1326,13 @@ function getEnv() {
     return ENV_TYPE.ALIPAY;
   }
 
+<<<<<<< HEAD
+=======
+  if (typeof tt !== 'undefined' && tt.getSystemInfo) {
+    return ENV_TYPE.TT;
+  }
+
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
   if (typeof global !== 'undefined' && global.__fbGenNativeModule) {
     return ENV_TYPE.RN;
   }
@@ -1396,7 +1412,11 @@ function () {
 
         callback.apply(_this, args);
 
+<<<<<<< HEAD
         _this.off(events, wrapper, context);
+=======
+        _this.off(events, callback, context);
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
       };
 
       this.on(events, wrapper, context);
@@ -1473,6 +1493,7 @@ Events.eventSplitter = /\s+/;
 
 function render() {}
 
+<<<<<<< HEAD
 function createRef() {
   return {
     current: null
@@ -1619,6 +1640,8 @@ var interceptors = /*#__PURE__*/Object.freeze({
   logInterceptor: logInterceptor
 });
 
+=======
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 var onAndSyncApis = {
   onSocketOpen: true,
   onSocketError: true,
@@ -1649,6 +1672,7 @@ var onAndSyncApis = {
   getExtConfigSync: true,
   getLogManager: true,
   onMemoryWarning: true,
+<<<<<<< HEAD
   reportMonitor: true,
   reportAnalytics: true,
   navigateToSmartGameProgram: true,
@@ -1663,6 +1687,10 @@ var onAndSyncApis = {
   offError: true,
   offAppShow: true,
   offAppHide: true
+=======
+  reportAnalytics: true,
+  navigateToSmartGameProgram: true
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 };
 var noPromiseApis = {
   // 媒体
@@ -1693,15 +1721,25 @@ var noPromiseApis = {
   showNavigationBarLoading: true,
   hideNavigationBarLoading: true,
   createAnimation: true,
+<<<<<<< HEAD
   createSelectorQuery: true,
   createCanvasContext: true,
   // createContext: true,
+=======
+  pageScrollTo: true,
+  createSelectorQuery: true,
+  createCanvasContext: true,
+  createContext: true,
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
   drawCanvas: true,
   hideKeyboard: true,
   stopPullDownRefresh: true,
   createIntersectionObserver: true,
+<<<<<<< HEAD
   // 菜单
   getMenuButtonBoundingClientRect: true,
+=======
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
   onWindowResize: true,
   offWindowResize: true,
   // 拓展接口
@@ -1709,10 +1747,14 @@ var noPromiseApis = {
   base64ToArrayBuffer: true,
   getAccountInfoSync: true,
   getUpdateManager: true,
+<<<<<<< HEAD
   createWorker: true,
   // 广告
   createRewardedVideoAd: true,
   createInterstitialAd: true
+=======
+  createWorker: true
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 };
 var otherApis = {
   // 网络
@@ -1723,6 +1765,7 @@ var otherApis = {
   closeSocket: true,
   // 媒体
   chooseImage: true,
+<<<<<<< HEAD
   chooseMessageFile: true,
   previewImage: true,
   getImageInfo: true,
@@ -1732,6 +1775,13 @@ var otherApis = {
   playVoice: true,
   setInnerAudioOption: true,
   getAvailableAudioSources: true,
+=======
+  previewImage: true,
+  getImageInfo: true,
+  saveImageToPhotosAlbum: true,
+  startRecord: true,
+  playVoice: true,
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
   getBackgroundAudioPlayerState: true,
   playBackgroundAudio: true,
   seekBackgroundAudio: true,
@@ -1802,7 +1852,10 @@ var otherApis = {
   setWifiList: true,
   getConnectedWifi: true,
   // 界面
+<<<<<<< HEAD
   pageScrollTo: true,
+=======
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
   showToast: true,
   showLoading: true,
   showModal: true,
@@ -1894,6 +1947,7 @@ function initPxTransform(config) {
   this.config.deviceRatio = deviceRatio;
 }
 
+<<<<<<< HEAD
 // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/is
 
 function objectIs(x, y) {
@@ -2251,6 +2305,858 @@ function getCurrentPageUrl() {
 }
 
 var commonjsGlobal = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+=======
+/* eslint-disable camelcase */
+var eventCenter = new Events();
+
+var nextTick = function nextTick(fn) {
+  var _fn;
+
+  for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    args[_key - 1] = arguments[_key];
+  }
+
+  fn = typeof fn === 'function' ? (_fn = fn).bind.apply(_fn, [null].concat(args)) : fn;
+  var timerFunc = wx.nextTick ? wx.nextTick : setTimeout;
+  timerFunc(fn);
+};
+
+var commonjsGlobal = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+
+function createCommonjsModule(fn, module) {
+  return module = { exports: {} }, fn(module, module.exports), module.exports;
+}
+
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/
+/* eslint-disable no-unused-vars */
+
+var getOwnPropertySymbols = Object.getOwnPropertySymbols;
+var hasOwnProperty$1 = Object.prototype.hasOwnProperty;
+var propIsEnumerable = Object.prototype.propertyIsEnumerable;
+
+function toObject(val) {
+  if (val === null || val === undefined) {
+    throw new TypeError('Object.assign cannot be called with null or undefined');
+  }
+
+  return Object(val);
+}
+
+function shouldUseNative() {
+  try {
+    if (!Object.assign) {
+      return false;
+    } // Detect buggy property enumeration order in older V8 versions.
+    // https://bugs.chromium.org/p/v8/issues/detail?id=4118
+
+
+    var test1 = new String('abc'); // eslint-disable-line no-new-wrappers
+
+    test1[5] = 'de';
+
+    if (Object.getOwnPropertyNames(test1)[0] === '5') {
+      return false;
+    } // https://bugs.chromium.org/p/v8/issues/detail?id=3056
+
+
+    var test2 = {};
+
+    for (var i = 0; i < 10; i++) {
+      test2['_' + String.fromCharCode(i)] = i;
+    }
+
+    var order2 = Object.getOwnPropertyNames(test2).map(function (n) {
+      return test2[n];
+    });
+
+    if (order2.join('') !== '0123456789') {
+      return false;
+    } // https://bugs.chromium.org/p/v8/issues/detail?id=3056
+
+
+    var test3 = {};
+    'abcdefghijklmnopqrst'.split('').forEach(function (letter) {
+      test3[letter] = letter;
+    });
+
+    if (Object.keys(Object.assign({}, test3)).join('') !== 'abcdefghijklmnopqrst') {
+      return false;
+    }
+
+    return true;
+  } catch (err) {
+    // We don't expect any of the above to throw, but better to be safe.
+    return false;
+  }
+}
+
+var objectAssign = shouldUseNative() ? Object.assign : function (target, source) {
+  var from;
+  var to = toObject(target);
+  var symbols;
+
+  for (var s = 1; s < arguments.length; s++) {
+    from = Object(arguments[s]);
+
+    for (var key in from) {
+      if (hasOwnProperty$1.call(from, key)) {
+        to[key] = from[key];
+      }
+    }
+
+    if (getOwnPropertySymbols) {
+      symbols = getOwnPropertySymbols(from);
+
+      for (var i = 0; i < symbols.length; i++) {
+        if (propIsEnumerable.call(from, symbols[i])) {
+          to[symbols[i]] = from[symbols[i]];
+        }
+      }
+    }
+  }
+
+  return to;
+};
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
+var ReactPropTypesSecret_1 = ReactPropTypesSecret;
+
+var printWarning = function printWarning() {};
+
+{
+  var ReactPropTypesSecret$1 = ReactPropTypesSecret_1;
+  var loggedTypeFailures = {};
+
+  printWarning = function printWarning(text) {
+    var message = 'Warning: ' + text;
+
+    if (typeof console !== 'undefined') {
+      console.error(message);
+    }
+
+    try {
+      // --- Welcome to debugging React ---
+      // This error was thrown as a convenience so that you can use this stack
+      // to find the callsite that caused this warning to fire.
+      throw new Error(message);
+    } catch (x) {}
+  };
+}
+/**
+ * Assert that the values match with the type specs.
+ * Error messages are memorized and will only be shown once.
+ *
+ * @param {object} typeSpecs Map of name to a ReactPropType
+ * @param {object} values Runtime values that need to be type-checked
+ * @param {string} location e.g. "prop", "context", "child context"
+ * @param {string} componentName Name of the component for error messages.
+ * @param {?Function} getStack Returns the component stack.
+ * @private
+ */
+
+function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
+  {
+    for (var typeSpecName in typeSpecs) {
+      if (typeSpecs.hasOwnProperty(typeSpecName)) {
+        var error; // Prop type validation may throw. In case they do, we don't want to
+        // fail the render phase where it didn't fail before. So we log it.
+        // After these have been cleaned up, we'll let them throw.
+
+        try {
+          // This is intentionally an invariant that gets caught. It's the same
+          // behavior as without this statement except with a better message.
+          if (typeof typeSpecs[typeSpecName] !== 'function') {
+            var err = Error((componentName || 'React class') + ': ' + location + ' type `' + typeSpecName + '` is invalid; ' + 'it must be a function, usually from the `prop-types` package, but received `' + _typeof(typeSpecs[typeSpecName]) + '`.');
+            err.name = 'Invariant Violation';
+            throw err;
+          }
+
+          error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret$1);
+        } catch (ex) {
+          error = ex;
+        }
+
+        if (error && !(error instanceof Error)) {
+          printWarning((componentName || 'React class') + ': type specification of ' + location + ' `' + typeSpecName + '` is invalid; the type checker ' + 'function must return `null` or an `Error` but returned a ' + _typeof(error) + '. ' + 'You may have forgotten to pass an argument to the type checker ' + 'creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and ' + 'shape all require an argument).');
+        }
+
+        if (error instanceof Error && !(error.message in loggedTypeFailures)) {
+          // Only monitor this failure once because there tends to be a lot of the
+          // same error.
+          loggedTypeFailures[error.message] = true;
+          var stack = getStack ? getStack() : '';
+          printWarning('Failed ' + location + ' type: ' + error.message + (stack != null ? stack : ''));
+        }
+      }
+    }
+  }
+}
+
+var checkPropTypes_1 = checkPropTypes;
+
+var printWarning$1 = function printWarning() {};
+
+{
+  printWarning$1 = function printWarning(text) {
+    var message = 'Warning: ' + text;
+
+    if (typeof console !== 'undefined') {
+      console.error(message);
+    }
+
+    try {
+      // --- Welcome to debugging React ---
+      // This error was thrown as a convenience so that you can use this stack
+      // to find the callsite that caused this warning to fire.
+      throw new Error(message);
+    } catch (x) {}
+  };
+}
+
+function emptyFunctionThatReturnsNull() {
+  return null;
+}
+
+var factoryWithTypeCheckers = function factoryWithTypeCheckers(isValidElement, throwOnDirectAccess) {
+  /* global Symbol */
+  var ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
+  var FAUX_ITERATOR_SYMBOL = '@@iterator'; // Before Symbol spec.
+
+  /**
+   * Returns the iterator method function contained on the iterable object.
+   *
+   * Be sure to invoke the function with the iterable as context:
+   *
+   *     var iteratorFn = getIteratorFn(myIterable);
+   *     if (iteratorFn) {
+   *       var iterator = iteratorFn.call(myIterable);
+   *       ...
+   *     }
+   *
+   * @param {?object} maybeIterable
+   * @return {?function}
+   */
+
+  function getIteratorFn(maybeIterable) {
+    var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
+
+    if (typeof iteratorFn === 'function') {
+      return iteratorFn;
+    }
+  }
+  /**
+   * Collection of methods that allow declaration and validation of props that are
+   * supplied to React components. Example usage:
+   *
+   *   var Props = require('ReactPropTypes');
+   *   var MyArticle = React.createClass({
+   *     propTypes: {
+   *       // An optional string prop named "description".
+   *       description: Props.string,
+   *
+   *       // A required enum prop named "category".
+   *       category: Props.oneOf(['News','Photos']).isRequired,
+   *
+   *       // A prop named "dialog" that requires an instance of Dialog.
+   *       dialog: Props.instanceOf(Dialog).isRequired
+   *     },
+   *     render: function() { ... }
+   *   });
+   *
+   * A more formal specification of how these methods are used:
+   *
+   *   type := array|bool|func|object|number|string|oneOf([...])|instanceOf(...)
+   *   decl := ReactPropTypes.{type}(.isRequired)?
+   *
+   * Each and every declaration produces a function with the same signature. This
+   * allows the creation of custom validation functions. For example:
+   *
+   *  var MyLink = React.createClass({
+   *    propTypes: {
+   *      // An optional string or URI prop named "href".
+   *      href: function(props, propName, componentName) {
+   *        var propValue = props[propName];
+   *        if (propValue != null && typeof propValue !== 'string' &&
+   *            !(propValue instanceof URI)) {
+   *          return new Error(
+   *            'Expected a string or an URI for ' + propName + ' in ' +
+   *            componentName
+   *          );
+   *        }
+   *      }
+   *    },
+   *    render: function() {...}
+   *  });
+   *
+   * @internal
+   */
+
+  var ANONYMOUS = '<<anonymous>>'; // Important!
+  // Keep this list in sync with production version in `./factoryWithThrowingShims.js`.
+
+  var ReactPropTypes = {
+    array: createPrimitiveTypeChecker('array'),
+    bool: createPrimitiveTypeChecker('boolean'),
+    func: createPrimitiveTypeChecker('function'),
+    number: createPrimitiveTypeChecker('number'),
+    object: createPrimitiveTypeChecker('object'),
+    string: createPrimitiveTypeChecker('string'),
+    symbol: createPrimitiveTypeChecker('symbol'),
+    any: createAnyTypeChecker(),
+    arrayOf: createArrayOfTypeChecker,
+    element: createElementTypeChecker(),
+    instanceOf: createInstanceTypeChecker,
+    node: createNodeChecker(),
+    objectOf: createObjectOfTypeChecker,
+    oneOf: createEnumTypeChecker,
+    oneOfType: createUnionTypeChecker,
+    shape: createShapeTypeChecker,
+    exact: createStrictShapeTypeChecker
+  };
+  /**
+   * inlined Object.is polyfill to avoid requiring consumers ship their own
+   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+   */
+
+  /*eslint-disable no-self-compare*/
+
+  function is(x, y) {
+    // SameValue algorithm
+    if (x === y) {
+      // Steps 1-5, 7-10
+      // Steps 6.b-6.e: +0 != -0
+      return x !== 0 || 1 / x === 1 / y;
+    } else {
+      // Step 6.a: NaN == NaN
+      return x !== x && y !== y;
+    }
+  }
+  /*eslint-enable no-self-compare*/
+
+  /**
+   * We use an Error-like object for backward compatibility as people may call
+   * PropTypes directly and inspect their output. However, we don't use real
+   * Errors anymore. We don't inspect their stack anyway, and creating them
+   * is prohibitively expensive if they are created too often, such as what
+   * happens in oneOfType() for any type before the one that matched.
+   */
+
+  function PropTypeError(message) {
+    this.message = message;
+    this.stack = '';
+  } // Make `instanceof Error` still work for returned errors.
+
+
+  PropTypeError.prototype = Error.prototype;
+
+  function createChainableTypeChecker(validate) {
+    {
+      var manualPropTypeCallCache = {};
+      var manualPropTypeWarningCount = 0;
+    }
+
+    function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
+      componentName = componentName || ANONYMOUS;
+      propFullName = propFullName || propName;
+
+      if (secret !== ReactPropTypesSecret_1) {
+        if (throwOnDirectAccess) {
+          // New behavior only for users of `prop-types` package
+          var err = new Error("Calling PropTypes validators directly is not supported by the `prop-types` package. Use `PropTypes.checkPropTypes()` to call them. Read more at http://fb.me/use-check-prop-types");
+          err.name = 'Invariant Violation';
+          throw err;
+        } else if (typeof console !== 'undefined') {
+          // Old behavior for people using React.PropTypes
+          var cacheKey = componentName + ':' + propName;
+
+          if (!manualPropTypeCallCache[cacheKey] && // Avoid spamming the console because they are often not actionable except for lib authors
+          manualPropTypeWarningCount < 3) {
+            printWarning$1("You are manually calling a React.PropTypes validation function for the `" + propFullName + '` prop on `' + componentName + '`. This is deprecated ' + 'and will throw in the standalone `prop-types` package. ' + 'You may be seeing this warning due to a third-party PropTypes ' + 'library. See https://fb.me/react-warning-dont-call-proptypes ' + 'for details.');
+            manualPropTypeCallCache[cacheKey] = true;
+            manualPropTypeWarningCount++;
+          }
+        }
+      }
+
+      if (props[propName] == null) {
+        if (isRequired) {
+          if (props[propName] === null) {
+            return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required ' + ('in `' + componentName + '`, but its value is `null`.'));
+          }
+
+          return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required in ' + ('`' + componentName + '`, but its value is `undefined`.'));
+        }
+
+        return null;
+      } else {
+        return validate(props, propName, componentName, location, propFullName);
+      }
+    }
+
+    var chainedCheckType = checkType.bind(null, false);
+    chainedCheckType.isRequired = checkType.bind(null, true);
+    return chainedCheckType;
+  }
+
+  function createPrimitiveTypeChecker(expectedType) {
+    function validate(props, propName, componentName, location, propFullName, secret) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+
+      if (propType !== expectedType) {
+        // `propValue` being instance of, say, date/regexp, pass the 'object'
+        // check, but we can offer a more precise error message here rather than
+        // 'of type `object`'.
+        var preciseType = getPreciseType(propValue);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + preciseType + '` supplied to `' + componentName + '`, expected ') + ('`' + expectedType + '`.'));
+      }
+
+      return null;
+    }
+
+    return createChainableTypeChecker(validate);
+  }
+
+  function createAnyTypeChecker() {
+    return createChainableTypeChecker(emptyFunctionThatReturnsNull);
+  }
+
+  function createArrayOfTypeChecker(typeChecker) {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (typeof typeChecker !== 'function') {
+        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside arrayOf.');
+      }
+
+      var propValue = props[propName];
+
+      if (!Array.isArray(propValue)) {
+        var propType = getPropType(propValue);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an array.'));
+      }
+
+      for (var i = 0; i < propValue.length; i++) {
+        var error = typeChecker(propValue, i, componentName, location, propFullName + '[' + i + ']', ReactPropTypesSecret_1);
+
+        if (error instanceof Error) {
+          return error;
+        }
+      }
+
+      return null;
+    }
+
+    return createChainableTypeChecker(validate);
+  }
+
+  function createElementTypeChecker() {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+
+      if (!isValidElement(propValue)) {
+        var propType = getPropType(propValue);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement.'));
+      }
+
+      return null;
+    }
+
+    return createChainableTypeChecker(validate);
+  }
+
+  function createInstanceTypeChecker(expectedClass) {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (!(props[propName] instanceof expectedClass)) {
+        var expectedClassName = expectedClass.name || ANONYMOUS;
+        var actualClassName = getClassName(props[propName]);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + actualClassName + '` supplied to `' + componentName + '`, expected ') + ('instance of `' + expectedClassName + '`.'));
+      }
+
+      return null;
+    }
+
+    return createChainableTypeChecker(validate);
+  }
+
+  function createEnumTypeChecker(expectedValues) {
+    if (!Array.isArray(expectedValues)) {
+      printWarning$1('Invalid argument supplied to oneOf, expected an instance of array.');
+      return emptyFunctionThatReturnsNull;
+    }
+
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+
+      for (var i = 0; i < expectedValues.length; i++) {
+        if (is(propValue, expectedValues[i])) {
+          return null;
+        }
+      }
+
+      var valuesString = JSON.stringify(expectedValues);
+      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of value `' + propValue + '` ' + ('supplied to `' + componentName + '`, expected one of ' + valuesString + '.'));
+    }
+
+    return createChainableTypeChecker(validate);
+  }
+
+  function createObjectOfTypeChecker(typeChecker) {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (typeof typeChecker !== 'function') {
+        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside objectOf.');
+      }
+
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an object.'));
+      }
+
+      for (var key in propValue) {
+        if (propValue.hasOwnProperty(key)) {
+          var error = typeChecker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret_1);
+
+          if (error instanceof Error) {
+            return error;
+          }
+        }
+      }
+
+      return null;
+    }
+
+    return createChainableTypeChecker(validate);
+  }
+
+  function createUnionTypeChecker(arrayOfTypeCheckers) {
+    if (!Array.isArray(arrayOfTypeCheckers)) {
+      printWarning$1('Invalid argument supplied to oneOfType, expected an instance of array.');
+      return emptyFunctionThatReturnsNull;
+    }
+
+    for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+      var checker = arrayOfTypeCheckers[i];
+
+      if (typeof checker !== 'function') {
+        printWarning$1("Invalid argument supplied to oneOfType. Expected an array of check functions, but received " + getPostfixForTypeWarning(checker) + ' at index ' + i + '.');
+        return emptyFunctionThatReturnsNull;
+      }
+    }
+
+    function validate(props, propName, componentName, location, propFullName) {
+      for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+        var checker = arrayOfTypeCheckers[i];
+
+        if (checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret_1) == null) {
+          return null;
+        }
+      }
+
+      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`.'));
+    }
+
+    return createChainableTypeChecker(validate);
+  }
+
+  function createNodeChecker() {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (!isNode(props[propName])) {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`, expected a ReactNode.'));
+      }
+
+      return null;
+    }
+
+    return createChainableTypeChecker(validate);
+  }
+
+  function createShapeTypeChecker(shapeTypes) {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+      }
+
+      for (var key in shapeTypes) {
+        var checker = shapeTypes[key];
+
+        if (!checker) {
+          continue;
+        }
+
+        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret_1);
+
+        if (error) {
+          return error;
+        }
+      }
+
+      return null;
+    }
+
+    return createChainableTypeChecker(validate);
+  }
+
+  function createStrictShapeTypeChecker(shapeTypes) {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+      } // We need to check all keys in case some are required but missing from
+      // props.
+
+
+      var allKeys = objectAssign({}, props[propName], shapeTypes);
+
+      for (var key in allKeys) {
+        var checker = shapeTypes[key];
+
+        if (!checker) {
+          return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` key `' + key + '` supplied to `' + componentName + '`.' + '\nBad object: ' + JSON.stringify(props[propName], null, '  ') + '\nValid keys: ' + JSON.stringify(Object.keys(shapeTypes), null, '  '));
+        }
+
+        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret_1);
+
+        if (error) {
+          return error;
+        }
+      }
+
+      return null;
+    }
+
+    return createChainableTypeChecker(validate);
+  }
+
+  function isNode(propValue) {
+    switch (_typeof(propValue)) {
+      case 'number':
+      case 'string':
+      case 'undefined':
+        return true;
+
+      case 'boolean':
+        return !propValue;
+
+      case 'object':
+        if (Array.isArray(propValue)) {
+          return propValue.every(isNode);
+        }
+
+        if (propValue === null || isValidElement(propValue)) {
+          return true;
+        }
+
+        var iteratorFn = getIteratorFn(propValue);
+
+        if (iteratorFn) {
+          var iterator = iteratorFn.call(propValue);
+          var step;
+
+          if (iteratorFn !== propValue.entries) {
+            while (!(step = iterator.next()).done) {
+              if (!isNode(step.value)) {
+                return false;
+              }
+            }
+          } else {
+            // Iterator will provide entry [k,v] tuples rather than values.
+            while (!(step = iterator.next()).done) {
+              var entry = step.value;
+
+              if (entry) {
+                if (!isNode(entry[1])) {
+                  return false;
+                }
+              }
+            }
+          }
+        } else {
+          return false;
+        }
+
+        return true;
+
+      default:
+        return false;
+    }
+  }
+
+  function isSymbol(propType, propValue) {
+    // Native Symbol.
+    if (propType === 'symbol') {
+      return true;
+    } // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'
+
+
+    if (propValue['@@toStringTag'] === 'Symbol') {
+      return true;
+    } // Fallback for non-spec compliant Symbols which are polyfilled.
+
+
+    if (typeof Symbol === 'function' && propValue instanceof Symbol) {
+      return true;
+    }
+
+    return false;
+  } // Equivalent of `typeof` but with special handling for array and regexp.
+
+
+  function getPropType(propValue) {
+    var propType = _typeof(propValue);
+
+    if (Array.isArray(propValue)) {
+      return 'array';
+    }
+
+    if (propValue instanceof RegExp) {
+      // Old webkits (at least until Android 4.0) return 'function' rather than
+      // 'object' for typeof a RegExp. We'll normalize this here so that /bla/
+      // passes PropTypes.object.
+      return 'object';
+    }
+
+    if (isSymbol(propType, propValue)) {
+      return 'symbol';
+    }
+
+    return propType;
+  } // This handles more types than `getPropType`. Only used for error messages.
+  // See `createPrimitiveTypeChecker`.
+
+
+  function getPreciseType(propValue) {
+    if (typeof propValue === 'undefined' || propValue === null) {
+      return '' + propValue;
+    }
+
+    var propType = getPropType(propValue);
+
+    if (propType === 'object') {
+      if (propValue instanceof Date) {
+        return 'date';
+      } else if (propValue instanceof RegExp) {
+        return 'regexp';
+      }
+    }
+
+    return propType;
+  } // Returns a string that is postfixed to a warning about an invalid type.
+  // For example, "undefined" or "of type array"
+
+
+  function getPostfixForTypeWarning(value) {
+    var type = getPreciseType(value);
+
+    switch (type) {
+      case 'array':
+      case 'object':
+        return 'an ' + type;
+
+      case 'boolean':
+      case 'date':
+      case 'regexp':
+        return 'a ' + type;
+
+      default:
+        return type;
+    }
+  } // Returns class name of the object, if any.
+
+
+  function getClassName(propValue) {
+    if (!propValue.constructor || !propValue.constructor.name) {
+      return ANONYMOUS;
+    }
+
+    return propValue.constructor.name;
+  }
+
+  ReactPropTypes.checkPropTypes = checkPropTypes_1;
+  ReactPropTypes.PropTypes = ReactPropTypes;
+  return ReactPropTypes;
+};
+
+function emptyFunction() {}
+
+var factoryWithThrowingShims = function factoryWithThrowingShims() {
+  function shim(props, propName, componentName, location, propFullName, secret) {
+    if (secret === ReactPropTypesSecret_1) {
+      // It is still safe when called from React.
+      return;
+    }
+
+    var err = new Error("Calling PropTypes validators directly is not supported by the `prop-types` package. Use PropTypes.checkPropTypes() to call them. Read more at http://fb.me/use-check-prop-types");
+    err.name = 'Invariant Violation';
+    throw err;
+  }
+  shim.isRequired = shim;
+
+  function getShim() {
+    return shim;
+  }
+  // Keep this list in sync with production version in `./factoryWithTypeCheckers.js`.
+
+  var ReactPropTypes = {
+    array: shim,
+    bool: shim,
+    func: shim,
+    number: shim,
+    object: shim,
+    string: shim,
+    symbol: shim,
+    any: shim,
+    arrayOf: getShim,
+    element: shim,
+    instanceOf: getShim,
+    node: shim,
+    objectOf: getShim,
+    oneOf: getShim,
+    oneOfType: getShim,
+    shape: getShim,
+    exact: getShim
+  };
+  ReactPropTypes.checkPropTypes = emptyFunction;
+  ReactPropTypes.PropTypes = ReactPropTypes;
+  return ReactPropTypes;
+};
+
+var propTypes = createCommonjsModule(function (module) {
+  /**
+   * Copyright (c) 2013-present, Facebook, Inc.
+   *
+   * This source code is licensed under the MIT license found in the
+   * LICENSE file in the root directory of this source tree.
+   */
+  {
+    var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol.for && Symbol.for('react.element') || 0xeac7;
+
+    var isValidElement = function isValidElement(object) {
+      return _typeof(object) === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+    }; // By explicitly using `prop-types` you are opting into new development behavior.
+    // http://fb.me/prop-types-in-prod
+
+
+    var throwOnDirectAccess = true;
+    module.exports = factoryWithTypeCheckers(isValidElement, throwOnDirectAccess);
+  }
+});
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 
 /** Detect free variable `global` from Node.js. */
 
@@ -2275,7 +3181,11 @@ var _Symbol$1 = _Symbol2;
 var objectProto$1 = Object.prototype;
 /** Used to check objects for own properties. */
 
+<<<<<<< HEAD
 var hasOwnProperty$1 = objectProto$1.hasOwnProperty;
+=======
+var hasOwnProperty$2 = objectProto$1.hasOwnProperty;
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 /**
  * Used to resolve the
  * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
@@ -2295,7 +3205,11 @@ var symToStringTag = _Symbol$1 ? _Symbol$1.toStringTag : undefined;
  */
 
 function getRawTag(value) {
+<<<<<<< HEAD
   var isOwn = hasOwnProperty$1.call(value, symToStringTag),
+=======
+  var isOwn = hasOwnProperty$2.call(value, symToStringTag),
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
       tag = value[symToStringTag];
 
   try {
@@ -2384,8 +3298,13 @@ var _overArg = overArg;
 
 /** Built-in value references. */
 
+<<<<<<< HEAD
 var getPrototype$1 = _overArg(Object.getPrototypeOf, Object);
 var _getPrototype = getPrototype$1;
+=======
+var getPrototype = _overArg(Object.getPrototypeOf, Object);
+var _getPrototype = getPrototype;
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 
 /**
  * Checks if `value` is object-like. A value is object-like if it's not `null`
@@ -2429,7 +3348,11 @@ var funcProto$1 = Function.prototype,
 var funcToString$1 = funcProto$1.toString;
 /** Used to check objects for own properties. */
 
+<<<<<<< HEAD
 var hasOwnProperty$2 = objectProto$3.hasOwnProperty;
+=======
+var hasOwnProperty$3 = objectProto$3.hasOwnProperty;
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 /** Used to infer the `Object` constructor. */
 
 var objectCtorString = funcToString$1.call(Object);
@@ -2473,13 +3396,21 @@ function isPlainObject(value) {
     return true;
   }
 
+<<<<<<< HEAD
   var Ctor = hasOwnProperty$2.call(proto, 'constructor') && proto.constructor;
+=======
+  var Ctor = hasOwnProperty$3.call(proto, 'constructor') && proto.constructor;
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
   return typeof Ctor == 'function' && Ctor instanceof Ctor && funcToString$1.call(Ctor) == objectCtorString;
 }
 
 var isPlainObject_1 = isPlainObject;
 
+<<<<<<< HEAD
 function isEmptyObject$1(obj) {
+=======
+function isEmptyObject(obj) {
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
   if (!obj || !isPlainObject_1(obj)) {
     return false;
   }
@@ -2492,16 +3423,28 @@ function isEmptyObject$1(obj) {
 
   return true;
 }
+<<<<<<< HEAD
 function isFunction$2(arg) {
   return typeof arg === 'function';
 }
 function isArray$2(arg) {
+=======
+function noop() {}
+function isFunction$1(arg) {
+  return typeof arg === 'function';
+}
+function isArray$1(arg) {
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
   return Array.isArray(arg);
 }
 function shakeFnFromObject(obj) {
   var newObj;
 
+<<<<<<< HEAD
   if (isArray$2(obj)) {
+=======
+  if (isArray$1(obj)) {
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
     newObj = [];
     var len = obj.length;
 
@@ -2512,7 +3455,11 @@ function shakeFnFromObject(obj) {
     newObj = {};
 
     for (var key in obj) {
+<<<<<<< HEAD
       if (isFunction$2(obj[key])) {
+=======
+      if (isFunction$1(obj[key])) {
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
         continue;
       }
 
@@ -2546,17 +3493,29 @@ function diffArrToPath(to, from) {
       if (_typeof(toItem) !== 'object') {
         res[targetKey] = toItem;
       } else {
+<<<<<<< HEAD
         var arrTo = isArray$2(toItem);
         var arrFrom = isArray$2(fromItem);
+=======
+        var arrTo = isArray$1(toItem);
+        var arrFrom = isArray$1(fromItem);
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 
         if (arrTo !== arrFrom) {
           res[targetKey] = toItem;
         } else if (arrTo && arrFrom) {
+<<<<<<< HEAD
           if (toItem.length < fromItem.length) {
             res[targetKey] = toItem;
           } else {
             // 数组
             diffArrToPath(toItem, fromItem, res, "".concat(targetKey));
+=======
+          if (toItem.length === fromItem.length) {
+            diffArrToPath(toItem, fromItem, res, "".concat(targetKey));
+          } else {
+            res[targetKey] = toItem;
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
           }
         } else {
           if (!toItem || !fromItem || keyList(toItem).length < keyList(fromItem).length) {
@@ -2565,7 +3524,11 @@ function diffArrToPath(to, from) {
             // 对象
             var shouldDiffObject = true;
             Object.keys(fromItem).some(function (key) {
+<<<<<<< HEAD
               if (typeof toItem[key] === 'undefined' && typeof fromItem[key] !== 'undefined') {
+=======
+              if (typeof toItem[key] === 'undefined') {
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
                 shouldDiffObject = false;
                 return true;
               }
@@ -2614,17 +3577,29 @@ function diffObjToPath(to, from) {
       if (_typeof(toItem) !== 'object') {
         res[targetKey] = toItem;
       } else {
+<<<<<<< HEAD
         var arrTo = isArray$2(toItem);
         var arrFrom = isArray$2(fromItem);
+=======
+        var arrTo = isArray$1(toItem);
+        var arrFrom = isArray$1(fromItem);
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 
         if (arrTo !== arrFrom) {
           res[targetKey] = toItem;
         } else if (arrTo && arrFrom) {
+<<<<<<< HEAD
           if (toItem.length < fromItem.length) {
             res[targetKey] = toItem;
           } else {
             // 数组
             diffArrToPath(toItem, fromItem, res, "".concat(targetKey));
+=======
+          if (toItem.length === fromItem.length) {
+            diffArrToPath(toItem, fromItem, res, "".concat(targetKey));
+          } else {
+            res[targetKey] = toItem;
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
           }
         } else {
           // null
@@ -2634,7 +3609,11 @@ function diffObjToPath(to, from) {
             // 对象
             var shouldDiffObject = true;
             Object.keys(fromItem).some(function (key) {
+<<<<<<< HEAD
               if (typeof toItem[key] === 'undefined' && typeof fromItem[key] !== 'undefined') {
+=======
+              if (typeof toItem[key] === 'undefined') {
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
                 shouldDiffObject = false;
                 return true;
               }
@@ -2685,7 +3664,11 @@ function queryToJson(str) {
         ret[name] = [ret[name]];
       }
 
+<<<<<<< HEAD
       if (isArray$2(ret[name])) {
+=======
+      if (isArray$1(ret[name])) {
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
         ret[name].push(val);
       } else {
         ret[name] = val;
@@ -2717,6 +3700,7 @@ function getElementById(component, id, type) {
   if (res) return res;
   return null;
 }
+<<<<<<< HEAD
 var id$1 = 0;
 
 function genId() {
@@ -2735,6 +3719,8 @@ var prefix = 0;
 function genCompPrefix() {
   return String(prefix++);
 }
+=======
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 
 var data = {};
 function cacheDataSet(key, val) {
@@ -2749,6 +3735,7 @@ function cacheDataHas(key) {
   return key in data;
 }
 
+<<<<<<< HEAD
 var Manager =
 /*#__PURE__*/
 function () {
@@ -2810,11 +3797,32 @@ var anonymousFnNamePreffix = 'funPrivate';
 var routerParamsPrivateKey = '__key_';
 var preloadPrivateKey = '__preload_';
 var PRELOAD_DATA_KEY = 'preload';
+=======
+var privatePropValName = '__triggerObserer';
+var anonymousFnNamePreffix = 'funPrivate';
+var componentFnReg = /^__fn_/;
+var routerParamsPrivateKey = '__key_';
+var preloadPrivateKey = '__preload_';
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 var preloadInitedComponent = '$preloadComponent';
 var pageExtraFns = ['onPullDownRefresh', 'onReachBottom', 'onShareAppMessage', 'onPageScroll', 'onTabItemTap', 'onResize'];
 
 function bindProperties(weappComponentConf, ComponentClass, isPage) {
+<<<<<<< HEAD
   weappComponentConf.properties = {};
+=======
+  weappComponentConf.properties = ComponentClass.properties || {};
+  var defaultProps = ComponentClass.defaultProps || {};
+
+  for (var key in defaultProps) {
+    if (defaultProps.hasOwnProperty(key)) {
+      weappComponentConf.properties[key] = {
+        type: null,
+        value: null
+      };
+    }
+  }
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 
   if (isPage) {
     weappComponentConf.properties[routerParamsPrivateKey] = {
@@ -2827,14 +3835,21 @@ function bindProperties(weappComponentConf, ComponentClass, isPage) {
     };
     var defaultParams = ComponentClass.defaultParams || {};
 
+<<<<<<< HEAD
     for (var key in defaultParams) {
       if (defaultParams.hasOwnProperty(key)) {
         weappComponentConf.properties[key] = {
+=======
+    for (var _key in defaultParams) {
+      if (defaultParams.hasOwnProperty(_key)) {
+        weappComponentConf.properties[_key] = {
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
           type: null,
           value: null
         };
       }
     }
+<<<<<<< HEAD
   }
 
   weappComponentConf.properties.compid = {
@@ -2842,6 +3857,21 @@ function bindProperties(weappComponentConf, ComponentClass, isPage) {
     value: null,
     observer: function observer() {
       initComponent.apply(this, [ComponentClass, isPage]);
+=======
+  } // 拦截props的更新，插入生命周期
+  // 调用小程序setData或会造成性能消耗
+
+
+  weappComponentConf.properties[privatePropValName] = {
+    type: null,
+    observer: function observer() {
+      if (!this.$component || !this.$component.__isReady) return;
+      var nextProps = filterProps(ComponentClass.properties, ComponentClass.defaultProps, this.$component.props, this.data);
+      this.$component.props = nextProps;
+      this.$component._unsafeCallUpdate = true;
+      updateComponent(this.$component);
+      this.$component._unsafeCallUpdate = false;
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
     }
   };
 }
@@ -2913,13 +3943,18 @@ function processEvent(eventHandlerName, obj) {
 
     var dataset = event.currentTarget.dataset || {};
     var bindArgs = {};
+<<<<<<< HEAD
     var eventType = event.type.toLocaleLowerCase();
+=======
+    var eventHandlerNameLower = eventHandlerName.toLocaleLowerCase();
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
     Object.keys(dataset).forEach(function (key) {
       var keyLower = key.toLocaleLowerCase();
 
       if (/^e/.test(keyLower)) {
         // 小程序属性里中划线后跟一个下划线会解析成不同的结果
         keyLower = keyLower.replace(/^e/, '');
+<<<<<<< HEAD
 
         if (keyLower.indexOf(eventType) >= 0) {
           var argName = keyLower.replace(eventType, '');
@@ -2927,6 +3962,13 @@ function processEvent(eventHandlerName, obj) {
           if (/^(a[a-z]|so)$/.test(argName)) {
             bindArgs[argName] = dataset[key];
           }
+=======
+        keyLower = keyLower.toLocaleLowerCase();
+
+        if (keyLower.indexOf(eventHandlerNameLower) >= 0) {
+          var argName = keyLower.replace(eventHandlerNameLower, '');
+          bindArgs[argName] = dataset[key];
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
         }
       }
     }); // 如果是通过triggerEvent触发,并且带有参数
@@ -2951,7 +3993,11 @@ function processEvent(eventHandlerName, obj) {
         detailArgs.shift();
       }
 
+<<<<<<< HEAD
       if (!isEmptyObject$1(bindArgs)) {
+=======
+      if (!isEmptyObject(bindArgs)) {
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
         datasetArgs = Object.keys(bindArgs).sort().map(function (key) {
           return bindArgs[key];
         });
@@ -2976,7 +4022,11 @@ function processEvent(eventHandlerName, obj) {
         detailArgs.shift();
       }
 
+<<<<<<< HEAD
       if (!isEmptyObject$1(bindArgs)) {
+=======
+      if (!isEmptyObject(bindArgs)) {
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
         datasetArgs = Object.keys(bindArgs).sort().map(function (key) {
           return bindArgs[key];
         });
@@ -2997,6 +4047,7 @@ function bindEvents(weappComponentConf, events, isPage) {
   });
 }
 
+<<<<<<< HEAD
 function filterProps() {
   var defaultProps = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var propsFromPropsManager = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
@@ -3007,6 +4058,39 @@ function filterProps() {
     for (var propName in defaultProps) {
       if (newProps[propName] === undefined) {
         newProps[propName] = defaultProps[propName];
+=======
+function filterProps(properties) {
+  var defaultProps = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var componentProps = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+  var weappComponentData = arguments.length > 3 ? arguments[3] : undefined;
+  var newProps = Object.assign({}, componentProps);
+
+  for (var propName in properties) {
+    if (propName === privatePropValName) {
+      continue;
+    }
+
+    if (typeof componentProps[propName] === 'function') {
+      newProps[propName] = componentProps[propName];
+    } else if (propName in weappComponentData) {
+      newProps[propName] = weappComponentData[propName];
+    }
+
+    if (componentFnReg.test(propName)) {
+      if (weappComponentData[propName] === true) {
+        var fnName = propName.replace(componentFnReg, '');
+        newProps[fnName] = noop;
+      }
+
+      delete newProps[propName];
+    }
+  }
+
+  if (!isEmptyObject(defaultProps)) {
+    for (var _propName in defaultProps) {
+      if (newProps[_propName] === undefined || newProps[_propName] === null) {
+        newProps[_propName] = defaultProps[_propName];
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
       }
     }
   }
@@ -3044,7 +4128,16 @@ function componentTrigger(component, key, args) {
           target = query.select("#".concat(ref.id));
         }
 
+<<<<<<< HEAD
         commitAttachRef(ref, target, component, refs, true);
+=======
+        if ('refName' in ref && ref['refName']) {
+          refs[ref.refName] = target;
+        } else if ('fn' in ref && typeof ref['fn'] === 'function') {
+          ref['fn'].call(component, target);
+        }
+
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
         ref.target = target;
       });
       component.refs = Object.assign({}, component.refs || {}, refs);
@@ -3052,8 +4145,18 @@ function componentTrigger(component, key, args) {
   }
 
   if (key === 'componentWillUnmount') {
+<<<<<<< HEAD
     var compid = component.$scope.data.compid;
     if (compid) propsManager.delete(compid);
+=======
+    component._dirty = true;
+    component._disable = true;
+    component.$router = {
+      params: {}
+    };
+    component._pendingStates = [];
+    component._pendingCallbacks = [];
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
   }
 
   component[key] && typeof component[key] === 'function' && (_component$key = component[key]).call.apply(_component$key, [component].concat(_toConsumableArray(args)));
@@ -3065,6 +4168,7 @@ function componentTrigger(component, key, args) {
   }
 
   if (key === 'componentWillUnmount') {
+<<<<<<< HEAD
     component._dirty = true;
     component._disable = true;
     component.$router = {
@@ -3075,6 +4179,15 @@ function componentTrigger(component, key, args) {
     component._pendingCallbacks = []; // refs
 
     detachAllRef(component);
+=======
+    // refs
+    if (component['$$refs'] && component['$$refs'].length > 0) {
+      component['$$refs'].forEach(function (ref) {
+        return typeof ref['fn'] === 'function' && ref['fn'].call(component, null);
+      });
+      component.refs = {};
+    }
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
   }
 }
 
@@ -3087,6 +4200,7 @@ function initComponent(ComponentClass, isPage) {
   // 动态组件执行改造函数副本的时,在初始化数据前计算好props
 
   if (!isPage) {
+<<<<<<< HEAD
     var compid = this.data.compid;
 
     if (compid) {
@@ -3100,20 +4214,34 @@ function initComponent(ComponentClass, isPage) {
     this.$component.props = nextProps;
   } else {
     this.$component.$router.path = getCurrentPageUrl();
+=======
+    var nextProps = filterProps(ComponentClass.properties, ComponentClass.defaultProps, this.$component.props, this.data);
+    this.$component.props = nextProps;
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
   }
 
   updateComponent(this.$component);
 }
 
 function createComponent(ComponentClass, isPage) {
+<<<<<<< HEAD
   var initData = {};
   var componentProps = filterProps(ComponentClass.defaultProps);
+=======
+  var initData = {
+    _componentProps: 1
+  };
+  var componentProps = filterProps({}, ComponentClass.defaultProps);
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
   var componentInstance = new ComponentClass(componentProps);
   componentInstance._constructor && componentInstance._constructor(componentProps);
 
   try {
+<<<<<<< HEAD
     Current.current = componentInstance;
     Current.index = 0;
+=======
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
     componentInstance.state = componentInstance._createData() || componentInstance.state;
   } catch (err) {
     if (isPage) {
@@ -3158,11 +4286,14 @@ function createComponent(ComponentClass, isPage) {
           params = filterParams(this.data, ComponentClass.defaultParams);
         }
 
+<<<<<<< HEAD
         if (cacheDataHas(PRELOAD_DATA_KEY)) {
           var data = cacheDataGet(PRELOAD_DATA_KEY, true);
           this.$component.$router.preload = data;
         }
 
+=======
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
         Object.assign(this.$component.$router.params, params); // preload
 
         if (cacheDataHas(this.data[preloadPrivateKey])) {
@@ -3172,7 +4303,11 @@ function createComponent(ComponentClass, isPage) {
         }
       }
 
+<<<<<<< HEAD
       if (hasParamsCache || !isPage) {
+=======
+      if (!isPage || hasParamsCache || ComponentClass.defaultParams) {
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
         initComponent.apply(this, [ComponentClass, isPage]);
       }
     },
@@ -3183,6 +4318,7 @@ function createComponent(ComponentClass, isPage) {
       }
     },
     detached: function detached() {
+<<<<<<< HEAD
       var component = this.$component;
       componentTrigger(component, 'componentWillUnmount');
       component.hooks.forEach(function (hook) {
@@ -3190,6 +4326,9 @@ function createComponent(ComponentClass, isPage) {
           hook.cleanup();
         }
       });
+=======
+      componentTrigger(this.$component, 'componentWillUnmount');
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
     }
   };
 
@@ -3260,6 +4399,7 @@ function createComponent(ComponentClass, isPage) {
   return weappComponentConf;
 }
 
+<<<<<<< HEAD
 //   !process.env ||
 //   process.env.NODE_ENV !== 'production'
 
@@ -3268,6 +4408,18 @@ function updateComponent(component) {
   //   const componentName = component.constructor.name || component.constructor.toString().match(/^function\s*([^\s(]+)/)[1]
   //   PropTypes.checkPropTypes(__propTypes, props, 'prop', componentName)
   // }
+=======
+var isDEV = typeof process === 'undefined' || !process.env || true;
+var privatePropKeyName = '_triggerObserer';
+function updateComponent(component) {
+  var props = component.props,
+      __propTypes = component.__propTypes;
+
+  if (isDEV && __propTypes) {
+    var componentName = component.constructor.name || component.constructor.toString().match(/^function\s*([^\s(]+)/)[1];
+    propTypes.checkPropTypes(__propTypes, props, 'prop', componentName);
+  }
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 
   var prevProps = component.prevProps || props;
   component.props = prevProps;
@@ -3313,6 +4465,7 @@ function updateComponent(component) {
   component.prevState = component.state;
 }
 
+<<<<<<< HEAD
 function injectContextType(component) {
   var ctxType = component.constructor.contextType;
 
@@ -3336,6 +4489,8 @@ function injectContextType(component) {
   }
 }
 
+=======
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 function doUpdate(component, prevProps, prevState) {
   var state = component.state,
       _component$props = component.props,
@@ -3344,6 +4499,7 @@ function doUpdate(component, prevProps, prevState) {
 
   if (component._createData) {
     // 返回null或undefined则保持不变
+<<<<<<< HEAD
     var runLoopRef = !component.__mounted;
 
     if (component.__isReady) {
@@ -3360,6 +4516,12 @@ function doUpdate(component, prevProps, prevState) {
     }
   }
 
+=======
+    data = component._createData(state, props) || data;
+  }
+
+  var privatePropKeyVal = component.$scope.data[privatePropKeyName] || false;
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
   data = Object.assign({}, props, data);
 
   if (component.$usedState && component.$usedState.length) {
@@ -3372,18 +4534,32 @@ function doUpdate(component, prevProps, prevState) {
       }
 
       if (_typeof(val) === 'object') {
+<<<<<<< HEAD
         if (isEmptyObject$1(val)) return set$1(_data, key, val);
         val = shakeFnFromObject(val); // 避免筛选完 Fn 后产生了空对象还去渲染
 
         if (!isEmptyObject$1(val)) set$1(_data, key, val);
+=======
+        if (isEmptyObject(val)) return set$1(_data, key, val);
+        val = shakeFnFromObject(val); // 避免筛选完 Fn 后产生了空对象还去渲染
+
+        if (!isEmptyObject(val)) set$1(_data, key, val);
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
       } else {
         set$1(_data, key, val);
       }
     });
     data = _data;
+<<<<<<< HEAD
   }
 
   data['$taroCompReady'] = true;
+=======
+  } // 改变这个私有的props用来触发(observer)子组件的更新
+
+
+  data[privatePropKeyName] = !privatePropKeyVal;
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
   var dataDiff = diffObjToPath(data, component.$scope.data);
   var __mounted = component.__mounted; // 每次 setData 都独立生成一个 callback 数组
 
@@ -3394,10 +4570,15 @@ function doUpdate(component, prevProps, prevState) {
     component._pendingCallbacks = [];
   }
 
+<<<<<<< HEAD
   var cb = function cb() {
     if (__mounted) {
       invokeEffects(component);
 
+=======
+  component.$scope.setData(dataDiff, function () {
+    if (__mounted) {
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
       if (component['$$refs'] && component['$$refs'].length > 0) {
         component['$$refs'].forEach(function (ref) {
           // 只有 component 类型能做判断。因为 querySelector 每次调用都一定返回 nodeRefs，无法得知 dom 类型的挂载状态。
@@ -3407,12 +4588,18 @@ function doUpdate(component, prevProps, prevState) {
           var prevRef = ref.target;
 
           if (target !== prevRef) {
+<<<<<<< HEAD
             commitAttachRef(ref, target, component, component.refs);
+=======
+            if (ref.refName) component.refs[ref.refName] = target;
+            typeof ref.fn === 'function' && ref.fn.call(component, target);
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
             ref.target = target;
           }
         });
       }
 
+<<<<<<< HEAD
       if (component['$$hasLoopRef']) {
         component._disableEffect = true;
 
@@ -3421,6 +4608,8 @@ function doUpdate(component, prevProps, prevState) {
         component._disableEffect = false;
       }
 
+=======
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
       if (typeof component.componentDidUpdate === 'function') {
         component.componentDidUpdate(prevProps, prevState);
       }
@@ -3433,6 +4622,7 @@ function doUpdate(component, prevProps, prevState) {
         typeof cbs[i] === 'function' && cbs[i].call(component);
       }
     }
+<<<<<<< HEAD
   };
 
   if (Object.keys(dataDiff).length === 0) {
@@ -3440,6 +4630,9 @@ function doUpdate(component, prevProps, prevState) {
   } else {
     component.$scope.setData(dataDiff, cb);
   }
+=======
+  });
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 }
 
 var items = [];
@@ -3461,12 +4654,19 @@ function rerender() {
   }
 }
 
+<<<<<<< HEAD
 // #私有的__componentProps更新用于触发子组件中对应obsever，生命周期componentWillReceiveProps,componentShouldUpdate在这里处理
 // #父组件传过来的props放到data.__props中供模板使用，这么做的目的是模拟receiveProps生命周期
 // 执行顺序：组件setState -> 组件_createData() -> 对应的小程序组件setData（组件更新）-> 子组件的__componentProps.observer执行
 //          -> 触发子组件componentWillReceiveProps，更新子组件props,componentShouldUpdate -> 子组件_createData -> 子组件setData
 
 var PRELOAD_DATA_KEY$1 = 'preload';
+=======
+// #私有的__componentProps更新用于触发子组件中对应obsever，生命周期componentWillReciveProps,componentShouldUpdate在这里处理
+// #父组件传过来的props放到data.__props中供模板使用，这么做的目的是模拟reciveProps生命周期
+// 执行顺序：组件setState -> 组件_createData() -> 对应的小程序组件setData（组件更新）-> 子组件的__componentProps.observer执行
+//          -> 触发子组件componentWillReciveProps，更新子组件props,componentShouldUpdate -> 子组件_createData -> 子组件setData
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 
 var BaseComponent =
 /*#__PURE__*/
@@ -3490,8 +4690,11 @@ function () {
 
     _defineProperty(this, "nextProps", {});
 
+<<<<<<< HEAD
     _defineProperty(this, "context", {});
 
+=======
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
     _defineProperty(this, "_dirty", true);
 
     _defineProperty(this, "_disable", true);
@@ -3505,6 +4708,7 @@ function () {
     _defineProperty(this, "$componentType", '');
 
     _defineProperty(this, "$router", {
+<<<<<<< HEAD
       params: {},
       path: ''
     });
@@ -3524,6 +4728,14 @@ function () {
     this.$componentType = isPage ? 'PAGE' : 'COMPONENT';
     this.$prefix = genCompPrefix();
     this.isTaroComponent = this.$componentType && this.$router && this._pendingStates;
+=======
+      params: {}
+    });
+
+    this.state = {};
+    this.props = props;
+    this.$componentType = isPage ? 'PAGE' : 'COMPONENT';
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
   }
 
   _createClass(BaseComponent, [{
@@ -3543,7 +4755,11 @@ function () {
         (this._pendingStates = this._pendingStates || []).push(state);
       }
 
+<<<<<<< HEAD
       if (isFunction$2(callback)) {
+=======
+      if (isFunction$1(callback)) {
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
         (this._pendingCallbacks = this._pendingCallbacks || []).push(callback);
       }
 
@@ -3570,7 +4786,11 @@ function () {
 
       this._pendingStates.length = 0;
       queue.forEach(function (nextState) {
+<<<<<<< HEAD
         if (isFunction$2(nextState)) {
+=======
+        if (isFunction$1(nextState)) {
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
           nextState = nextState.call(_this, stateClone, props);
         }
 
@@ -3581,12 +4801,17 @@ function () {
   }, {
     key: "forceUpdate",
     value: function forceUpdate(callback) {
+<<<<<<< HEAD
       if (isFunction$2(callback)) {
+=======
+      if (isFunction$1(callback)) {
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
         (this._pendingCallbacks = this._pendingCallbacks || []).push(callback);
       }
 
       this._isForceUpdate = true;
       updateComponent(this);
+<<<<<<< HEAD
     }
   }, {
     key: "$preload",
@@ -3602,6 +4827,8 @@ function () {
       }
 
       cacheDataSet(PRELOAD_DATA_KEY$1, preloadData);
+=======
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
     } // 会被匿名函数调用
 
   }, {
@@ -3642,6 +4869,49 @@ function () {
   return BaseComponent;
 }();
 
+<<<<<<< HEAD
+=======
+/* eslint-disable */
+Object.is = Object.is || function (x, y) {
+  if (x === y) {
+    return x !== 0 || 1 / x === 1 / y;
+  }
+
+  return x !== x && y !== y;
+};
+
+function shallowEqual(obj1, obj2) {
+  if (obj1 === null && obj2 === null) {
+    return true;
+  }
+
+  if (obj1 === null || obj2 === null) {
+    return false;
+  }
+
+  if (Object.is(obj1, obj2)) {
+    return true;
+  }
+
+  var obj1Keys = obj1 ? Object.keys(obj1) : [];
+  var obj2Keys = obj2 ? Object.keys(obj2) : [];
+
+  if (obj1Keys.length !== obj2Keys.length) {
+    return false;
+  }
+
+  for (var i = 0; i < obj1Keys.length; i++) {
+    var obj1KeyItem = obj1Keys[i];
+
+    if (!obj2.hasOwnProperty(obj1KeyItem) || !Object.is(obj1[obj1KeyItem], obj2[obj1KeyItem])) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 var PureComponent =
 /*#__PURE__*/
 function (_Component) {
@@ -3755,12 +5025,15 @@ var RequestQueue = {
   }
 };
 
+<<<<<<< HEAD
 function taroInterceptor(chain) {
   return request(chain.requestParams);
 }
 
 var link = new Link(taroInterceptor);
 
+=======
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 function request(options) {
   options = options || {};
 
@@ -3924,6 +5197,7 @@ function processApis(taro) {
           args[_key3] = arguments[_key3];
         }
 
+<<<<<<< HEAD
         var argsLen = args.length;
         var newArgs = args.concat();
         var lastArg = newArgs[argsLen - 1];
@@ -3933,6 +5207,9 @@ function processApis(taro) {
         }
 
         return wx[key].apply(wx, newArgs);
+=======
+        return wx[key].apply(wx, args);
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
       };
     }
   });
@@ -3963,6 +5240,7 @@ function canIUseWebp() {
   return false;
 }
 
+<<<<<<< HEAD
 function wxCloud(taro) {
   var wxC = wx.cloud || {};
   var wxcloud = {};
@@ -3977,13 +5255,21 @@ function initNativeApi(taro) {
   processApis(taro);
   taro.request = link.request.bind(link);
   taro.addInterceptor = link.addInterceptor.bind(link);
+=======
+function initNativeApi(taro) {
+  processApis(taro);
+  taro.request = request;
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
   taro.getCurrentPages = getCurrentPages;
   taro.getApp = getApp;
   taro.requirePlugin = requirePlugin;
   taro.initPxTransform = initPxTransform.bind(taro);
   taro.pxTransform = pxTransform.bind(taro);
   taro.canIUseWebp = canIUseWebp;
+<<<<<<< HEAD
   wxCloud(taro);
+=======
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 }
 
 /* eslint-disable camelcase */
@@ -3995,7 +5281,10 @@ var Taro = {
   Events: Events,
   eventCenter: eventCenter,
   getEnv: getEnv,
+<<<<<<< HEAD
   createRef: createRef,
+=======
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
   render: render,
   ENV_TYPE: ENV_TYPE,
   internal_safe_get: get,
@@ -4003,6 +5292,7 @@ var Taro = {
   internal_inline_style: inlineStyle,
   createComponent: createComponent,
   internal_get_original: getOriginal,
+<<<<<<< HEAD
   getElementById: getElementById,
   propsManager: propsManager,
   interceptors: interceptors,
@@ -4017,6 +5307,9 @@ var Taro = {
   useImperativeHandle: useImperativeHandle,
   useContext: useContext,
   createContext: createContext
+=======
+  getElementById: getElementById
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 };
 initNativeApi(Taro);
 

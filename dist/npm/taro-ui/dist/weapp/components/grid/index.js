@@ -60,7 +60,11 @@ var AtGrid = (_temp2 = _class = function (_AtComponent) {
       args[_key] = arguments[_key];
     }
 
+<<<<<<< HEAD
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = AtGrid.__proto__ || Object.getPrototypeOf(AtGrid)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "loopArray3", "data", "gridGroup", "columnNum", "mode", "hasBorder", "className"], _this.handleClick = function (item, index, row) {
+=======
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = AtGrid.__proto__ || Object.getPrototypeOf(AtGrid)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "loopArray0", "data", "gridGroup", "columnNum", "mode", "hasBorder", "className"], _this.handleClick = function (item, index, row) {
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
       for (var _len2 = arguments.length, arg = Array(_len2 > 3 ? _len2 - 3 : 0), _key2 = 3; _key2 < _len2; _key2++) {
         arg[_key2 - 3] = arguments[_key2];
       }
@@ -70,6 +74,7 @@ var AtGrid = (_temp2 = _class = function (_AtComponent) {
           columnNum = _this$props.columnNum;
 
       if ((0, _isFunction3.default)(onClick)) {
+<<<<<<< HEAD
         var _this$props2;
 
         /* prettier-ignore */
@@ -77,24 +82,39 @@ var AtGrid = (_temp2 = _class = function (_AtComponent) {
         (_this$props2 = _this.props).onClick.apply(_this$props2, [item, clickIndex].concat(arg));
       }
     }, _this.customComponents = ["AtIcon"], _temp), _possibleConstructorReturn(_this, _ret);
+=======
+        /* prettier-ignore */
+        var clickIndex = row * columnNum + index;
+        _this.__triggerPropsFn("onClick", [null].concat([item, clickIndex].concat(arg)));
+      }
+    }, _this.$$refs = [], _temp), _possibleConstructorReturn(_this, _ret);
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
   }
 
   _createClass(AtGrid, [{
     key: "_constructor",
     value: function _constructor(props) {
       _get(AtGrid.prototype.__proto__ || Object.getPrototypeOf(AtGrid.prototype), "_constructor", this).call(this, props);
+<<<<<<< HEAD
 
       this.$$refs = [];
+=======
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
     }
   }, {
     key: "_createData",
     value: function _createData() {
+<<<<<<< HEAD
       var _this2 = this;
 
       this.__state = arguments[0] || this.state || {};
       this.__props = arguments[1] || this.props || {};
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
+=======
+      this.__state = arguments[0] || this.state || {};
+      this.__props = arguments[1] || this.props || {};
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
       ;
 
       var _props = this.__props,
@@ -115,7 +135,11 @@ var AtGrid = (_temp2 = _class = function (_AtComponent) {
       });
 
       var anonymousState__temp = (0, _index6.default)('at-grid', this.__props.className);
+<<<<<<< HEAD
       var loopArray3 = gridGroup.map(function (item, i) {
+=======
+      var loopArray0 = gridGroup.map(function (item, i) {
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
         item = {
           $original: (0, _index.internal_get_original)(item)
         };
@@ -129,6 +153,7 @@ var AtGrid = (_temp2 = _class = function (_AtComponent) {
           var $loopState__temp5 = (0, _index.internal_inline_style)({
             flex: "0 0 " + 100 / columnNum + "%"
           });
+<<<<<<< HEAD
           var $loopState__temp7 = (0, _isObject3.default)(childItem.$original.iconInfo) && !childItem.$original.image ? _this2.mergeStyle({ fontSize: (childItem.$original.iconInfo.size || 24) + "px" }, childItem.$original.iconInfo.customStyle) : null;
           var $loopState__temp9 = (0, _isObject3.default)(childItem.$original.iconInfo) && !childItem.$original.image;
           var $compid__19 = (0, _index.genCompid)(__prefix + "dEUvQfkJme" + i + "-" + index);
@@ -139,12 +164,18 @@ var AtGrid = (_temp2 = _class = function (_AtComponent) {
             "className": childItem.$original.iconInfo.className,
             "prefixClass": childItem.$original.iconInfo.prefixClass
           }, $compid__19);
+=======
+          var $loopState__temp7 = (0, _isObject3.default)(childItem.$original.iconInfo) && !childItem.$original.image;
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
           return {
             $loopState__temp3: $loopState__temp3,
             $loopState__temp5: $loopState__temp5,
             $loopState__temp7: $loopState__temp7,
+<<<<<<< HEAD
             $loopState__temp9: $loopState__temp9,
             $compid__19: $compid__19,
+=======
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
             $original: childItem.$original
           };
         });
@@ -155,7 +186,11 @@ var AtGrid = (_temp2 = _class = function (_AtComponent) {
       });
       Object.assign(this.__state, {
         anonymousState__temp: anonymousState__temp,
+<<<<<<< HEAD
         loopArray3: loopArray3,
+=======
+        loopArray0: loopArray0,
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
         data: data,
         gridGroup: gridGroup
       });
@@ -164,7 +199,40 @@ var AtGrid = (_temp2 = _class = function (_AtComponent) {
   }]);
 
   return AtGrid;
+<<<<<<< HEAD
 }(_component2.default), _class.$$events = ["handleClick"], _class.$$componentPath = "D:/\u9879\u76EE/weixin-react/node_modules/taro-ui/dist/weapp/components/grid/index", _temp2);
+=======
+}(_component2.default), _class.properties = {
+  "onClick": {
+    "type": null,
+    "value": null
+  },
+  "columnNum": {
+    "type": null,
+    "value": null
+  },
+  "__fn_onClick": {
+    "type": null,
+    "value": null
+  },
+  "data": {
+    "type": null,
+    "value": null
+  },
+  "mode": {
+    "type": null,
+    "value": null
+  },
+  "hasBorder": {
+    "type": null,
+    "value": null
+  },
+  "className": {
+    "type": null,
+    "value": null
+  }
+}, _class.$$events = ["handleClick"], _temp2);
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 
 
 AtGrid.defaultProps = {

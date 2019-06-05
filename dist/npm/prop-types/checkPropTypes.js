@@ -12,7 +12,10 @@ var printWarning = function () {};
 {
   var ReactPropTypesSecret = require("./lib/ReactPropTypesSecret.js");
   var loggedTypeFailures = {};
+<<<<<<< HEAD
   var has = Function.call.bind(Object.prototype.hasOwnProperty);
+=======
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 
   printWarning = function (text) {
     var message = 'Warning: ' + text;
@@ -42,7 +45,11 @@ var printWarning = function () {};
 function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
   {
     for (var typeSpecName in typeSpecs) {
+<<<<<<< HEAD
       if (has(typeSpecs, typeSpecName)) {
+=======
+      if (typeSpecs.hasOwnProperty(typeSpecName)) {
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
         var error;
         // Prop type validation may throw. In case they do, we don't want to
         // fail the render phase where it didn't fail before. So we log it.
@@ -76,6 +83,7 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
   }
 }
 
+<<<<<<< HEAD
 /**
  * Resets warning cache when testing.
  *
@@ -87,4 +95,6 @@ checkPropTypes.resetWarningCache = function () {
   }
 };
 
+=======
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 module.exports = checkPropTypes;

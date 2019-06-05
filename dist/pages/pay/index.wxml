@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <block wx:if="{{$taroCompReady}}">
     <view style="flex-direction:column;" class="flex-wrp ">
         <view style="{{anonymousState__temp}}">
@@ -7,6 +8,17 @@
             <at-form compid="{{$compid__5}}">
                 <view class="at-row pay_password_list">
                     <block wx:for="{{loopArray0}}" wx:for-item="r" wx:for-index="_anonIdx2" wx:key="{{true}}">
+=======
+<block>
+    <view style="flex-direction:column;" class="flex-wrp ">
+        <view style="{{anonymousState__temp}}">
+            <at-steps items="{{items}}" __triggerObserer="{{ _triggerObserer }}" current="{{current}}" bindonchange="onChange" __fn_onChange="{{true}}" data-e-onChange-so="this"></at-steps>
+        </view>
+        <block wx:if="{{current === 0}}">
+            <at-form className="pay_password_list" __triggerObserer="{{ _triggerObserer }}">
+                <view class="at-row pay_password_list">
+                    <block wx:for="{{loopArray0}}" wx:for-item="r" wx:key="{{true}}">
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
                         <block wx:if="{{r.$original !== 3}}">
                             <view class="at-col input">
                                 <view class="{{r.$loopState__temp3}}">{{r.$loopState__temp5}}</view>
@@ -20,7 +32,11 @@
                         </block>
                     </block>
                 </view>
+<<<<<<< HEAD
                 <editor-num compid="{{$compid__6}}"></editor-num>
+=======
+                <editor-num maxLength="{{4}}" __triggerObserer="{{ _triggerObserer }}" bindonchange="childChange" bindonsubmit="childSubmit" __fn_onChange="{{true}}" data-e-childChange-so="this" __fn_onSubmit="{{true}}" data-e-childSubmit-so="this"></editor-num>
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
             </at-form>
         </block>
         <block wx:if="{{current === 1}}">
@@ -34,7 +50,11 @@
                 </view>
                 <view class="pay_btn">
                     <view>
+<<<<<<< HEAD
                         <at-button compid="{{$compid__7}}">支付押金 100.00元</at-button>
+=======
+                        <at-button type="primary" __triggerObserer="{{ _triggerObserer }}" bindonclick="openPage" __fn_onClick="{{true}}" data-e-openPage-so="this" data-e-openPage-a-a="/pages/pay/success">支付押金 100.00元</at-button>
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
                     </view>
                 </view>
             </view>

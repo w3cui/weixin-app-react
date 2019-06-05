@@ -46,9 +46,15 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
+<<<<<<< HEAD
     return _ret = (_temp = (_this2 = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this2), _this2.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "anonymousState__temp4", "anonymousState__temp5", "anonymousState__temp6", "anonymousState__temp7", "$compid__36", "$compid__37", "$compid__38", "$compid__39", "swiperConfig", "wxInfo", "circle", "weiXinInfo", "isOpened", "userInfo"], _this2.config = {
       navigationBarTitleText: '新网服务终端'
     }, _this2.customComponents = ["AtModal", "AtModalHeader", "AtModalContent", "AtModalAction", "AtIcon", "AtGrid"], _temp), _possibleConstructorReturn(_this2, _ret);
+=======
+    return _ret = (_temp = (_this2 = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this2), _this2.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "anonymousState__temp4", "anonymousState__temp5", "anonymousState__temp6", "anonymousState__temp7", "swiperConfig", "wxInfo", "circle", "weiXinInfo", "userInfo"], _this2.config = {
+      navigationBarTitleText: '新网服务终端'
+    }, _this2.$$refs = [], _temp), _possibleConstructorReturn(_this2, _ret);
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
   }
 
   _createClass(Index, [{
@@ -60,8 +66,12 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
           vertical: false
         },
         circle: true,
+<<<<<<< HEAD
         weiXinInfo: false,
         isOpened: wx.canIUse('button.open-type.getUserInfo')
+=======
+        weiXinInfo: false
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
       };
       /**
        * 指定config的类型声明为: Taro.Config
@@ -70,7 +80,10 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
        * 对于像 navigationBarTextStyle: 'black' 这样的推导出的类型是 string
        * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
        */
+<<<<<<< HEAD
       this.$$refs = [];
+=======
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
     }
   }, {
     key: "openURL",
@@ -83,6 +96,29 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
     key: "componentWillMount",
     value: function componentWillMount() {
       var _this = this;
+<<<<<<< HEAD
+=======
+      wx.login({
+        success: function success(res) {
+          if (res.code) {
+            wx.getUserInfo({
+              success: function success(userinfo) {
+                // 发起网络请求
+                wx.request({
+                  url: 'https://hotel.park666.com/api/user/third',
+                  data: {
+                    code: res.code,
+                    user_info: userinfo.rawData
+                  }
+                });
+              }
+            });
+          } else {
+            console.log('登录失败！' + res.errMsg);
+          }
+        }
+      });
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
       // 获取用户信息
       wx.getUserInfo({
         success: function success(res) {
@@ -96,6 +132,7 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
           // _this.setState({ weiXinInfo: res.userInfo });
         }
       });
+<<<<<<< HEAD
     }
   }, {
     key: "componentDidMount",
@@ -109,20 +146,56 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
     value: function bindGetUserInfo(e) {
       this.setState({ isOpened: false });
     }
+=======
+      // // 进行微信授权
+      // wx.getSetting({
+      //   success(res) {
+      //     if (!res.authSetting['scope.record']) {
+      //       wx.authorize({
+      //         scope: 'scope.record',
+      //         success() {
+      //           // 用户已经同意小程序使用录音功能，后续调用 wx.startRecord 接口不会弹窗询问
+      //           wx.startRecord()
+      //         }
+      //       })
+      //     }
+      //   }
+      // })
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {}
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {}
+  }, {
+    key: "componentDidShow",
+    value: function componentDidShow() {}
+  }, {
+    key: "componentDidHide",
+    value: function componentDidHide() {}
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
   }, {
     key: "_createData",
     value: function _createData() {
       this.__state = arguments[0] || this.state || {};
       this.__props = arguments[1] || this.props || {};
+<<<<<<< HEAD
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
+=======
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
       ;
 
       var _state = this.__state,
           swiperConfig = _state.swiperConfig,
           circle = _state.circle,
+<<<<<<< HEAD
           weiXinInfo = _state.weiXinInfo,
           isOpened = _state.isOpened;
+=======
+          weiXinInfo = _state.weiXinInfo;
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
       var wxInfo = this.__props.userInfo.wxInfo;
 
       console.log("fdsa", this.__props);
@@ -150,6 +223,7 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
         },
         value: '敬请期待'
       }];
+<<<<<<< HEAD
       var $compid__36 = (0, _index.genCompid)(__prefix + "$compid__36");
       _index.propsManager.set({
         "isOpened": isOpened
@@ -173,6 +247,8 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
         "columnNum": 2,
         "data": anonymousState__temp7
       }, $compid__39);
+=======
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
       Object.assign(this.__state, {
         anonymousState__temp: anonymousState__temp,
         anonymousState__temp2: anonymousState__temp2,
@@ -181,10 +257,13 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
         anonymousState__temp5: anonymousState__temp5,
         anonymousState__temp6: anonymousState__temp6,
         anonymousState__temp7: anonymousState__temp7,
+<<<<<<< HEAD
         $compid__36: $compid__36,
         $compid__37: $compid__37,
         $compid__38: $compid__38,
         $compid__39: $compid__39,
+=======
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
         wxInfo: wxInfo
       });
       return this.__state;
@@ -192,7 +271,16 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
   }]);
 
   return Index;
+<<<<<<< HEAD
 }(_index.Component), _class.$$events = ["bindGetUserInfo", "openURL"], _class.$$componentPath = "pages/index/index", _temp2);
+=======
+}(_index.Component), _class.properties = {
+  "userInfo": {
+    "type": null,
+    "value": null
+  }
+}, _class.$$events = ["openURL"], _temp2);
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 Index = tslib_1.__decorate([(0, _index3.connect)(function (_ref2) {
   var counter = _ref2.counter,
       userInfo = _ref2.userInfo;

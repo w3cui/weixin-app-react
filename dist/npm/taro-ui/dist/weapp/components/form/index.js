@@ -50,35 +50,51 @@ var AtForm = (_temp2 = _class = function (_AtComponent) {
       args[_key] = arguments[_key];
     }
 
+<<<<<<< HEAD
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = AtForm.__proto__ || Object.getPrototypeOf(AtForm)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "reportSubmit", "customStyle", "className", "children"], _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
+=======
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = AtForm.__proto__ || Object.getPrototypeOf(AtForm)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "reportSubmit", "__fn_onSubmit", "__fn_onReset", "customStyle", "className", "children"], _this.$$refs = [], _temp), _possibleConstructorReturn(_this, _ret);
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
   }
 
   _createClass(AtForm, [{
     key: "_constructor",
     value: function _constructor(props) {
       _get(AtForm.prototype.__proto__ || Object.getPrototypeOf(AtForm.prototype), "_constructor", this).call(this, props);
+<<<<<<< HEAD
 
       this.$$refs = [];
+=======
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
     }
   }, {
     key: "onSubmit",
     value: function onSubmit() {
+<<<<<<< HEAD
       var _props;
 
       (_props = this.props).onSubmit.apply(_props, arguments);
+=======
+      this.__triggerPropsFn("onSubmit", [null].concat([].concat(Array.prototype.slice.call(arguments))));
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
     }
   }, {
     key: "onReset",
     value: function onReset() {
+<<<<<<< HEAD
       var _props2;
 
       (_props2 = this.props).onReset.apply(_props2, arguments);
+=======
+      this.__triggerPropsFn("onReset", [null].concat([].concat(Array.prototype.slice.call(arguments))));
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
     }
   }, {
     key: "_createData",
     value: function _createData() {
       this.__state = arguments[0] || this.state || {};
       this.__props = arguments[1] || this.props || {};
+<<<<<<< HEAD
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
@@ -87,6 +103,14 @@ var AtForm = (_temp2 = _class = function (_AtComponent) {
           customStyle = _props3.customStyle,
           className = _props3.className,
           reportSubmit = _props3.reportSubmit;
+=======
+      ;
+
+      var _props = this.__props,
+          customStyle = _props.customStyle,
+          className = _props.className,
+          reportSubmit = _props.reportSubmit;
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 
 
       var anonymousState__temp = (0, _index6.default)('at-form', className);
@@ -101,7 +125,32 @@ var AtForm = (_temp2 = _class = function (_AtComponent) {
   }]);
 
   return AtForm;
+<<<<<<< HEAD
 }(_component2.default), _class.$$events = ["onSubmit", "onReset"], _class.defaultProps = {
+=======
+}(_component2.default), _class.properties = {
+  "__fn_onSubmit": {
+    "type": null,
+    "value": null
+  },
+  "__fn_onReset": {
+    "type": null,
+    "value": null
+  },
+  "customStyle": {
+    "type": null,
+    "value": null
+  },
+  "className": {
+    "type": null,
+    "value": null
+  },
+  "reportSubmit": {
+    "type": null,
+    "value": null
+  }
+}, _class.$$events = ["onSubmit", "onReset"], _class.defaultProps = {
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
   customStyle: '',
   className: '',
   reportSubmit: false,
@@ -113,7 +162,11 @@ var AtForm = (_temp2 = _class = function (_AtComponent) {
   reportSubmit: _index4.default.bool,
   onSubmit: _index4.default.func,
   onReset: _index4.default.func
+<<<<<<< HEAD
 }, _class.$$componentPath = "D:/\u9879\u76EE/weixin-react/node_modules/taro-ui/dist/weapp/components/form/index", _temp2);
+=======
+}, _temp2);
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 exports.default = AtForm;
 
 Component(require('../../../../../@tarojs/taro-weapp/index.js').default.createComponent(AtForm));

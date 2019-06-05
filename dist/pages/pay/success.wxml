@@ -1,24 +1,44 @@
+<<<<<<< HEAD
 <block wx:if="{{$taroCompReady}}">
     <view style="flex-direction:column;" class="flex-wrp ">
         <view style="{{anonymousState__temp}}">
             <at-steps compid="{{$compid__8}}"></at-steps>
+=======
+<block>
+    <view style="flex-direction:column;" class="flex-wrp ">
+        <view style="{{anonymousState__temp}}">
+            <at-steps items="{{items}}" __triggerObserer="{{ _triggerObserer }}" current="{{current}}"></at-steps>
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
         </view>
         <view class="pay_push">
             <view class="pay_succes_msg">
                 <view>
+<<<<<<< HEAD
                     <at-icon compid="{{$compid__9}}"></at-icon>
+=======
+                    <at-icon prefixClass="iconfont" __triggerObserer="{{ _triggerObserer }}" value="gou" size="80" color="#f58523"></at-icon>
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
                 </view>支付成功</view>
             <view class="hr"></view>
             <view class="pay_push_text_two">
                 <view class="bt">
+<<<<<<< HEAD
                     <at-icon compid="{{$compid__10}}"></at-icon>开启成功
                     <at-icon compid="{{$compid__11}}"></at-icon>
+=======
+                    <at-icon prefixClass="iconfont" __triggerObserer="{{ _triggerObserer }}" value="gengduo" size="30" color="#9B9E9F"></at-icon>开启成功
+                    <at-icon prefixClass="iconfont" __triggerObserer="{{ _triggerObserer }}" value="gengduo" size="30" color="#9B9E9F"></at-icon>
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
                 </view>
                 <view>305 房间 1 间 请打开柜门领取房间钥匙</view>
             </view>
             <view class="pay_btn">
                 <view>
+<<<<<<< HEAD
                     <at-button compid="{{$compid__12}}">开启柜门</at-button>
+=======
+                    <at-button type="primary" __triggerObserer="{{ _triggerObserer }}" disabled="{{true}}">开启柜门</at-button>
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
                 </view>
             </view>
         </view>

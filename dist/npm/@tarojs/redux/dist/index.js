@@ -3,6 +3,7 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 var store = null;
+<<<<<<< HEAD
 var appGlobal = global || {};
 var globalRef = Object.getPrototypeOf(appGlobal) || appGlobal;
 function getStore() {
@@ -13,6 +14,13 @@ function setStore(arg) {
   {
     store = arg;
   }
+=======
+function getStore() {
+  return store;
+}
+function setStore(arg) {
+  store = arg;
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 }
 
 function _typeof(obj) {
@@ -128,6 +136,49 @@ function _get(target, property, receiver) {
   return _get(target, property, receiver || target);
 }
 
+<<<<<<< HEAD
+=======
+/* eslint-disable */
+Object.is = Object.is || function (x, y) {
+  if (x === y) {
+    return x !== 0 || 1 / x === 1 / y;
+  }
+
+  return x !== x && y !== y;
+};
+
+function shallowEqual(obj1, obj2) {
+  if (obj1 === null && obj2 === null) {
+    return true;
+  }
+
+  if (obj1 === null || obj2 === null) {
+    return false;
+  }
+
+  if (Object.is(obj1, obj2)) {
+    return true;
+  }
+
+  var obj1Keys = obj1 ? Object.keys(obj1) : [];
+  var obj2Keys = obj2 ? Object.keys(obj2) : [];
+
+  if (obj1Keys.length !== obj2Keys.length) {
+    return false;
+  }
+
+  for (var i = 0; i < obj1Keys.length; i++) {
+    var obj1KeyItem = obj1Keys[i];
+
+    if (!obj2.hasOwnProperty(obj1KeyItem) || !Object.is(obj1[obj1KeyItem], obj2[obj1KeyItem])) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 function isObject(arg) {
   return arg != null && _typeof(arg) === 'object' && !Array.isArray(arg);
 }
@@ -147,6 +198,25 @@ function mergeObjects(obj1, obj2) {
   return result;
 }
 
+<<<<<<< HEAD
+=======
+function isEqual(a, b) {
+  var typeA = _typeof(a);
+
+  var typeB = _typeof(b);
+
+  if (typeA !== typeB) {
+    return false;
+  }
+
+  if (typeA === 'object') {
+    return shallowEqual(a, b);
+  }
+
+  return a === b;
+}
+
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 function wrapPropsWithDispatch(mapDispatchToProps, dispatch) {
   if (typeof mapDispatchToProps === 'function') {
     return mapDispatchToProps(dispatch);
@@ -188,7 +258,11 @@ function connect(mapStateToProps, mapDispatchToProps) {
         val = mergeObjects(val, initMapDispatch[key]);
       }
 
+<<<<<<< HEAD
       if (_this.props[key] !== val) {
+=======
+      if (!isEqual(_this.props[key], val)) {
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
         _this.props[key] = val;
         isChanged = true;
       }
@@ -197,7 +271,11 @@ function connect(mapStateToProps, mapDispatchToProps) {
     if (isChanged) {
       this.prevProps = prevProps;
       this._unsafeCallUpdate = true;
+<<<<<<< HEAD
       this.setState({}, function () {
+=======
+      this.forceUpdate(function () {
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
         delete _this._unsafeCallUpdate;
       });
     }
@@ -215,12 +293,20 @@ function connect(mapStateToProps, mapDispatchToProps) {
       function (_Component) {
         _inherits(Connect, _Component);
 
+<<<<<<< HEAD
         function Connect(props, isPage) {
+=======
+        function Connect(props) {
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
           var _this2;
 
           _classCallCheck(this, Connect);
 
+<<<<<<< HEAD
           _this2 = _possibleConstructorReturn(this, _getPrototypeOf(Connect).call(this, Object.assign.apply(Object, Array.prototype.slice.call(arguments).concat([mergeObjects(mapStateToProps(store.getState(), props), initMapDispatch)])), isPage));
+=======
+          _this2 = _possibleConstructorReturn(this, _getPrototypeOf(Connect).call(this, Object.assign.apply(Object, Array.prototype.slice.call(arguments).concat([mergeObjects(mapStateToProps(store.getState(), props), initMapDispatch)]))));
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
           Object.keys(initMapDispatch).forEach(function (key) {
             _this2["__event_".concat(key)] = initMapDispatch[key];
           });
@@ -263,14 +349,22 @@ var Provider = function Provider() {
   _classCallCheck(this, Provider);
 };
 
+<<<<<<< HEAD
 var index = {
+=======
+var index$1 = {
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
   connect: connect,
   Provider: Provider,
   getStore: getStore,
   setStore: setStore
 };
 
+<<<<<<< HEAD
 exports.default = index;
+=======
+exports.default = index$1;
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 exports.connect = connect;
 exports.Provider = Provider;
 exports.getStore = getStore;

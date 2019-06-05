@@ -44,23 +44,33 @@ var AtLoading = (_temp2 = _class = function (_AtComponent) {
       args[_key] = arguments[_key];
     }
 
+<<<<<<< HEAD
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = AtLoading.__proto__ || Object.getPrototypeOf(AtLoading)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "anonymousState__temp4", "color", "size"], _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
+=======
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = AtLoading.__proto__ || Object.getPrototypeOf(AtLoading)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "anonymousState__temp4", "color", "size"], _this.$$refs = [], _temp), _possibleConstructorReturn(_this, _ret);
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
   }
 
   _createClass(AtLoading, [{
     key: "_constructor",
     value: function _constructor(props) {
       _get(AtLoading.prototype.__proto__ || Object.getPrototypeOf(AtLoading.prototype), "_constructor", this).call(this, props);
+<<<<<<< HEAD
 
       this.$$refs = [];
+=======
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
     }
   }, {
     key: "_createData",
     value: function _createData() {
       this.__state = arguments[0] || this.state || {};
       this.__props = arguments[1] || this.props || {};
+<<<<<<< HEAD
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
+=======
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
       ;
 
       var _props = this.__props,
@@ -92,13 +102,30 @@ var AtLoading = (_temp2 = _class = function (_AtComponent) {
   }]);
 
   return AtLoading;
+<<<<<<< HEAD
 }(_component2.default), _class.$$events = [], _class.defaultProps = {
+=======
+}(_component2.default), _class.properties = {
+  "color": {
+    "type": null,
+    "value": null
+  },
+  "size": {
+    "type": null,
+    "value": null
+  }
+}, _class.$$events = [], _class.defaultProps = {
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
   size: '18',
   color: '#fff'
 }, _class.propTypes = {
   size: _index4.default.oneOfType([_index4.default.string, _index4.default.number]),
   color: _index4.default.oneOfType([_index4.default.string, _index4.default.number])
+<<<<<<< HEAD
 }, _class.$$componentPath = "D:/\u9879\u76EE/weixin-react/node_modules/taro-ui/dist/weapp/components/loading/index", _temp2);
+=======
+}, _temp2);
+>>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 exports.default = AtLoading;
 
 Component(require('../../../../../@tarojs/taro-weapp/index.js').default.createComponent(AtLoading));
