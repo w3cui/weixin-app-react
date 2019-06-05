@@ -1,0 +1,17 @@
+{
+  "miniprogramRoot": "./",
+  "projectname": "weixin-react",
+  "description": "",
+  "appid": "wx94089fb7c88a1931",
+  "setting": {
+    "urlCheck": true,
+    "es6": false,
+    "postcss": false,
+    "minified": false,
+    "newFeature": true
+  },
+  "compileType": "miniprogram",
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {}
+}

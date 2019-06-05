@@ -1,0 +1,12 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="editor_num at-row at-row--wrap">
+        <view class="{{ref.$loopState__temp2}}" bindtap="childFocus" wx:key="$key" wx:for="{{loopArray5}}" wx:for-item="ref" wx:for-index="$key" data-e-tap-so="this" data-e-tap-a-a="{{ref.$original}}">
+            <block>
+                <block wx:if="{{ref.$original === 'x'}}">
+                    <icons compid="{{ref.$compid__22}}"></icons>
+                </block>
+                <block wx:else>{{ref.$original}}</block>
+            </block>
+        </view>
+    </view>
+</block>

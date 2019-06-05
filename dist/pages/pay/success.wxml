@@ -1,0 +1,26 @@
+<block wx:if="{{$taroCompReady}}">
+    <view style="flex-direction:column;" class="flex-wrp ">
+        <view style="{{anonymousState__temp}}">
+            <at-steps compid="{{$compid__8}}"></at-steps>
+        </view>
+        <view class="pay_push">
+            <view class="pay_succes_msg">
+                <view>
+                    <at-icon compid="{{$compid__9}}"></at-icon>
+                </view>支付成功</view>
+            <view class="hr"></view>
+            <view class="pay_push_text_two">
+                <view class="bt">
+                    <at-icon compid="{{$compid__10}}"></at-icon>开启成功
+                    <at-icon compid="{{$compid__11}}"></at-icon>
+                </view>
+                <view>305 房间 1 间 请打开柜门领取房间钥匙</view>
+            </view>
+            <view class="pay_btn">
+                <view>
+                    <at-button compid="{{$compid__12}}">开启柜门</at-button>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>

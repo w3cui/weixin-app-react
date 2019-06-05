@@ -1,0 +1,43 @@
+<block wx:if="{{$taroCompReady}}">
+    <view style="flex-direction:column;" class="flex-wrp ">
+        <view style="{{anonymousState__temp}}">
+            <at-steps compid="{{$compid__4}}"></at-steps>
+        </view>
+        <block wx:if="{{current === 0}}">
+            <at-form compid="{{$compid__5}}">
+                <view class="at-row pay_password_list">
+                    <block wx:for="{{loopArray0}}" wx:for-item="r" wx:for-index="_anonIdx2" wx:key="{{true}}">
+                        <block wx:if="{{r.$original !== 3}}">
+                            <view class="at-col input">
+                                <view class="{{r.$loopState__temp3}}">{{r.$loopState__temp5}}</view>
+                                <view class="fg">-</view>
+                            </view>
+                        </block>
+                        <block wx:else>
+                            <view class="at-col input">
+                                <view class="{{r.$loopState__temp7}}">{{r.$loopState__temp9}}</view>
+                            </view>
+                        </block>
+                    </block>
+                </view>
+                <editor-num compid="{{$compid__6}}"></editor-num>
+            </at-form>
+        </block>
+        <block wx:if="{{current === 1}}">
+            <view class="pay_push">
+                <view class="pay_push_money">¥100.00元</view>
+                <view class="hr"></view>
+                <view class="pay_push_text">
+                    <view>1.押金用户通过微信支付的方式向xxx酒店支付入住押金</view>
+                    <view>2.押金会在用户离开酒店后，由酒店方查验房间后自动原路退返，退返押金需要2个工作日。</view>
+                    <view>3.又住宿疑问可致电酒店客服电话咨询。</view>
+                </view>
+                <view class="pay_btn">
+                    <view>
+                        <at-button compid="{{$compid__7}}">支付押金 100.00元</at-button>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+</block>

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "at-steps": "../../npm/taro-ui/dist/weapp/components/steps/index",
+    "at-button": "../../npm/taro-ui/dist/weapp/components/button/index",
+    "at-form": "../../npm/taro-ui/dist/weapp/components/form/index",
+    "editor-num": "../../components/editor/index"
+  },
+  "navigationBarTitleText": "自助订房"
+}
