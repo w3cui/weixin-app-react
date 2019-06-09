@@ -1,38 +1,21 @@
-<<<<<<< HEAD
 <block wx:if="{{$taroCompReady}}">
     <view class="{{anonymousState__temp}}" style="{{anonymousState__temp2}}">
         <view wx:key="$original.title" class="{{item.$loopState__temp4}}" bindtap="handleClick" wx:for="{{loopArray4}}" wx:for-item="item" wx:for-index="i" data-e-tap-so="this" data-e-tap-a-a="{{i}}">
-=======
-<block>
-    <view class="{{anonymousState__temp}}" style="{{anonymousState__temp2}}">
-        <view wx:key="{{item.$original.title}}" class="{{item.$loopState__temp4}}" bindtap="handleClick" wx:for="{{loopArray0}}" wx:for-item="item" wx:for-index="i" data-e-handleClick-so="this" data-e-handleClick-a-a="{{i}}">
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
             <view class="at-steps__circular-wrap">
                 <block wx:if="{{i !== 0}}">
                     <view class="at-steps__left-line"></view>
                 </block>
                 <block>
                     <block wx:if="{{item.$original.success || item.$original.error}}">
-<<<<<<< HEAD
                         <at-icon compid="{{item.$compid__20}}"></at-icon>
-=======
-                        <at-icon value="{{item.$original.success ? 'check-circle' : 'close-circle'}}" __triggerObserer="{{ _triggerObserer }}" color="{{item.$original.success ? '#6190E8' : '#FF4949'}}" size="28"></at-icon>
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
                     </block>
                     <block wx:else>
                         <view class="at-steps__circular">
                             <block>
                                 <block wx:if="{{item.$original.icon}}">
-<<<<<<< HEAD
                                     <at-icon compid="{{item.$compid__21}}"></at-icon>
                                 </block>
                                 <block wx:else><text class="at-steps__num">{{i + 1}}</text>
-=======
-                                    <at-icon value="{{item.$original.icon.value}}" __triggerObserer="{{ _triggerObserer }}" color="{{i === current ? item.$original.icon.activeColor : item.$original.icon.inactiveColor}}" size="{{item.$original.icon.size}}"></at-icon>
-                                </block>
-                                <block wx:else>
-                                    <text class="at-steps__num">{{i + 1}}</text>
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
                                 </block>
                             </block>
                         </view>

@@ -7,19 +7,13 @@
 
 'use strict';
 
-<<<<<<< HEAD
 var ReactIs = require("./npm/react-is/index.js");
-=======
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 var assign = require("./npm/object-assign/index.js");
 
 var ReactPropTypesSecret = require("./lib/ReactPropTypesSecret.js");
 var checkPropTypes = require("./checkPropTypes.js");
 
-<<<<<<< HEAD
 var has = Function.call.bind(Object.prototype.hasOwnProperty);
-=======
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 var printWarning = function () {};
 
 {
@@ -130,10 +124,7 @@ module.exports = function (isValidElement, throwOnDirectAccess) {
     any: createAnyTypeChecker(),
     arrayOf: createArrayOfTypeChecker,
     element: createElementTypeChecker(),
-<<<<<<< HEAD
     elementType: createElementTypeTypeChecker(),
-=======
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
     instanceOf: createInstanceTypeChecker,
     node: createNodeChecker(),
     objectOf: createObjectOfTypeChecker,
@@ -275,7 +266,6 @@ module.exports = function (isValidElement, throwOnDirectAccess) {
     return createChainableTypeChecker(validate);
   }
 
-<<<<<<< HEAD
   function createElementTypeTypeChecker() {
     function validate(props, propName, componentName, location, propFullName) {
       var propValue = props[propName];
@@ -288,8 +278,6 @@ module.exports = function (isValidElement, throwOnDirectAccess) {
     return createChainableTypeChecker(validate);
   }
 
-=======
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
   function createInstanceTypeChecker(expectedClass) {
     function validate(props, propName, componentName, location, propFullName) {
       if (!(props[propName] instanceof expectedClass)) {
@@ -304,7 +292,6 @@ module.exports = function (isValidElement, throwOnDirectAccess) {
 
   function createEnumTypeChecker(expectedValues) {
     if (!Array.isArray(expectedValues)) {
-<<<<<<< HEAD
       {
         if (arguments.length > 1) {
           printWarning('Invalid arguments supplied to oneOf, expected an array, got ' + arguments.length + ' arguments. ' + 'A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z]).');
@@ -312,9 +299,6 @@ module.exports = function (isValidElement, throwOnDirectAccess) {
           printWarning('Invalid argument supplied to oneOf, expected an array.');
         }
       }
-=======
-      printWarning('Invalid argument supplied to oneOf, expected an instance of array.');
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
       return emptyFunctionThatReturnsNull;
     }
 
@@ -326,7 +310,6 @@ module.exports = function (isValidElement, throwOnDirectAccess) {
         }
       }
 
-<<<<<<< HEAD
       var valuesString = JSON.stringify(expectedValues, function replacer(key, value) {
         var type = getPreciseType(value);
         if (type === 'symbol') {
@@ -335,10 +318,6 @@ module.exports = function (isValidElement, throwOnDirectAccess) {
         return value;
       });
       return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of value `' + String(propValue) + '` ' + ('supplied to `' + componentName + '`, expected one of ' + valuesString + '.'));
-=======
-      var valuesString = JSON.stringify(expectedValues);
-      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of value `' + propValue + '` ' + ('supplied to `' + componentName + '`, expected one of ' + valuesString + '.'));
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
     }
     return createChainableTypeChecker(validate);
   }
@@ -354,11 +333,7 @@ module.exports = function (isValidElement, throwOnDirectAccess) {
         return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an object.'));
       }
       for (var key in propValue) {
-<<<<<<< HEAD
         if (has(propValue, key)) {
-=======
-        if (propValue.hasOwnProperty(key)) {
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
           var error = typeChecker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
           if (error instanceof Error) {
             return error;
@@ -508,14 +483,11 @@ module.exports = function (isValidElement, throwOnDirectAccess) {
       return true;
     }
 
-<<<<<<< HEAD
     // falsy value can't be a Symbol
     if (!propValue) {
       return false;
     }
 
-=======
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
     // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'
     if (propValue['@@toStringTag'] === 'Symbol') {
       return true;
@@ -590,10 +562,7 @@ module.exports = function (isValidElement, throwOnDirectAccess) {
   }
 
   ReactPropTypes.checkPropTypes = checkPropTypes;
-<<<<<<< HEAD
   ReactPropTypes.resetWarningCache = checkPropTypes.resetWarningCache;
-=======
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
   ReactPropTypes.PropTypes = ReactPropTypes;
 
   return ReactPropTypes;

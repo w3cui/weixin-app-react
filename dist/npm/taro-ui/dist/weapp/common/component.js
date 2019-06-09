@@ -49,12 +49,9 @@ var AtComponent = (_temp = _class = function (_Component) {
   _createClass(AtComponent, [{
     key: 'mergeStyle',
     value: function mergeStyle(style1, style2) {
-<<<<<<< HEAD
       if (style1 && (typeof style1 === 'undefined' ? 'undefined' : _typeof(style1)) === 'object' && style2 && (typeof style2 === 'undefined' ? 'undefined' : _typeof(style2)) === 'object') {
         return Object.assign({}, style1, style2);
       }
-=======
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
       return objectToString(style1) + objectToString(style2);
     }
   }]);

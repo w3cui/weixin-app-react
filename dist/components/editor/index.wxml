@@ -1,18 +1,9 @@
-<<<<<<< HEAD
 <block wx:if="{{$taroCompReady}}">
     <view class="editor_num at-row at-row--wrap">
         <view class="{{ref.$loopState__temp2}}" bindtap="childFocus" wx:key="$key" wx:for="{{loopArray5}}" wx:for-item="ref" wx:for-index="$key" data-e-tap-so="this" data-e-tap-a-a="{{ref.$original}}">
             <block>
                 <block wx:if="{{ref.$original === 'x'}}">
                     <icons compid="{{ref.$compid__22}}"></icons>
-=======
-<block>
-    <view class="editor_num at-row at-row--wrap">
-        <view class="{{ref.$loopState__temp2}}" bindtap="childFocus" wx:key="{{$key}}" wx:for="{{loopArray0}}" wx:for-item="ref" wx:for-index="$key" data-e-childFocus-so="this" data-e-childFocus-a-a="{{ref.$original}}">
-            <block>
-                <block wx:if="{{ref.$original === 'x'}}">
-                    <icons icon="iconfont-qingchu" __triggerObserer="{{ _triggerObserer }}" size="45rpx"></icons>
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
                 </block>
                 <block wx:else>{{ref.$original}}</block>
             </block>

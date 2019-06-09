@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <block wx:if="{{$taroCompReady}}">
-=======
-<block>
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
     <view class="at-loading" style="{{anonymousState__temp}}">
         <view class="at-loading__ring" style="{{anonymousState__temp2}}"></view>
         <view class="at-loading__ring" style="{{anonymousState__temp3}}"></view>

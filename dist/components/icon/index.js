@@ -12,13 +12,10 @@ var _class, _temp2;
 
 var _index = require("../../npm/@tarojs/taro-weapp/index.js");
 
-<<<<<<< HEAD
 var _index2 = _interopRequireDefault(_index);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-=======
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -39,11 +36,7 @@ var Icons = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-<<<<<<< HEAD
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Icons.__proto__ || Object.getPrototypeOf(Icons)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "icon", "iconName", "size", "color"], _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
-=======
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Icons.__proto__ || Object.getPrototypeOf(Icons)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "icon", "iconName", "size", "color"], _this.$$refs = [], _temp), _possibleConstructorReturn(_this, _ret);
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
   }
 
   _createClass(Icons, [{
@@ -51,21 +44,15 @@ var Icons = (_temp2 = _class = function (_BaseComponent) {
     value: function _constructor() {
       _get(Icons.prototype.__proto__ || Object.getPrototypeOf(Icons.prototype), "_constructor", this).apply(this, arguments);
       this.state = {};
-<<<<<<< HEAD
       this.$$refs = [];
-=======
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
     }
   }, {
     key: "_createData",
     value: function _createData() {
       this.__state = arguments[0] || this.state || {};
       this.__props = arguments[1] || this.props || {};
-<<<<<<< HEAD
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
-=======
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
       ;
 
       var _props = this.__props,
@@ -85,28 +72,7 @@ var Icons = (_temp2 = _class = function (_BaseComponent) {
   }]);
 
   return Icons;
-<<<<<<< HEAD
 }(_index.Component), _class.$$events = [], _class.$$componentPath = "components/icon/index", _temp2);
-=======
-}(_index.Component), _class.properties = {
-  "icon": {
-    "type": null,
-    "value": null
-  },
-  "iconName": {
-    "type": null,
-    "value": null
-  },
-  "size": {
-    "type": null,
-    "value": null
-  },
-  "color": {
-    "type": null,
-    "value": null
-  }
-}, _class.$$events = [], _temp2);
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 exports.default = Icons;
 
 Component(require('../../npm/@tarojs/taro-weapp/index.js').default.createComponent(Icons));

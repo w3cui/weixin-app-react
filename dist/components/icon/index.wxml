@@ -1,7 +1,3 @@
-<<<<<<< HEAD
 <block wx:if="{{$taroCompReady}}">
-=======
-<block>
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
     <view class="{{icon + ' ' + (iconName || 'iconfont')}}" style="{{anonymousState__temp}}"></view>
 </block>

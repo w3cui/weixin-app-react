@@ -16,7 +16,6 @@ var tslib_1 = _interopRequireWildcard(_tslib);
 
 var _index = require("../../npm/@tarojs/taro-weapp/index.js");
 
-<<<<<<< HEAD
 var _index2 = _interopRequireDefault(_index);
 
 var _index3 = require("../../npm/@tarojs/redux/index.js");
@@ -24,11 +23,6 @@ var _index3 = require("../../npm/@tarojs/redux/index.js");
 var _index4 = require("../../redux/action/index.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-=======
-var _index2 = require("../../npm/@tarojs/redux/index.js");
-
-var _index3 = require("../../redux/action/index.js");
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -52,15 +46,9 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-<<<<<<< HEAD
     return _ret = (_temp = (_this2 = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this2), _this2.$usedState = ["anonymousState__temp", "$compid__8", "$compid__9", "$compid__10", "$compid__11", "$compid__12", "swiperConfig", "circle", "weiXinInfo", "current", "passwords"], _this2.config = {
       navigationBarTitleText: '密码办理入住'
     }, _this2.customComponents = ["AtSteps", "AtIcon", "AtButton"], _temp), _possibleConstructorReturn(_this2, _ret);
-=======
-    return _ret = (_temp = (_this2 = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this2), _this2.$usedState = ["anonymousState__temp", "items", "current", "swiperConfig", "circle", "weiXinInfo", "passwords"], _this2.config = {
-      navigationBarTitleText: '密码办理入住'
-    }, _this2.$$refs = [], _temp), _possibleConstructorReturn(_this2, _ret);
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
   }
 
   _createClass(Index, [{
@@ -83,10 +71,7 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
        * 对于像 navigationBarTextStyle: 'black' 这样的推导出的类型是 string
        * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
        */
-<<<<<<< HEAD
       this.$$refs = [];
-=======
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
     }
     // hloadChange(event) {
     //   const { current } = this.state
@@ -117,11 +102,8 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
     value: function _createData() {
       this.__state = arguments[0] || this.state || {};
       this.__props = arguments[1] || this.props || {};
-<<<<<<< HEAD
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
-=======
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
       ;
 
       var current = this.__state.current;
@@ -132,7 +114,6 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
         paddingTop: '30rpx',
         paddingBottom: '20rpx'
       });
-<<<<<<< HEAD
       var $compid__8 = (0, _index.genCompid)(__prefix + "$compid__8");
       _index.propsManager.set({
         "items": items,
@@ -171,24 +152,14 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
         $compid__10: $compid__10,
         $compid__11: $compid__11,
         $compid__12: $compid__12
-=======
-      Object.assign(this.__state, {
-        anonymousState__temp: anonymousState__temp,
-        items: items
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
       });
       return this.__state;
     }
   }]);
 
   return Index;
-<<<<<<< HEAD
 }(_index.Component), _class.$$events = [], _class.$$componentPath = "pages/pay/success", _temp2);
 Index = tslib_1.__decorate([(0, _index3.connect)(function (_ref2) {
-=======
-}(_index.Component), _class.properties = {}, _class.$$events = [], _temp2);
-Index = tslib_1.__decorate([(0, _index2.connect)(function (_ref2) {
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
   var counter = _ref2.counter,
       userInfo = _ref2.userInfo;
   return {
@@ -197,11 +168,7 @@ Index = tslib_1.__decorate([(0, _index2.connect)(function (_ref2) {
 }, function (dispatch, rep) {
   return {
     setWeiXinUser: function setWeiXinUser(data) {
-<<<<<<< HEAD
       dispatch((0, _index4.setWeiXinUser)(data));
-=======
-      dispatch((0, _index3.setWeiXinUser)(data));
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
     }
   };
 })], Index);

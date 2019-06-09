@@ -66,7 +66,7 @@ export default class Index extends Component {
   }
 
   bindGetUserInfo(e){
-    this.setState({isOpened:false,})
+    this.setState({isOpened:false,}) 
   }
   render() {
     const { swiperConfig, circle, weiXinInfo ,isOpened} = this.state

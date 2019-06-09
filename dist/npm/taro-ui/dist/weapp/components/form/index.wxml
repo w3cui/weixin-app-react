@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 <block wx:if="{{$taroCompReady}}">
     <form class="{{anonymousState__temp}}" style="{{anonymousState__temp2}}" bindsubmit="onSubmit" report-submit="{{reportSubmit}}" bindreset="onReset" data-e-submit-so="this" data-e-reset-so="this">
-=======
-<block>
-    <form class="{{anonymousState__temp}}" style="{{anonymousState__temp2}}" bindsubmit="onSubmit" report-submit="{{reportSubmit}}" bindreset="onReset" data-e-onSubmit-so="this" data-e-onReset-so="this">
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
         <slot></slot>
     </form>
 </block>

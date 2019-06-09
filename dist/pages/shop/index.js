@@ -91,15 +91,9 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-<<<<<<< HEAD
     return _ret = (_temp = (_this2 = _possibleConstructorReturn(this, (_ref2 = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref2, [this].concat(args))), _this2), _this2.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "loopArray1", "loopArray2", "$compid__14", "$compid__15", "$compid__16", "$compid__17", "current", "swiperConfig", "circle", "weiXinInfo", "passwords"], _this2.config = {
       navigationBarTitleText: '自助订房'
     }, _this2.customComponents = ["AtSteps", "AtButton", "AtForm", "EditorNum"], _temp), _possibleConstructorReturn(_this2, _ret);
-=======
-    return _ret = (_temp = (_this2 = _possibleConstructorReturn(this, (_ref2 = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref2, [this].concat(args))), _this2), _this2.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "loopArray0", "items", "current", "swiperConfig", "circle", "weiXinInfo", "passwords"], _this2.config = {
-      navigationBarTitleText: '自助订房'
-    }, _this2.$$refs = [], _temp), _possibleConstructorReturn(_this2, _ret);
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
   }
 
   _createClass(Index, [{
@@ -122,10 +116,7 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
        * 对于像 navigationBarTextStyle: 'black' 这样的推导出的类型是 string
        * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
        */
-<<<<<<< HEAD
       this.$$refs = [];
-=======
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
     }
     // hloadChange(event) {
     //   const { current } = this.state
@@ -164,21 +155,15 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       debugger;
     }
   }, {
-<<<<<<< HEAD
     key: "onChange",
     value: function onChange() {}
   }, {
-=======
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
     key: "_createData",
     value: function _createData() {
       this.__state = arguments[0] || this.state || {};
       this.__props = arguments[1] || this.props || {};
-<<<<<<< HEAD
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
-=======
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
       ;
 
       var _state = this.__state,
@@ -210,12 +195,11 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       var anonymousState__temp3 = current === 0 ? (0, _index.internal_inline_style)({
         paddingTop: '200rpx'
       }) : null;
-<<<<<<< HEAD
       var loopArray1 = current === 0 ? [1, 2, 3, 4, 5, 6].map(function (ref, _anonIdx) {
         ref = {
           $original: (0, _index.internal_get_original)(ref)
         };
-        var $compid__13 = (0, _index.genCompid)(__prefix + "brDBVHaahd" + _anonIdx);
+        var $compid__13 = (0, _index.genCompid)(__prefix + "sOgByXDJBG" + _anonIdx);
         current === 0 && _index.propsManager.set({
           "type": "primary"
         }, $compid__13);
@@ -225,9 +209,6 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
         };
       }) : [];
       var loopArray2 = current === 1 ? [0, 1, 2, 3].map(function (r, _anonIdx3) {
-=======
-      var loopArray0 = current === 1 ? [0, 1, 2, 3].map(function (r) {
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
         r = {
           $original: (0, _index.internal_get_original)(r)
         };
@@ -243,7 +224,6 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
           $original: r.$original
         };
       }) : [];
-<<<<<<< HEAD
       var $compid__14 = (0, _index.genCompid)(__prefix + "$compid__14");
       _index.propsManager.set({
         "items": items,
@@ -265,34 +245,23 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
         "type": "primary",
         "onClick": this.openPage.bind(this, "/pages/pay/success")
       }, $compid__17);
-=======
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
       Object.assign(this.__state, {
         anonymousState__temp: anonymousState__temp,
         anonymousState__temp2: anonymousState__temp2,
         anonymousState__temp3: anonymousState__temp3,
-<<<<<<< HEAD
         loopArray1: loopArray1,
         loopArray2: loopArray2,
         $compid__14: $compid__14,
         $compid__15: $compid__15,
         $compid__16: $compid__16,
         $compid__17: $compid__17
-=======
-        loopArray0: loopArray0,
-        items: items
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
       });
       return this.__state;
     }
   }]);
 
   return Index;
-<<<<<<< HEAD
 }(_index.Component), _class.$$events = ["onScrolltoupper", "onScroll"], _class.$$componentPath = "pages/shop/index", _temp2);
-=======
-}(_index.Component), _class.properties = {}, _class.$$events = ["onChange", "onScrolltoupper", "onScroll", "childChange", "childSubmit", "openPage"], _temp2);
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 exports.default = Index;
 
 Component(require('../../npm/@tarojs/taro-weapp/index.js').default.createComponent(Index, true));

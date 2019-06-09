@@ -1,14 +1,8 @@
 {
   "miniprogramRoot": "./",
-<<<<<<< HEAD
   "projectname": "weixin-react",
   "description": "",
   "appid": "wx94089fb7c88a1931",
-=======
-  "projectname": "%E6%96%B0%E7%BD%91%E6%9C%8D%E5%8A%A1%E7%BB%88%E7%AB%AF",
-  "description": "",
-  "appid": "wx431af78ee639f238",
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
   "setting": {
     "urlCheck": true,
     "es6": false,

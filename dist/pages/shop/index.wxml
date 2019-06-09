@@ -1,28 +1,15 @@
-<<<<<<< HEAD
 <block wx:if="{{$taroCompReady}}">
     <view style="flex-direction:column;" class="flex-wrp ">
         <view style="{{anonymousState__temp}}">
             <at-steps compid="{{$compid__14}}"></at-steps>
-=======
-<block>
-    <view style="flex-direction:column;" class="flex-wrp ">
-        <view style="{{anonymousState__temp}}">
-            <at-steps items="{{items}}" __triggerObserer="{{ _triggerObserer }}" current="{{current}}" bindonchange="onChange" __fn_onChange="{{true}}" data-e-onChange-so="this"></at-steps>
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
             <view class="hr" style="{{anonymousState__temp2}}"></view>
         </view>
         <block wx:if="{{current === 0}}">
             <scroll-view class="scrollview" scroll-y="{{true}}" scroll-with-animation="{{true}}" scroll-top="{{0}}" style="height: 100vh;" bindscrolltoupper="onScrolltoupper" bindscroll="onScroll">
                 <view style="{{anonymousState__temp3}}">
-<<<<<<< HEAD
                     <view class="item_list_goods at-row" wx:for="{{loopArray1}}" wx:for-item="ref" wx:for-index="_anonIdx2">
                         <view class="pic at-col at-col-2 at-col--auto">
                             <image mode="scaleToFill" src="http://imgproxy.18cap.cn/imgextra/i3/2176670969/*o1*c*n012a*n87*c1*j1q*h3*hpw2b_!!2176670969.jpg_400x400.jpg"></image>
-=======
-                    <view class="item_list_goods at-row" wx:for="{{[1, 2, 3, 4, 5, 6]}}" wx:for-item="ref">
-                        <view class="pic at-col at-col-2 at-col--auto">
-                            <image mode="scaleToFill" src="http://imgproxy.18cap.cn/imgextra/i3/2176670969/*o1*c*n012a*n87*c1*j1q*h3*hpw2b_!!2176670969.jpg_400x400.jpg" />
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
                         </view>
                         <view class="center at-col">
                             <view class="bt">豪华双人间</view>
@@ -30,34 +17,19 @@
                         </view>
                         <view class="btn">
                             <view class="col ">
-<<<<<<< HEAD
                                 <at-button compid="{{ref.$compid__13}}">订购</at-button>
                             </view>
                             <view class="col money">¥<text>260</text>
                             </view><text class=" col del">¥226</text>
-=======
-                                <at-button type="primary" __triggerObserer="{{ _triggerObserer }}">订购</at-button>
-                            </view>
-                            <view class="col money">¥
-                                <text>260</text>
-                            </view>
-                            <text class=" col del">¥226</text>
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
                         </view>
                     </view>
                 </view>
             </scroll-view>
         </block>
         <block wx:if="{{current === 1}}">
-<<<<<<< HEAD
             <at-form compid="{{$compid__15}}">
                 <view class="at-row pay_password_list">
                     <block wx:for="{{loopArray2}}" wx:for-item="r" wx:for-index="_anonIdx4" wx:key="{{true}}">
-=======
-            <at-form className="pay_password_list" __triggerObserer="{{ _triggerObserer }}">
-                <view class="at-row pay_password_list">
-                    <block wx:for="{{loopArray0}}" wx:for-item="r" wx:key="{{true}}">
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
                         <block wx:if="{{r.$original !== 3}}">
                             <view class="at-col input">
                                 <view class="{{r.$loopState__temp5}}">{{r.$loopState__temp7}}</view>
@@ -71,11 +43,7 @@
                         </block>
                     </block>
                 </view>
-<<<<<<< HEAD
                 <editor-num compid="{{$compid__16}}"></editor-num>
-=======
-                <editor-num maxLength="{{4}}" __triggerObserer="{{ _triggerObserer }}" bindonchange="childChange" bindonsubmit="childSubmit" __fn_onChange="{{true}}" data-e-childChange-so="this" __fn_onSubmit="{{true}}" data-e-childSubmit-so="this"></editor-num>
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
             </at-form>
         </block>
         <block wx:if="{{current === 2}}">
@@ -89,11 +57,7 @@
                 </view>
                 <view class="pay_btn">
                     <view>
-<<<<<<< HEAD
                         <at-button compid="{{$compid__17}}">支付押金 100.00元</at-button>
-=======
-                        <at-button type="primary" __triggerObserer="{{ _triggerObserer }}" bindonclick="openPage" __fn_onClick="{{true}}" data-e-openPage-so="this" data-e-openPage-a-a="/pages/pay/success">支付押金 100.00元</at-button>
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
                     </view>
                 </view>
             </view>

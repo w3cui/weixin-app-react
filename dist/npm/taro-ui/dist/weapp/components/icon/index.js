@@ -48,41 +48,27 @@ var AtIcon = (_temp2 = _class = function (_AtComponent) {
       args[_key] = arguments[_key];
     }
 
-<<<<<<< HEAD
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = AtIcon.__proto__ || Object.getPrototypeOf(AtIcon)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "customStyle", "className", "prefixClass", "value", "size", "color"], _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
-=======
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = AtIcon.__proto__ || Object.getPrototypeOf(AtIcon)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "__fn_onClick", "customStyle", "className", "prefixClass", "value", "size", "color"], _this.$$refs = [], _temp), _possibleConstructorReturn(_this, _ret);
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
   }
 
   _createClass(AtIcon, [{
     key: "_constructor",
-<<<<<<< HEAD
     value: function _constructor() {
       _get(AtIcon.prototype.__proto__ || Object.getPrototypeOf(AtIcon.prototype), "_constructor", this).apply(this, arguments);
       this.$$refs = [];
-=======
-    value: function _constructor(props) {
-      _get(AtIcon.prototype.__proto__ || Object.getPrototypeOf(AtIcon.prototype), "_constructor", this).call(this, props);
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
     }
   }, {
     key: "handleClick",
     value: function handleClick() {
-<<<<<<< HEAD
       var _props;
 
       (_props = this.props).onClick.apply(_props, arguments);
-=======
-      this.__triggerPropsFn("onClick", [null].concat([].concat(Array.prototype.slice.call(arguments))));
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
     }
   }, {
     key: "_createData",
     value: function _createData() {
       this.__state = arguments[0] || this.state || {};
       this.__props = arguments[1] || this.props || {};
-<<<<<<< HEAD
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
@@ -100,24 +86,6 @@ var AtIcon = (_temp2 = _class = function (_AtComponent) {
         fontSize: "" + _index2.default.pxTransform(parseInt(size) * 2),
         color: color
       };
-=======
-      ;
-
-      var _props = this.__props,
-          customStyle = _props.customStyle,
-          className = _props.className,
-          prefixClass = _props.prefixClass,
-          value = _props.value,
-          size = _props.size,
-          color = _props.color;
-
-
-      var rootStyle = {
-        fontSize: size + "px",
-        color: color
-      };
-
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
       var anonymousState__temp = (0, _index6.default)(prefixClass, prefixClass + "-" + value, className);
       var anonymousState__temp2 = (0, _index.internal_inline_style)(this.mergeStyle(rootStyle, customStyle));
       Object.assign(this.__state, {
@@ -129,40 +97,7 @@ var AtIcon = (_temp2 = _class = function (_AtComponent) {
   }]);
 
   return AtIcon;
-<<<<<<< HEAD
 }(_component2.default), _class.$$events = ["handleClick"], _class.defaultProps = {
-=======
-}(_component2.default), _class.properties = {
-  "__fn_onClick": {
-    "type": null,
-    "value": null
-  },
-  "customStyle": {
-    "type": null,
-    "value": null
-  },
-  "className": {
-    "type": null,
-    "value": null
-  },
-  "prefixClass": {
-    "type": null,
-    "value": null
-  },
-  "value": {
-    "type": null,
-    "value": null
-  },
-  "size": {
-    "type": null,
-    "value": null
-  },
-  "color": {
-    "type": null,
-    "value": null
-  }
-}, _class.$$events = ["handleClick"], _class.defaultProps = {
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
   customStyle: '',
   className: '',
   prefixClass: 'at-icon',
@@ -178,11 +113,7 @@ var AtIcon = (_temp2 = _class = function (_AtComponent) {
   color: _index4.default.string,
   size: _index4.default.oneOfType([_index4.default.string, _index4.default.number]),
   onClick: _index4.default.func
-<<<<<<< HEAD
 }, _class.$$componentPath = "D:/\u9879\u76EE/weixin-react/node_modules/taro-ui/dist/weapp/components/icon/index", _temp2);
-=======
-}, _temp2);
->>>>>>> 51c8217fc99247b5712c57e35f7900326285179e
 exports.default = AtIcon;
 
 Component(require('../../../../../@tarojs/taro-weapp/index.js').default.createComponent(AtIcon));
